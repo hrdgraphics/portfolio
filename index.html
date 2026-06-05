@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renata Hanko — Creative Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07050f;--bg2:#0a0815;--surf:#0f0c1c;--surf2:#151228;
+  --bdr:rgba(140,90,255,.1);--bdrhi:rgba(140,90,255,.22);
+  --w:#ede9f8;--mu:rgba(237,233,248,.48);--mu2:rgba(237,233,248,.24);
+  --pu:#9060ff;--pk:#e04fa0;
+  --g:linear-gradient(135deg,#9060ff 0%,#e04fa0 100%);
+  --ez:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--w);font-family:'Plus Jakarta Sans',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* ── CURSOR ─────────────────────────────── */
+#cd{position:fixed;width:6px;height:6px;border-radius:50%;background:var(--pu);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,background .2s;mix-blend-mode:screen}
+#cr{position:fixed;width:32px;height:32px;border-radius:50%;border:1px solid rgba(144,96,255,.4);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s var(--ez),height .3s var(--ez)}
+body.ch #cd{transform:translate(-50%,-50%) scale(3.5);background:var(--pk)}
+body.ch #cr{width:50px;height:50px}
+
+/* ── NAV ─────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;justify-content:space-between;align-items:center;padding:20px 52px}
+nav::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(7,5,15,.94) 0%,transparent 100%);pointer-events:none}
+.nl{position:relative;z-index:1}
+/* Three-dot gradient logo mark */
+.nl svg{display:block}
+.nv{display:flex;gap:30px;list-style:none;position:relative;z-index:1}
+.nv a{color:var(--mu);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;transition:color .22s}
+.nv a:hover{color:var(--w)}
+.ncta{position:relative;z-index:1;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;padding:9px 22px;border:1px solid var(--bdrhi);color:var(--pu);overflow:hidden;transition:color .28s,border-color .28s}
+.ncta::before{content:'';position:absolute;inset:0;background:var(--g);opacity:0;transition:opacity .28s}
+.ncta:hover{color:#fff;border-color:transparent}
+.ncta:hover::before{opacity:1}
+.ncta span{position:relative;z-index:1}
+
+/* ── HERO ─────────────────────────────────── */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 52px 88px;position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(88px)}
+.o1{width:520px;height:520px;background:rgba(144,96,255,.12);top:-120px;right:-60px;animation:df 9s ease-in-out infinite}
+.o2{width:360px;height:360px;background:rgba(224,79,160,.08);bottom:-50px;left:-40px;animation:df 12s ease-in-out infinite reverse}
+@keyframes df{0%,100%{transform:translate(0,0)}50%{transform:translate(14px,-20px)}}
+.hgr{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(144,96,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(144,96,255,.025) 1px,transparent 1px);background-size:72px 72px}
+.hbn{position:absolute;right:-6px;top:50%;transform:translateY(-52%);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(160px,20vw,280px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(144,96,255,.048);user-select:none;pointer-events:none;letter-spacing:-.04em}
+.hc{position:relative;z-index:1}
+.he{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pu);margin-bottom:18px;opacity:0;animation:su .9s var(--ez) .3s forwards}
+/* HERO H1 — Plus Jakarta Sans is tight and punchy, not wide */
+.hh{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(50px,7.5vw,102px);line-height:.92;letter-spacing:-.03em;margin-bottom:26px;opacity:0;animation:su .9s var(--ez) .5s forwards}
+/* Only the italic accent word gets gradient */
+.hh .ac{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:.88em;letter-spacing:-.01em;background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hs{max-width:400px;font-size:.92rem;line-height:1.76;color:var(--mu);margin-bottom:40px;opacity:0;animation:su .9s var(--ez) .66s forwards}
+.hbt{display:flex;gap:12px;align-items:center;opacity:0;animation:su .9s var(--ez) .82s forwards}
+/* Primary button — gradient fill, intentional */
+.bp{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#fff;background:var(--g);transition:opacity .28s}
+.bp:hover{opacity:.8}
+/* Ghost button */
+.bg{display:inline-flex;align-items:center;gap:8px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);transition:color .22s}
+.bg:hover{color:var(--w)}
+.bg svg{transition:transform .28s}
+.bg:hover svg{transform:translateX(4px)}
+.hsc{position:absolute;right:52px;bottom:88px;writing-mode:vertical-rl;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mu2);display:flex;align-items:center;gap:12px;opacity:0;animation:fi 1s ease 1.4s forwards}
+.hsc::after{content:'';width:1px;height:48px;background:linear-gradient(to bottom,transparent,var(--pu))}
+@keyframes su{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+
+/* ── TICKER ──────────────────────────────── */
+.tkr{border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:13px 0;overflow:hidden;white-space:nowrap;user-select:none}
+.tkt{display:inline-flex;animation:tk 28s linear infinite}
+.ti{font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--mu2);padding:0 28px;font-weight:400}
+.ti .d{color:var(--pu);margin-right:6px}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── SECTIONS ────────────────────────────── */
+section{padding:104px 52px}
+.ey{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--pu);margin-bottom:44px;display:flex;align-items:center;gap:11px}
+.ey::before{content:'';width:24px;height:1px;background:var(--g)}
+
+/* ── STATS ───────────────────────────────── */
+.sbd{border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
+.sr{display:grid;grid-template-columns:repeat(4,1fr)}
+.st{padding:44px 38px;border-right:1px solid var(--bdr)}
+.st:last-child{border-right:none}
+/* Stat numbers — gradient, intentional use */
+.sn{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(36px,4vw,56px);line-height:1;background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
+.sl{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);line-height:1.55}
+
+/* ── WORK ────────────────────────────────── */
+.wh{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px}
+.wt{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(34px,4.5vw,62px);line-height:.9;letter-spacing:-.03em}
+.fb{display:flex;gap:2px}
+.fn{padding:8px 18px;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;background:transparent;border:1px solid var(--bdr);color:var(--mu);cursor:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;transition:all .2s}
+.fn.on{background:var(--g);border-color:transparent;color:#fff;font-weight:600}
+.fn:hover:not(.on){border-color:var(--bdrhi);color:var(--w)}
+
+/* ── PROJECT GRID ────────────────────────── */
+/*
+  KEY FIX: Cards are flex columns. The image area is a
+  fixed aspect-ratio div (using aspect-ratio property, not
+  padding-top hack). Text lives OUTSIDE the image — below it.
+  This means ALL cards in a row share the same image height
+  AND the text is always at the same vertical position.
+*/
+.pg{display:grid;grid-template-columns:repeat(12,1fr);gap:2px}
+.pc{grid-column:span 6;display:flex;flex-direction:column;background:var(--surf);cursor:none;overflow:hidden;position:relative}
+.pc.lg{grid-column:span 7}
+.pc.md{grid-column:span 5}
+.pc.hf{grid-column:span 6}
+.pc.sm{grid-column:span 4}
+/* Image area — aspect-ratio enforced, NO padding-top trick */
+.pci{position:relative;overflow:hidden;flex-shrink:0}
+.pc.lg .pci{aspect-ratio:16/10}
+.pc.md .pci{aspect-ratio:4/3}
+.pc.hf .pci{aspect-ratio:4/3}
+.pc.sm .pci{aspect-ratio:1/1}
+/* Background fill inside image area */
+.pcbg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:transform .85s var(--ez),filter .5s}
+.pc:hover .pcbg{transform:scale(1.07);filter:brightness(.35) saturate(1.5)}
+/* Dark gradient over image */
+.pco{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,5,15,.7) 0%,transparent 60%);transition:opacity .3s;pointer-events:none}
+.pc:hover .pco{opacity:0}
+/* Text block — sits BELOW the image, NOT overlaid */
+.pct{padding:18px 20px 20px;background:var(--surf);flex:1;display:flex;flex-direction:column;justify-content:space-between;min-height:0}
+/* Tags row */
+.ptags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+.ptag{font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(144,96,255,.3);color:var(--pu);padding:2px 7px;line-height:1.5}
+/* Title */
+.ptn{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.92rem;line-height:1.2;color:var(--w);margin-bottom:4px}
+/* Desc */
+.ptd{font-size:.72rem;color:var(--mu);line-height:1.55}
+/* Hover: thin top border gradient line */
+.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--g);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ez);z-index:2}
+.pc:hover::before{transform:scaleX(1)}
+/* Arrow top-right on hover */
+.par{position:absolute;top:14px;right:14px;width:32px;height:32px;border:1px solid rgba(144,96,255,.28);display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(-4px);transition:all .28s;z-index:3;pointer-events:none}
+.pc:hover .par{opacity:1;transform:translateY(0);background:var(--g);border-color:transparent}
+.pclink{position:absolute;inset:0;z-index:10;cursor:none}
+/* hidden by filter */
+.pc.gone{display:none}
+/* bg fills */
+.ba{background:linear-gradient(145deg,#0e0626,#1a0838)}
+.bb{background:linear-gradient(145deg,#050c26,#0d163c)}
+.bc{background:linear-gradient(145deg,#10051a,#1e0a2c)}
+.bd{background:linear-gradient(145deg,#070818,#12142c)}
+.be{background:linear-gradient(145deg,#130510,#220c1a)}
+.bf{background:linear-gradient(145deg,#051016,#0a1a24)}
+.bg2{background:linear-gradient(145deg,#0d100a,#181e10)}
+
+/* ── MOTION ──────────────────────────────── */
+.msc{background:var(--bg2)}
+.mgr{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:48px}
+.mi{position:relative;overflow:hidden;background:var(--surf);cursor:none}
+.mi.mf{grid-column:span 2}
+.mia{position:relative;width:100%}
+.mi.mf .mia{aspect-ratio:21/8}
+.mi:not(.mf) .mia{aspect-ratio:16/9}
+.mif{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;transition:transform .7s var(--ez)}
+.mi:hover .mif{transform:scale(1.04)}
+.pb{width:54px;height:54px;border-radius:50%;border:1px solid rgba(144,96,255,.38);display:flex;align-items:center;justify-content:center;transition:all .28s}
+.mi:hover .pb{background:var(--g);border-color:transparent}
+.mlb{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mu2)}
+.mm{position:absolute;bottom:0;left:0;right:0;padding:20px 22px;background:linear-gradient(to top,rgba(7,5,15,.94) 0%,transparent 100%);pointer-events:none}
+.mt{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:2px}
+.ms{font-size:.68rem;color:var(--mu);letter-spacing:.04em}
+
+/* ── TESTIMONIALS ────────────────────────── */
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:44px}
+.tc{background:var(--surf);padding:36px 28px;position:relative;overflow:hidden}
+.tc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--g)}
+/* Pull-quote mark — gradient, intentional */
+.tqm{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:3rem;line-height:.5;background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px}
+.tt{font-size:.83rem;line-height:1.82;color:rgba(237,233,248,.62);margin-bottom:20px;font-style:italic}
+.ts{font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--pu)}
+
+/* ── CLIENTS ─────────────────────────────── */
+.clsc{background:var(--surf)}
+.clh{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(28px,3.8vw,48px);line-height:.9;margin-bottom:44px;max-width:480px;letter-spacing:-.02em}
+.cg{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--bdr)}
+.cc{background:var(--surf);padding:28px 16px;transition:background .25s}
+.cc:hover{background:rgba(144,96,255,.05)}
+.cn{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.84rem;letter-spacing:.04em;color:var(--mu2);text-align:center;transition:color .25s}
+.cc:hover .cn{color:var(--w)}
+
+/* ── ABOUT ───────────────────────────────── */
+.agr{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.ah{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(34px,4.2vw,54px);line-height:.9;letter-spacing:-.03em;margin-bottom:26px}
+/* Pull italic — purple, one of the intentional accent uses */
+.ah .pu{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:.9em;color:var(--pu)}
+.ap{font-size:.87rem;line-height:1.82;color:var(--mu);margin-bottom:14px}
+.sk{list-style:none;margin-top:12px}
+.ski{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--bdr);font-size:.77rem;color:rgba(237,233,248,.56)}
+.ski:first-child{border-top:1px solid var(--bdr)}
+.sd{width:4px;height:4px;border-radius:50%;background:var(--pu);flex-shrink:0}
+
+/* ── CONTACT ─────────────────────────────── */
+.cwr{position:relative;overflow:hidden;min-height:66vh;display:flex;flex-direction:column;justify-content:center}
+.cgh{position:absolute;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(76px,12vw,160px);white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(144,96,255,.038);bottom:-6px;left:-5px;pointer-events:none;user-select:none;letter-spacing:-.03em}
+.ch2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(44px,7vw,96px);line-height:.88;letter-spacing:-.03em;margin-bottom:20px;position:relative;z-index:1}
+/* "great" gradient — intentional */
+.ch2 .gr{background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.csu{font-size:.88rem;color:var(--mu);max-width:380px;line-height:1.78;margin-bottom:36px;position:relative;z-index:1}
+.cat{display:flex;gap:7px;flex-wrap:wrap;position:relative;z-index:1}
+/* CTA button — gradient fill, intentional */
+.cpr{display:inline-block;padding:12px 32px;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#fff;background:var(--g);transition:opacity .28s}
+.cpr:hover{opacity:.78}
+.cs2{display:inline-block;padding:12px 24px;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--bdrhi);color:var(--mu);transition:all .22s}
+.cs2:hover{border-color:rgba(144,96,255,.45);color:var(--w)}
+
+/* ── FOOTER ──────────────────────────────── */
+footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-content:space-between;align-items:center}
+.fc{font-size:.62rem;letter-spacing:.1em;color:var(--mu2)}
+.fk{display:flex;gap:14px}
+.fk a{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mu2);transition:color .22s}
+.fk a:hover{color:var(--pu)}
+
+/* ── MODAL ───────────────────────────────── */
+.mov{position:fixed;inset:0;background:rgba(7,5,15,.97);z-index:500;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .34s var(--ez)}
+.mov.open{opacity:1;pointer-events:all}
+.mcl{position:fixed;top:24px;right:40px;z-index:520;width:40px;height:40px;background:var(--surf);border:1px solid var(--bdrhi);color:var(--w);font-size:.95rem;cursor:none;display:flex;align-items:center;justify-content:center;transition:all .22s}
+.mcl:hover{background:var(--g);border-color:transparent}
+.min{max-width:1000px;margin:0 auto;padding:100px 52px 80px}
+.cse{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pu);margin-bottom:9px}
+.cst{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(36px,5vw,72px);line-height:.88;letter-spacing:-.03em;margin-bottom:9px}
+.cst .g{background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.css{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--mu);margin-bottom:32px;font-weight:400}
+.csm{display:flex;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);margin-bottom:52px}
+.csmi{flex:1;padding:16px 20px;border-right:1px solid var(--bdr)}
+.csmi:last-child{border-right:none}
+.csmi .lb{font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pu);margin-bottom:4px}
+.csmi .vl{font-size:.78rem;color:var(--mu)}
+.csh{width:100%;aspect-ratio:21/8;display:flex;align-items:center;justify-content:center;margin-bottom:56px;position:relative;overflow:hidden}
+.csnt{position:absolute;bottom:12px;right:12px;font-size:.52rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(144,96,255,.32)}
+.c2c{display:grid;grid-template-columns:1fr 1fr;gap:52px;margin-bottom:48px}
+.cssl{font-size:.57rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pu);margin-bottom:9px;display:flex;align-items:center;gap:8px}
+.cssl::before{content:'';width:16px;height:1px;background:var(--g)}
+.cssh{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.15rem;margin-bottom:9px}
+.csp{font-size:.84rem;line-height:1.85;color:var(--mu)}
+.ots{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:36px 0}
+.ot{background:var(--surf);padding:26px 22px;border-left:2px solid var(--pu)}
+.otn{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(26px,3vw,42px);line-height:1;background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+.otl{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}
+.cim{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:36px 0}
+.ci{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.csq{border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:30px 0;margin:40px 0}
+.csq p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;line-height:1.72;color:var(--w);margin-bottom:10px}
+.csq p::before{content:'\201C';background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:1.3em;margin-right:3px}
+.csq cite{font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--pu)}
+.ctgs{display:flex;flex-wrap:wrap;gap:5px;margin:28px 0}
+.ctg{font-size:.57rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(144,96,255,.26);color:var(--pu);padding:4px 10px}
+.csfo{display:flex;justify-content:space-between;align-items:center;margin-top:44px;padding-top:32px;border-top:1px solid var(--bdr)}
+.csbe{display:inline-flex;align-items:center;gap:7px;padding:11px 28px;font-size:.67rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--g);transition:opacity .28s;font-weight:600}
+.csbe:hover{opacity:.78}
+.csnv{display:flex;gap:2px}
+.csnp{padding:14px 20px;background:var(--surf);cursor:none;transition:background .22s;display:block}
+.csnp:hover{background:var(--surf2)}
+.csnp .nl{font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pu);margin-bottom:3px}
+.csnp .nt{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.82rem;color:var(--w)}
+
+/* ── REVEAL ──────────────────────────────── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ez),transform .8s var(--ez)}
+.rv.on{opacity:1;transform:translateY(0)}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+</style>
+</head>
+<body>
+<div id="cd"></div><div id="cr"></div>
+
+<nav>
+  <a href="#" class="nl">
+    <!-- Three dots only — gradient purple to pink -->
+    <svg width="52" height="16" viewBox="0 0 52 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="dg" x1="0" y1="8" x2="52" y2="8" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#9060ff"/><stop offset="100%" stop-color="#e04fa0"/></linearGradient></defs>
+      <circle cx="8" cy="8" r="7" fill="url(#dg)"/>
+      <circle cx="26" cy="8" r="7" fill="url(#dg)"/>
+      <circle cx="44" cy="8" r="7" fill="url(#dg)"/>
+    </svg>
+  </a>
+  <ul class="nv">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#motion">Motion</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="ncta"><span>Available for hire</span></a>
+</nav>
+
+<section class="hero">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="hgr"></div>
+  <div class="hbn">01</div>
+  <div class="hc">
+    <p class="he">Creative Lead — Bristol, UK</p>
+    <h1 class="hh">Design that<br><span class="ac">moves</span><br>people.</h1>
+    <p class="hs">12+ years building brand systems, motion campaigns and high-impact design for McDonald's, Nando's, Lidl, B&amp;Q, Haven and more.</p>
+    <div class="hbt">
+      <a href="#work" class="bp">View Work<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="#motion" class="bg">Motion Reel<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+  <div class="hsc">Scroll</div>
+</section>
+
+<div class="tkr"><div class="tkt">
+<span class="ti"><span class="d">✦</span>Brand Identity</span><span class="ti"><span class="d">✦</span>Motion Design</span><span class="ti"><span class="d">✦</span>Creative Direction</span><span class="ti"><span class="d">✦</span>Campaign Design</span><span class="ti"><span class="d">✦</span>Web Design</span><span class="ti"><span class="d">✦</span>Print &amp; Editorial</span><span class="ti"><span class="d">✦</span>Animation</span><span class="ti"><span class="d">✦</span>Brand Systems</span><span class="ti"><span class="d">✦</span>Brand Identity</span><span class="ti"><span class="d">✦</span>Motion Design</span><span class="ti"><span class="d">✦</span>Creative Direction</span><span class="ti"><span class="d">✦</span>Campaign Design</span><span class="ti"><span class="d">✦</span>Web Design</span><span class="ti"><span class="d">✦</span>Print &amp; Editorial</span><span class="ti"><span class="d">✦</span>Animation</span><span class="ti"><span class="d">✦</span>Brand Systems</span>
+</div></div>
+
+<div class="sbd"><div class="sr">
+  <div class="st rv"><div class="sn">12+</div><div class="sl">Years creative experience</div></div>
+  <div class="st rv d1"><div class="sn">110%</div><div class="sl">Applications uplift — NAW Campaign</div></div>
+  <div class="st rv d2"><div class="sn">40%</div><div class="sl">Satisfaction improvement — Huddle</div></div>
+  <div class="st rv d3"><div class="sn">20+</div><div class="sl">National brands delivered</div></div>
+</div></div>
+
+<section id="work" style="padding-top:120px;padding-bottom:44px">
+  <div class="ey rv">Selected Work</div>
+  <div class="wh rv">
+    <h2 class="wt">Selected<br>Projects</h2>
+    <div class="fb">
+      <button class="fn on" data-f="all"    onclick="flt(this)">All</button>
+      <button class="fn"    data-f="brand"  onclick="flt(this)">Brand</button>
+      <button class="fn"    data-f="motion" onclick="flt(this)">Motion</button>
+      <button class="fn"    data-f="web"    onclick="flt(this)">Web</button>
+      <button class="fn"    data-f="print"  onclick="flt(this)">Print</button>
+    </div>
+  </div>
+
+  <div class="pg" id="pg">
+
+    <div class="pc lg ba" data-c="brand">
+      <div class="pci ba"><div class="pcbg"><svg width="70" height="50" viewBox="0 0 70 50" fill="none" opacity=".1"><circle cx="35" cy="25" r="18" stroke="#9060ff" stroke-width="1"/><circle cx="35" cy="25" r="9" fill="#9060ff" opacity=".35"/><path d="M18 25h34M35 8v34" stroke="#e04fa0" stroke-width="1.1"/></svg></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Packaging</span></div><div class="ptn">Fusion — Functional Beverage Brand</div><div class="ptd">Full identity for a functional beverage startup. Logo, packaging, visual language.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('fusion')"></a>
+    </div>
+
+    <div class="pc md bb" data-c="brand">
+      <div class="pci bb"><div class="pcbg"><svg width="54" height="54" viewBox="0 0 54 54" fill="none" opacity=".1"><rect x="7" y="7" width="40" height="40" rx="3" stroke="#9060ff" stroke-width="1"/><rect x="16" y="16" width="22" height="22" fill="#9060ff" opacity=".3"/><path d="M16 27h22M27 16v22" stroke="#e04fa0" stroke-width="1"/></svg></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Visual Identity</span><span class="ptag">Fintech</span></div><div class="ptn">Oriva — Finance, Simplified</div><div class="ptd">Clean, trustworthy identity for a fintech platform.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('oriva')"></a>
+    </div>
+
+    <div class="pc md bc" data-c="brand">
+      <div class="pci bc"><div class="pcbg"><svg width="54" height="46" viewBox="0 0 54 46" fill="none" opacity=".1"><polyline points="9,16 21,23 9,30" stroke="#9060ff" stroke-width="1.3" fill="none"/><line x1="27" y1="29" x2="46" y2="29" stroke="#e04fa0" stroke-width="1.3"/><line x1="27" y1="20" x2="40" y2="20" stroke="#e04fa0" stroke-width=".9" opacity=".5"/></svg></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Dev Tools</span></div><div class="ptn">Codedash — Brand &amp; Visual System</div><div class="ptd">Bold identity for a developer tools platform.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('codedash')"></a>
+    </div>
+
+    <div class="pc lg bd" data-c="brand">
+      <div class="pci bd"><div class="pcbg"><svg width="80" height="46" viewBox="0 0 80 46" fill="none" opacity=".1"><path d="M6 32 Q24 8 40 32 Q56 56 74 32" stroke="#e04fa0" stroke-width="1.3" fill="none"/><circle cx="6" cy="32" r="3" fill="#9060ff"/><circle cx="40" cy="32" r="3" fill="#e04fa0"/><circle cx="74" cy="32" r="3" fill="#9060ff"/></svg></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Evolution</span><span class="ptag">Art Direction</span></div><div class="ptn">Lifetime Training — Brand Repositioning</div><div class="ptd">Unanimous board approval. Full national brand system.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('lifetime')"></a>
+    </div>
+
+    <div class="pc hf be" data-c="brand">
+      <div class="pci be"><div class="pcbg"><svg width="56" height="52" viewBox="0 0 56 52" fill="none" opacity=".1"><path d="M28 5 L50 44 L6 44 Z" stroke="#9060ff" stroke-width="1" fill="rgba(144,96,255,.07)"/><circle cx="28" cy="30" r="6" fill="#e04fa0" opacity=".4" stroke="#e04fa0" stroke-width=".9"/></svg></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Travel</span></div><div class="ptn">Voyageur — Travel Brand Identity</div><div class="ptd">Evocative travel identity. 7 appreciations, 65 Behance views.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('voyageur')"></a>
+    </div>
+
+    <div class="pc hf ba" data-c="brand">
+      <div class="pci ba"><div class="pcbg"><svg width="56" height="56" viewBox="0 0 56 56" fill="none" opacity=".1"><circle cx="28" cy="18" r="8" stroke="#9060ff" stroke-width="1"/><circle cx="13" cy="42" r="6" stroke="#e04fa0" stroke-width=".9" opacity=".7"/><circle cx="43" cy="42" r="6" stroke="#e04fa0" stroke-width=".9" opacity=".7"/><line x1="21" y1="25" x2="16" y2="37" stroke="#9060ff" stroke-width=".7" opacity=".5"/><line x1="35" y1="25" x2="40" y2="37" stroke="#9060ff" stroke-width=".7" opacity=".5"/></svg></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Internal Brand</span><span class="ptag">Identity</span></div><div class="ptn">Huddle — Internal Brand Identity</div><div class="ptd">+25% employee participation. +40% satisfaction improvement.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('huddle')"></a>
+    </div>
+
+    <div class="pc lg bf" data-c="motion">
+      <div class="pci bf"><div class="pcbg"><svg width="74" height="50" viewBox="0 0 74 50" fill="none" opacity=".1"><rect x="3" y="7" width="68" height="38" rx="2" stroke="#9060ff" stroke-width=".8" opacity=".5"/><polygon points="26,16 26,38 50,27" fill="#e04fa0" opacity=".6"/></svg></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Campaign</span><span class="ptag">Animation</span><span class="ptag">Social</span></div><div class="ptn">NAW — #IAspiretoBe Campaign</div><div class="ptd">110% increase in apprenticeship applications. National multi-channel campaign.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('naw')"></a>
+    </div>
+
+    <div class="pc md be" data-c="brand">
+      <div class="pci be"><div class="pcbg"><svg width="44" height="56" viewBox="0 0 44 56" fill="none" opacity=".1"><ellipse cx="22" cy="32" rx="16" ry="20" stroke="#e04fa0" stroke-width="1"/><circle cx="22" cy="32" r="6" fill="#e04fa0" opacity=".25"/><line x1="22" y1="5" x2="22" y2="12" stroke="#9060ff" stroke-width="1.3"/></svg></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Beauty Brand</span><span class="ptag">Identity</span></div><div class="ptn">Rouge — Beauty Brand Identity</div><div class="ptd">Luxe feminine visual identity. 131 Behance views.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('rouge')"></a>
+    </div>
+
+    <div class="pc sm bb" data-c="print">
+      <div class="pci bb"><div class="pcbg"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" opacity=".12"><rect x="2" y="2" width="16" height="16" fill="#9060ff" opacity=".4"/><rect x="24" y="2" width="16" height="16" stroke="#9060ff" stroke-width=".9"/><rect x="2" y="24" width="16" height="16" stroke="#e04fa0" stroke-width=".9"/><rect x="24" y="24" width="16" height="16" fill="#e04fa0" opacity=".3"/></svg></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Print</span><span class="ptag">Activation</span></div><div class="ptn">B&amp;Q Reignite Campaign</div><div class="ptd">0 to 19 vacancies in one month.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('bq')"></a>
+    </div>
+
+    <div class="pc sm bd" data-c="brand">
+      <div class="pci bd"><div class="pcbg"><svg width="38" height="48" viewBox="0 0 38 48" fill="none" opacity=".12"><rect x="5" y="3" width="28" height="42" rx="2" stroke="#9060ff" stroke-width=".9" fill="rgba(144,96,255,.06)"/><path d="M11 15h16M11 21h11M11 27h13" stroke="#e04fa0" stroke-width=".8" opacity=".7"/></svg></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Luxury</span><span class="ptag">Hotel</span></div><div class="ptn">Regalia — Luxury Hotel Identity</div><div class="ptd">Refined luxury visual identity. 82 Behance views.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('regalia')"></a>
+    </div>
+
+    <div class="pc sm bc" data-c="web">
+      <div class="pci bc"><div class="pcbg"><svg width="46" height="40" viewBox="0 0 46 40" fill="none" opacity=".12"><rect x="2" y="2" width="42" height="28" rx="2" stroke="#9060ff" stroke-width=".9"/><rect x="2" y="2" width="42" height="7" fill="#9060ff" opacity=".1"/><rect x="7" y="13" width="12" height="10" stroke="#e04fa0" stroke-width=".7"/><rect x="24" y="13" width="14" height="4" stroke="#9060ff" stroke-width=".6" opacity=".5"/></svg></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Web Design</span><span class="ptag">Brand</span></div><div class="ptn">Tök Jó Gyümölcs — Web Design</div><div class="ptd">Vibrant web identity. +20% user engagement.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('tokjo')"></a>
+    </div>
+
+    <div class="pc hf bg2" data-c="motion">
+      <div class="pci bg2"><div class="pcbg"><svg width="58" height="44" viewBox="0 0 58 44" fill="none" opacity=".12"><rect x="2" y="6" width="54" height="32" rx="2" stroke="#9060ff" stroke-width=".8"/><path d="M14 22 Q29 9 44 22" stroke="#e04fa0" stroke-width="1" fill="none"/><circle cx="29" cy="22" r="6" fill="#9060ff" opacity=".22"/></svg></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Animation</span><span class="ptag">Explainer</span></div><div class="ptn">Haven — Apprenticeship Animation</div><div class="ptd">Zero amendments on delivery. Full character animation.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('haven')"></a>
+    </div>
+
+    <div class="pc hf ba" data-c="motion">
+      <div class="pci ba"><div class="pcbg"><svg width="56" height="46" viewBox="0 0 56 46" fill="none" opacity=".12"><circle cx="17" cy="23" r="11" stroke="#9060ff" stroke-width=".9"/><circle cx="17" cy="18" r="4" fill="#9060ff" opacity=".3"/><circle cx="39" cy="23" r="11" stroke="#e04fa0" stroke-width=".9" opacity=".7"/><circle cx="39" cy="18" r="4" fill="#e04fa0" opacity=".3"/></svg></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Character Design</span><span class="ptag">Motion</span></div><div class="ptn">Wetherspoons — Character Animation</div><div class="ptd">Illustrated character set for apprenticeship materials.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('wetherspoons')"></a>
+    </div>
+
+    <div class="pc hf bc" data-c="print">
+      <div class="pci bc"><div class="pcbg"><svg width="56" height="42" viewBox="0 0 56 42" fill="none" opacity=".12"><rect x="3" y="3" width="50" height="36" stroke="#9060ff" stroke-width=".8"/><rect x="8" y="8" width="20" height="14" fill="#e04fa0" opacity=".15"/><path d="M8 28h40M8 33h28" stroke="#9060ff" stroke-width=".7" opacity=".4"/></svg></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Print</span><span class="ptag">Guidelines</span></div><div class="ptn">Nando's — Apprenticeship Print Suite</div><div class="ptd">Full suite within strict colourful brand guidelines.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('nandos')"></a>
+    </div>
+
+    <div class="pc hf bf" data-c="print">
+      <div class="pci bf"><div class="pcbg"><svg width="52" height="52" viewBox="0 0 52 52" fill="none" opacity=".12"><rect x="3" y="3" width="46" height="46" rx="2" stroke="#9060ff" stroke-width=".8"/><rect x="9" y="9" width="14" height="24" fill="#9060ff" opacity=".18"/><rect x="29" y="9" width="14" height="9" fill="#e04fa0" opacity=".18"/><rect x="29" y="24" width="14" height="9" stroke="#e04fa0" stroke-width=".7"/></svg></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Print</span><span class="ptag">Charity</span></div><div class="ptn">Blue Cross &amp; Lidl — Print Materials</div><div class="ptd">Promotional print for charity and retail clients.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('bluecross')"></a>
+    </div>
+
+  </div>
+</section>
+
+<section id="motion" class="msc">
+  <div class="ey rv">Motion &amp; Animation</div>
+  <div class="rv">
+    <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(36px,5vw,68px);line-height:.9;letter-spacing:-.03em;margin-bottom:10px">Design that <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:.88em;color:var(--pu)">moves.</span></h2>
+    <p style="font-size:.86rem;color:var(--mu);max-width:420px;line-height:1.78">Character animation, kinetic campaigns, explainer video — motion is where brand storytelling truly comes alive.</p>
+  </div>
+  <div class="mgr">
+    <div class="mi mf ba" onclick="oCS('haven')" style="cursor:none">
+      <div class="mia"><div class="mif ba"><div class="pb"><svg width="15" height="15" viewBox="0 0 24 24" fill="#9060ff"><polygon points="5,3 19,12 5,21"/></svg></div><span class="mlb">Play Showreel</span></div><div class="mm"><div class="mt">Creative Motion Reel — 2026</div><div class="ms">Brand Campaigns · Character Animation · Kinetic Typography</div></div></div>
+    </div>
+    <div class="mi bb" onclick="oCS('haven')" style="cursor:none">
+      <div class="mia"><div class="mif bb"><div class="pb"><svg width="13" height="13" viewBox="0 0 24 24" fill="#9060ff"><polygon points="5,3 19,12 5,21"/></svg></div><span class="mlb">Animation</span></div><div class="mm"><div class="mt">Haven Apprenticeship</div><div class="ms">Character animation · Zero amendments on delivery</div></div></div>
+    </div>
+    <div class="mi be" onclick="oCS('wetherspoons')" style="cursor:none">
+      <div class="mia"><div class="mif be"><div class="pb"><svg width="13" height="13" viewBox="0 0 24 24" fill="#9060ff"><polygon points="5,3 19,12 5,21"/></svg></div><span class="mlb">Character Design</span></div><div class="mm"><div class="mt">Wetherspoons Characters</div><div class="ms">Illustration · Motion · Privacy-first solution</div></div></div>
+    </div>
+    <div class="mi bf" onclick="oCS('naw')" style="cursor:none">
+      <div class="mia"><div class="mif bf"><div class="pb"><svg width="13" height="13" viewBox="0 0 24 24" fill="#9060ff"><polygon points="5,3 19,12 5,21"/></svg></div><span class="mlb">Video Campaign</span></div><div class="mm"><div class="mt">NAW Campaign Videos</div><div class="ms">48% B2B traffic increase · 23,791 organic impressions</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="ey rv">What Clients Say</div>
+  <div class="tg">
+    <div class="tc rv"><span class="tqm">"</span><p class="tt">Her designs are always top quality and align perfectly with our partners brand guidelines. I've received great feedback from two of our employer partners on Reni's work.</p><div class="ts">Employer Partner — Nando's</div></div>
+    <div class="tc rv d1"><span class="tqm">"</span><p class="tt">They'll now never move on from Lifetime being their preferred supplier. A huge turnaround, in no small way down to the outstanding work on this project.</p><div class="ts">Account Manager — B&amp;Q Reignite</div></div>
+    <div class="tc rv d2"><span class="tqm">"</span><p class="tt">We never seen such a well put to point process of creation. From the moment the brief has been sent, to the time we got the first draft, everything ran smoothly.</p><div class="ts">Client — Blue Cross</div></div>
+  </div>
+</section>
+
+<section class="clsc">
+  <div class="ey rv">Client Roster</div>
+  <h2 class="clh rv">Trusted by brands<br>that millions know.</h2>
+  <div class="cg rv">
+    <div class="cc"><div class="cn">McDonald's</div></div><div class="cc"><div class="cn">Nando's</div></div><div class="cc"><div class="cn">Lidl</div></div><div class="cc"><div class="cn">B&amp;Q</div></div><div class="cc"><div class="cn">KFC</div></div><div class="cc"><div class="cn">Greene King</div></div><div class="cc"><div class="cn">Wetherspoon</div></div><div class="cc"><div class="cn">Haven</div></div><div class="cc"><div class="cn">Bupa</div></div><div class="cc"><div class="cn">Blue Cross</div></div><div class="cc"><div class="cn">Poundland</div></div><div class="cc"><div class="cn">SSP UK</div></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="ey rv">About</div>
+  <div class="agr">
+    <div class="rv">
+      <h2 class="ah">Solution-<span class="pu">focused.</span><br>Detail-<span class="pu">driven.</span></h2>
+      <p class="ap">Senior Creative Lead with 12+ years turning complex briefs into clear, scalable design — across brand systems, motion campaigns, and digital experiences that work hard in the real world.</p>
+      <p class="ap">Based in Bristol. Open to senior in-house and agency roles. Experienced leading teams, mentoring designers, and presenting directly to boards and stakeholders.</p>
+      <p class="ap">MA in PR &amp; Advertising · Google UX Certificate · Super Advanced Motion Graphics, Soho Editors.</p>
+      <a href="#contact" class="bp" style="margin-top:24px;display:inline-flex">Get in Touch<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:8px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="rv d1" style="padding-top:44px">
+      <ul class="sk">
+        <li class="ski"><span>Creative Direction &amp; Leadership</span><span class="sd"></span></li>
+        <li class="ski"><span>Brand Systems &amp; Governance</span><span class="sd"></span></li>
+        <li class="ski"><span>Motion &amp; Animation (After Effects)</span><span class="sd"></span></li>
+        <li class="ski"><span>Campaign Design — Digital &amp; Print</span><span class="sd"></span></li>
+        <li class="ski"><span>Web &amp; UX Design</span><span class="sd"></span></li>
+        <li class="ski"><span>Team Mentorship</span><span class="sd"></span></li>
+        <li class="ski"><span>Adobe CC · Figma · HTML · CSS</span><span class="sd"></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cwr">
+  <div class="cgh">Let's work together.</div>
+  <div class="ey rv" style="position:relative;z-index:1">Contact</div>
+  <h2 class="ch2 rv">Let's make<br>something <span class="gr">great.</span></h2>
+  <p class="csu rv">Open to Senior Designer and Creative Lead roles. Always happy to discuss interesting projects and collaborations.</p>
+  <div class="cat rv">
+    <a href="mailto:renatahanko@outlook.com" class="cpr">Contact Me</a>
+    <a href="https://www.behance.net/hankorenata" target="_blank" class="cs2">Behance</a>
+    <a href="https://www.linkedin.com" target="_blank" class="cs2">LinkedIn</a>
+    <a href="http://instagram.com/hrd.graphics" target="_blank" class="cs2">Instagram</a>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="nl">
+    <svg width="44" height="14" viewBox="0 0 44 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.45">
+      <defs><linearGradient id="fg" x1="0" y1="7" x2="44" y2="7" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#9060ff"/><stop offset="100%" stop-color="#e04fa0"/></linearGradient></defs>
+      <circle cx="7" cy="7" r="6" fill="url(#fg)"/>
+      <circle cx="22" cy="7" r="6" fill="url(#fg)"/>
+      <circle cx="37" cy="7" r="6" fill="url(#fg)"/>
+    </svg>
+  </a>
+  <div class="fc">© 2026 Renata Hanko — hrdgraphics.com</div>
+  <div class="fk">
+    <a href="https://www.behance.net/hankorenata" target="_blank">Behance</a>
+    <a href="#">LinkedIn</a>
+    <a href="http://instagram.com/hrd.graphics" target="_blank">Instagram</a>
+  </div>
+</footer>
+
+<div class="mov" id="modal">
+  <button class="mcl" onclick="cCS()">✕</button>
+  <div class="min" id="min"></div>
+</div>
+
+<script>
+// CURSOR
+const cd=document.getElementById('cd'),cr=document.getElementById('cr');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px'});
+(function r(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(r)})();
+document.querySelectorAll('a,button,.pc,.mi,.cc').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('ch'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('ch'));
+});
+
+// REVEAL
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}
+}),{threshold:.06,rootMargin:'0px 0px -36px 0px'});
+document.querySelectorAll('.rv').forEach(r=>io.observe(r));
+
+// FILTER — completely show/hide
+function flt(btn){
+  document.querySelectorAll('.fn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  const f=btn.dataset.f;
+  document.querySelectorAll('.pc').forEach(c=>{
+    c.classList.toggle('gone', f!=='all' && c.dataset.c!==f);
+  });
+}
+
+// DATA
+const D={
+  fusion:{ey:'Brand Identity · Packaging · Visual System',ti:'Fusion',su:'Functional Beverage Brand Identity',cl:'Fusion Beverages',yr:'2025',ro:'Creative Lead / Brand Designer',tg:['Brand Identity','Logo Design','Packaging','Visual System'],ch:'Develop a complete brand identity for a functional beverage startup entering a competitive wellness market. The brand needed to feel premium yet approachable, communicating energy and wellbeing without tired category clichés.',so:'Created a bold visual system centred on a dynamic logomark evoking movement and vitality. The colour palette balances deep confident tones with vibrant accents. Typography is clean and confident, allowing packaging to cut through on shelf.',o1:'11',l1:'Behance Appreciations',o2:'77',l2:'Profile Views',o3:'Complete',l3:'Brand System Delivered',qt:'A brand identity built to stand up to the biggest names in the functional beverage space.',qb:'Project Brief',bh:'https://www.behance.net/gallery/248327877/Fusion-Functional-Beverage-Brand-Identity'},
+  oriva:{ey:'Brand Identity · Fintech · Visual System',ti:'Oriva',su:'Finance, Simplified — Visual Identity',cl:'Oriva Finance',yr:'2025',ro:'Senior Graphic Designer',tg:['Brand Identity','Visual System','Fintech','Logo'],ch:'Build trust and approachability for a fintech platform in a sector associated with complexity. The brand needed to convey reliability without feeling cold or corporate.',so:'A restrained, elegant identity built on geometric precision. Clean typography pairs with subtle accent touches to signal modernity. The logo system is flexible across digital and print.',o1:'11',l1:'Behance Appreciations',o2:'37',l2:'Behance Views',o3:'Full',l3:'Visual Identity System',qt:'Clarity and confidence — exactly what a modern finance brand needs to earn trust.',qb:'Design Review',bh:'https://www.behance.net/gallery/242368371/Oriva-Finance-simplified-Visual-Identity'},
+  codedash:{ey:'Brand Identity · Developer Tools · Visual System',ti:'Codedash',su:'Brand Identity & Visual System',cl:'Codedash',yr:'2024',ro:'Senior Graphic Designer',tg:['Brand Identity','Tech','Visual System','Logo Design'],ch:'Position a developer tools platform as both technically credible and creatively distinct — cutting through generic tech branding.',so:'A sharp identity using negative space within the logomark to embed a code reference. Monochromatic with a single high-impact accent. Built for precision across screen and print.',o1:'2',l1:'Behance Appreciations',o2:'33',l2:'Behance Views',o3:'Complete',l3:'Visual System',qt:'Immediately recognisable. Feels built for developers, not just marketed at them.',qb:'Client Review',bh:'https://www.behance.net/gallery/238973155/Codedash-Brand-Identity-Visual-System'},
+  lifetime:{ey:'Brand Strategy · Identity · Art Direction',ti:'Lifetime Training',su:'Brand Repositioning & Evolution',cl:'Lifetime Training',yr:'2024–2025',ro:'Senior Designer & Motion Specialist',tg:['Brand Evolution','Art Direction','Design System','Guidelines'],ch:'Reposition a well-recognised but outdated national training brand seen as operational rather than transformative, lacking relevance in key growth sectors such as professional services and leadership development.',so:'Presented three strategic rebrand concepts to the board. The approved solution introduced a refreshed design system grounded in visual clarity, digital maturity, and emotional resonance. Full guidelines, asset libraries, and templates followed.',o1:'Unanimous',l1:'Board Approval',o2:'Full',l2:'Brand System & Guidelines',o3:'National',l3:'Rollout Across All Touchpoints',qt:'Recognition for design clarity, strategic thinking, and creative leadership from the full board of directors.',qb:'Board of Directors — Lifetime Training',bh:'https://www.behance.net/hankorenata'},
+  voyageur:{ey:'Brand Identity · Travel · Visual Language',ti:'Voyageur',su:'Travel Company Brand Identity',cl:'Voyageur Travel',yr:'2024',ro:'Senior Graphic Designer',tg:['Brand Identity','Travel','Logo Design','Visual Language'],ch:'Create a brand capturing the romance and adventure of independent travel, standing apart from generic travel aesthetics.',so:'An identity rooted in cartography and exploration. Refined typography evokes discovery. The palette draws from natural landscapes and the colour of adventure.',o1:'7',l1:'Behance Appreciations',o2:'65',l2:'Behance Views',o3:'Complete',l3:'Visual Identity',qt:'The brief was adventure — the outcome was a brand that felt like it had been on the journey.',qb:'Design Review',bh:'https://www.behance.net/gallery/210632483/Voyageur-Travel-company-Brand-Identity'},
+  huddle:{ey:'Internal Brand · Identity System · Employee Engagement',ti:'Huddle',su:'Internal Brand Identity',cl:'Lifetime Training (Internal)',yr:'2023',ro:'Creative Lead',tg:['Internal Brand','Identity','Employee Engagement','Guidelines'],ch:'Transform internal communications for a national company — fostering community, improving information accessibility, and increasing employee engagement across distributed teams.',so:'Developed the Huddle brand from scratch: logo, visual guidelines, tone of voice, and a full suite of branded assets including digital templates. Visual language is inclusive, energetic and human.',o1:'+25%',l1:'Employee Participation',o2:'+40%',l2:'Satisfaction Improvement',o3:'Full',l3:'Brand & Asset Library',qt:"The brand's visual language was carefully crafted to be inclusive, engaging, and aligned with the company's values.",qb:'Internal Communications Team',bh:'https://www.behance.net/gallery/199316641/Huddle-Brand-identity'},
+  naw:{ey:'Campaign Design · Motion · Social Media',ti:'NAW Campaign',su:'#IAspiretoBe — National Apprenticeship Week',cl:'Lifetime Training',yr:'2023',ro:'Creative Lead / Motion Designer',tg:['Campaign Design','Animation','Social Media','Motion Design','Video'],ch:'Lead the complete visual design for National Apprenticeship Week — a cohesive campaign identity across social media, animated GIFs and video driving measurable increases in applications.',so:'A bold campaign built around a clear hashtag mechanic. Dynamic animated GIFs crafted for social engagement. Video templates ensured brand consistency across multiple client videos at speed and scale.',o1:'110%',l1:'Increase in Applications',o2:'48%',l2:'Increase in B2B Traffic',o3:'23,791',l3:'Organic Impressions',qt:'The modern aesthetic and dynamic animated GIFs contributed to a remarkable growth in apprenticeship applications.',qb:'Campaign Report — Lifetime Training',bh:'https://www.behance.net/hankorenata'},
+  haven:{ey:'Character Animation · Motion Design · Explainer',ti:'Haven Animation',su:'Apprenticeship Explainer Animation',cl:'Haven Leisure',yr:'2023',ro:'Motion Designer / Animator',tg:['Animation','Motion Design','Character Design','Explainer','After Effects'],ch:'Design and animate a full explainer for Haven learners — communicating a complex apprenticeship journey in an engaging, on-brand way requiring zero revisions on delivery.',so:'Storyboarded a narrative following an apprentice on a road trip to their Haven placement. Character design, background illustration, kinetic type and icon animation all produced in-house. Template system built for future efficiency.',o1:'Zero',l1:'Amendments on Delivery',o2:'Full',l2:'Storyboard to Final Animation',o3:'Haven',l3:'Brand-Perfect Result',qt:"The video was received with great feedback — the client was really satisfied with the end result and they didn't require any additional amendments.",qb:'Project Manager — Lifetime Training',bh:'https://www.behance.net/hankorenata'},
+  wetherspoons:{ey:'Character Design · Illustration · Motion',ti:'Wetherspoons',su:'Character Design & Animation',cl:'Wetherspoon',yr:'2023',ro:'Illustrator / Motion Designer',tg:['Character Design','Illustration','Animation','Brand','Motion'],ch:'Design illustrated characters representing the range of apprenticeship roles — as a privacy-respecting alternative to photography while maintaining brand quality.',so:'Developed a cohesive character set reflecting different apprenticeship roles. The illustration style is clean, modern and characterful — consistent with the rebrand and adaptable across print and digital.',o1:'Strong',l1:'Client Approval',o2:'Full',l2:'Character Set Delivered',o3:'Privacy-First',l3:'Photography Alternative',qt:"We love these new characters. We think they show clearly the style that we were pushing for, and they are a good alternative to images.",qb:'Client — Wetherspoon',bh:'https://www.behance.net/hankorenata'},
+  rouge:{ey:'Brand Identity · Beauty · Visual Identity',ti:'Rouge',su:'Beauty Brand Identity',cl:'Rouge Beauty',yr:'2024',ro:'Senior Graphic Designer',tg:['Brand Identity','Beauty','Logo Design','Luxury'],ch:'Create a luxury beauty brand identity with warmth and confidence — aspirational and accessible, standing out in a crowded market.',so:'A refined identity centred on a sculptural wordmark with elegant letterforms. The palette is warm and feminine. Works beautifully across packaging, digital and editorial contexts.',o1:'6',l1:'Behance Appreciations',o2:'131',l2:'Behance Views',o3:'Complete',l3:'Brand Identity',qt:'Warmth, elegance, and confidence — a brand that women actually want to pick up.',qb:'Design Review',bh:'https://www.behance.net/gallery/186327127/Rouge-Beauty-Brand-identity'},
+  bq:{ey:'Print Design · Packaging · Activation Campaign',ti:'B&Q Reignite',su:'Print, Packaging & Activation Campaign',cl:'B&Q',yr:'2023',ro:'Creative Lead',tg:['Print Design','Packaging','Campaign','Retail','Activation'],ch:"Re-energise B&Q's apprenticeship programme after stalled engagement — win back provision from rival suppliers and increase active vacancies.",so:'Led the full activation campaign: a branded Reignite Box sent to stores, short-form video, factsheets, manager guides, stickers and promotional print assets.',o1:'0→19',l1:'Vacancies in One Month',o2:'Retained',l2:'Preferred Supplier Status',o3:'Outstanding',l3:'Client Testimonial',qt:"They'll now never move on from Lifetime being their preferred supplier. A huge turnaround, in no small way down to the outstanding work on this project.",qb:'Account Manager — Lifetime Training',bh:'https://www.behance.net/hankorenata'},
+  regalia:{ey:'Brand Identity · Luxury · Hospitality',ti:'Regalia',su:'Luxury Hotel Visual Identity',cl:'Regalia Hotel',yr:'2024',ro:'Senior Graphic Designer',tg:['Brand Identity','Luxury','Hotel','Hospitality'],ch:'Craft a hotel brand communicating old-world luxury while feeling fresh and relevant to a modern traveller — without predictable gold-and-serif clichés.',so:'An identity rooted in refined typography, considered spacing, and architectural references. Deliberate and restrained — every touchpoint feels purposeful.',o1:'6',l1:'Behance Appreciations',o2:'82',l2:'Behance Views',o3:'Full',l3:'Identity System',qt:'A hotel identity that earns every star on its own design merit.',qb:'Design Review',bh:'https://www.behance.net/gallery/184947869/Regalia-Luxury-Hotel-Visual-identity'},
+  tokjo:{ey:'Web Design · Brand · E-commerce',ti:'Tök Jó Gyümölcs',su:'Website Design & Brand Identity',cl:'Tök Jó Gyümölcs',yr:'2023',ro:'Senior Graphic Designer / Web Designer',tg:['Web Design','Brand Identity','E-commerce','UX','Responsive'],ch:'Design a vibrant website and brand for a fresh fruit pick-your-own business — making healthy living feel joyful and the shopping experience sensory and alive.',so:'Anchored the visual strategy around engagement, trust, and delight. Bold imagery, natural textures, and interactive moments create a brand that feels alive. Sub-page architecture keeps content clean.',o1:'+20%',l1:'User Engagement',o2:'-15%',l2:'Support Queries',o3:'Mobile-First',l3:'Responsive Design',qt:'A brand about making healthy living feel joyful — and a website that delivers on that promise.',qb:'Project Brief',bh:'https://www.behance.net/gallery/181784631/Website-design-Toek-jo-gyuemoelcs'},
+  nandos:{ey:'Print Design · Brand Guidelines · Editorial',ti:"Nando's",su:"Apprenticeship Programme — Full Print Suite",cl:"Nando's",yr:'2023',ro:'Senior Graphic Designer',tg:['Print Design','Brand Guidelines','Editorial'],ch:"Design and produce a full suite of apprenticeship materials for Nando's — working within strict, colourful brand guidelines while managing a high volume of deliverables.",so:"A comprehensive suite of guides, booklets and learner-facing materials honouring Nando's vibrant brand with precision. Every piece produced to the highest standard of brand alignment.",o1:'Full',l1:'Suite Delivered',o2:'Top Quality',l2:'Client-Praised Consistency',o3:'On Brand',l3:'Every Touchpoint',qt:"Her designs are always top quality and align perfectly with our partners brand guidelines.",qb:"Employer Partner — Nando's",bh:'https://www.behance.net/hankorenata'},
+  bluecross:{ey:'Print Design · Charity · Retail',ti:'Blue Cross & Lidl',su:'Print Materials & Internal Brand',cl:'Blue Cross / Lidl',yr:'2023',ro:'Senior Graphic Designer',tg:['Print Design','Charity','Retail','Internal Brand'],ch:'Design promotional print for two very different clients — a charity and a major retailer — each requiring distinct visual approaches and seamless process.',so:"For Blue Cross, a compassionate suite highlighting the rewarding nature of apprenticeships. For Lidl, an internal brand leveraging authentic warehouse imagery to create employee pride and ownership.",o1:'Full',l1:'Suite Delivered',o2:'Praised',l2:'Process & Clarity',o3:'Dual Client',l3:'Charity & Retail',qt:'We never seen such a well put to point process of creation. Everything ran smoothly.',qb:'Client — Blue Cross',bh:'https://www.behance.net/hankorenata'}
+};
+const KS=Object.keys(D);
+
+function oCS(id){
+  const d=D[id];if(!d)return;
+  const i=KS.indexOf(id);
+  const pv=KS[(i-1+KS.length)%KS.length];
+  const nx=KS[(i+1)%KS.length];
+  document.getElementById('min').innerHTML=`
+<p class="cse">${d.ey}</p>
+<h1 class="cst"><span class="g">${d.ti}</span></h1>
+<p class="css">${d.su}</p>
+<div class="csm">
+  <div class="csmi"><div class="lb">Client</div><div class="vl">${d.cl}</div></div>
+  <div class="csmi"><div class="lb">Year</div><div class="vl">${d.yr}</div></div>
+  <div class="csmi"><div class="lb">Role</div><div class="vl">${d.ro}</div></div>
+  <div class="csmi"><div class="lb">Behance</div><div class="vl"><a href="${d.bh}" target="_blank" style="color:var(--pu)">View Project →</a></div></div>
+</div>
+<div class="csh ba"><svg width="110" height="64" viewBox="0 0 110 64" fill="none" opacity=".08"><path d="M8 40 Q30 10 55 40 Q80 70 102 40" stroke="#9060ff" stroke-width="2" fill="none"/><circle cx="55" cy="40" r="14" fill="#e04fa0" opacity=".3"/></svg><div class="csnt">Add project imagery here</div></div>
+<div class="c2c">
+  <div><div class="cssl">The Challenge</div><h3 class="cssh">The Brief</h3><p class="csp">${d.ch}</p></div>
+  <div><div class="cssl">The Solution</div><h3 class="cssh">The Approach</h3><p class="csp">${d.so}</p></div>
+</div>
+<div class="cssl">Outcomes</div>
+<div class="ots">
+  <div class="ot"><div class="otn">${d.o1}</div><div class="otl">${d.l1}</div></div>
+  <div class="ot"><div class="otn">${d.o2}</div><div class="otl">${d.l2}</div></div>
+  <div class="ot"><div class="otn">${d.o3}</div><div class="otl">${d.l3}</div></div>
+</div>
+<div class="cim">
+  <div class="ci bb"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" opacity=".1"><rect x="2" y="2" width="36" height="36" rx="2" stroke="#9060ff" stroke-width=".9"/><circle cx="20" cy="20" r="8" fill="#e04fa0" opacity=".5"/></svg></div>
+  <div class="ci bc"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" opacity=".1"><path d="M3 37 L20 5 L37 37 Z" stroke="#9060ff" stroke-width=".9" fill="rgba(144,96,255,.1)"/></svg></div>
+</div>
+<blockquote class="csq"><p>${d.qt}</p><cite>${d.qb}</cite></blockquote>
+<div class="ctgs">${d.tg.map(t=>`<span class="ctg">${t}</span>`).join('')}</div>
+<div class="csfo">
+  <a href="${d.bh}" target="_blank" class="csbe">View on Behance →</a>
+  <div class="csnv">
+    <a class="csnp" href="#" onclick="event.preventDefault();oCS('${pv}')"><div class="nl">← Prev</div><div class="nt">${D[pv].ti}</div></a>
+    <a class="csnp" href="#" onclick="event.preventDefault();oCS('${nx}')" style="text-align:right"><div class="nl">Next →</div><div class="nt">${D[nx].ti}</div></a>
+  </div>
+</div>`;
+  const m=document.getElementById('modal');
+  m.classList.add('open');m.scrollTop=0;
+  document.body.style.overflow='hidden';
+}
+function cCS(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)cCS()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')cCS()});
+</script>
+</body>
+</html>
