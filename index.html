@@ -10,7 +10,7 @@
 :root{
   --bg:#07050f;--bg2:#0a0815;--surf:#0f0c1c;--surf2:#151228;
   --bdr:rgba(140,90,255,.1);--bdrhi:rgba(140,90,255,.22);
-  --w:#ede9f8;--mu:rgba(237,233,248,.48);--mu2:rgba(237,233,248,.24);
+  --w:#ede9f8;--mu:rgba(237,233,248,.88);--mu2:rgba(237,233,248,.55);
   --pu:#9060ff;--pk:#e04fa0;
   --g:linear-gradient(135deg,#9060ff 0%,#e04fa0 100%);
   --ez:cubic-bezier(.16,1,.3,1);
@@ -36,11 +36,17 @@ nav::after{content:'';position:absolute;inset:0;background:linear-gradient(to bo
 .nv{display:flex;gap:30px;list-style:none;position:relative;z-index:1}
 .nv a{color:var(--mu);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;transition:color .22s}
 .nv a:hover{color:var(--w)}
-.ncta{position:relative;z-index:1;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;padding:9px 22px;border:1px solid var(--bdrhi);color:var(--pu);overflow:hidden;transition:color .28s,border-color .28s}
+.ncta{position:relative;z-index:1;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;padding:9px 22px;border:1px solid var(--bdrhi);color:var(--pu);overflow:hidden;transition:color .28s,border-color .28s,background .35s}
 .ncta::before{content:'';position:absolute;inset:0;background:var(--g);opacity:0;transition:opacity .28s}
-.ncta:hover{color:#fff;border-color:transparent}
+.ncta:hover{color:var(--bg);border-color:rgba(240,236,255,.9)}
 .ncta:hover::before{opacity:1}
 .ncta span{position:relative;z-index:1}
+/* Scrolled state — off-white solid CTA */
+nav.scrolled{padding-top:14px;padding-bottom:14px}
+nav.scrolled::after{background:linear-gradient(to bottom,rgba(7,5,15,.98) 0%,rgba(7,5,15,.96) 100%)}
+nav.scrolled .ncta{background:rgba(240,236,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--bg);border-color:transparent;font-weight:600}
+nav.scrolled .ncta:hover{background:rgba(255,255,255,1)}
+nav.scrolled .ncta::before{display:none}
 
 /* ── HERO ─────────────────────────────────── */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 52px 88px;position:relative;overflow:hidden}
@@ -56,7 +62,7 @@ nav::after{content:'';position:absolute;inset:0;background:linear-gradient(to bo
 .hh{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(42px,6vw,88px);line-height:1.1;letter-spacing:-.03em;margin-bottom:26px;opacity:0;animation:su .9s var(--ez) .5s forwards}
 /* Italic accent — DM Serif Display complements Syne's geometry */
 .hh .ac{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:1.1em;letter-spacing:-.01em;display:inline-block;padding-bottom:.05em;background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hs{max-width:400px;font-size:.92rem;line-height:1.76;color:var(--mu);margin-bottom:40px;opacity:0;animation:su .9s var(--ez) .66s forwards}
+.hs{max-width:400px;font-size:1.12rem;line-height:1.78;color:var(--mu);margin-bottom:40px;opacity:0;animation:su .9s var(--ez) .66s forwards}
 .hbt{display:flex;gap:12px;align-items:center;opacity:0;animation:su .9s var(--ez) .82s forwards}
 /* Primary button — gradient fill, intentional */
 .bp{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#fff;background:var(--g);transition:opacity .28s}
@@ -80,7 +86,7 @@ nav::after{content:'';position:absolute;inset:0;background:linear-gradient(to bo
 
 /* ── SECTIONS ────────────────────────────── */
 section{padding:104px 52px}
-.ey{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--pu);margin-bottom:44px;display:flex;align-items:center;gap:11px}
+.ey{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--pu);margin-bottom:44px;display:flex;align-items:center;gap:11px}
 .ey::before{content:'';width:24px;height:1px;background:var(--g)}
 
 /* ── STATS ───────────────────────────────── */
@@ -90,7 +96,7 @@ section{padding:104px 52px}
 .st:last-child{border-right:none}
 /* Stat numbers — gradient, intentional use */
 .sn{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(36px,4vw,56px);line-height:1;background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
-.sl{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);line-height:1.55}
+.sl{font-size:.84rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);line-height:1.55}
 
 /* ── WORK ────────────────────────────────── */
 .wh{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px}
@@ -122,11 +128,11 @@ section{padding:104px 52px}
 .pct{padding:18px 20px 20px;background:var(--surf);flex:1;display:flex;flex-direction:column;justify-content:space-between;min-height:0}
 /* Tags row */
 .ptags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
-.ptag{font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(144,96,255,.3);color:var(--pu);padding:2px 7px;line-height:1.5}
+.ptag{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(144,96,255,.3);color:var(--pu);padding:2px 7px;line-height:1.5}
 /* Title */
-.ptn{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.92rem;line-height:1.2;color:var(--w);margin-bottom:4px}
+.ptn{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.02rem;line-height:1.2;color:var(--w);margin-bottom:4px}
 /* Desc */
-.ptd{font-size:.72rem;color:var(--mu);line-height:1.55}
+.ptd{font-size:.92rem;color:var(--mu);line-height:1.55}
 /* Hover: thin top border gradient line */
 .pc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--g);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ez);z-index:2}
 .pc:hover::before{transform:scaleX(1)}
@@ -160,7 +166,7 @@ section{padding:104px 52px}
 .mlb{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mu2)}
 .mm{position:absolute;bottom:0;left:0;right:0;padding:20px 22px;background:linear-gradient(to top,rgba(7,5,15,.94) 0%,transparent 100%);pointer-events:none}
 .mt{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:2px}
-.ms{font-size:.68rem;color:var(--mu);letter-spacing:.04em}
+.ms{font-size:.86rem;color:var(--mu);letter-spacing:.04em}
 
 /* ── TESTIMONIALS ────────────────────────── */
 .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:44px}
@@ -168,27 +174,72 @@ section{padding:104px 52px}
 .tc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--g)}
 /* Pull-quote mark — gradient, intentional */
 .tqm{display:block;font-family:'DM Serif Display',serif;font-style:italic;font-size:3rem;line-height:.5;background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px}
-.tt{font-size:.83rem;line-height:1.82;color:rgba(237,233,248,.62);margin-bottom:20px;font-style:italic}
+.tt{font-size:1.02rem;line-height:1.82;color:rgba(237,233,248,.9);margin-bottom:20px;font-style:italic}
 .ts{font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--pu)}
 
 /* ── CLIENTS ─────────────────────────────── */
 .clsc{background:var(--surf)}
-.clh{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,3.8vw,48px);line-height:.9;margin-bottom:44px;max-width:480px;letter-spacing:-.02em}
-.cg{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--bdr)}
-.cc{background:var(--surf);padding:28px 16px;transition:background .25s}
-.cc:hover{background:rgba(144,96,255,.05)}
-.cn{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.84rem;letter-spacing:.04em;color:var(--mu2);text-align:center;transition:color .25s}
+.clh{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,3.8vw,48px);line-height:.9;margin-bottom:64px;max-width:480px;letter-spacing:-.02em}
+/* New editorial client list — 2 columns, no hover colour shift */
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.cc{padding:0;background:transparent;border:none}
+.cc:hover{background:transparent}
+/* Each client as a full-width row with subtle separator */
+.cn-row{display:flex;align-items:baseline;gap:20px;padding:18px 0;border-bottom:1px solid var(--bdr);position:relative}
+.cn-row:first-child{border-top:1px solid var(--bdr)}
+/* Client name — large, editorial */
+.cn{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(18px,2.2vw,28px);letter-spacing:-.01em;color:var(--w);text-align:left;transition:none}
 .cc:hover .cn{color:var(--w)}
+/* Industry label — small muted descriptor */
+.cn-label{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mu2);white-space:nowrap}
+/* Gradient number accent top-left */
+.cn-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.65rem;background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;flex-shrink:0;width:24px}
+.cl-more{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.3rem;color:var(--mu2);margin-top:32px;padding-left:4px;letter-spacing:.01em}
+
 
 /* ── ABOUT ───────────────────────────────── */
 .agr{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.ah{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(34px,4.2vw,54px);line-height:.9;letter-spacing:-.03em;margin-bottom:26px}
-.ah .pu{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:1.08em;color:var(--pu)}
-.ap{font-size:.87rem;line-height:1.82;color:var(--mu);margin-bottom:14px}
+.ah{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(36px,5vw,68px);line-height:.9;letter-spacing:-.03em;margin-bottom:32px}
+.ah .pu{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:1.15em;color:var(--pu);letter-spacing:-.01em}
+.ap{font-size:1.08rem;line-height:1.82;color:var(--mu);margin-bottom:14px}
 .sk{list-style:none;margin-top:12px}
-.ski{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--bdr);font-size:.77rem;color:rgba(237,233,248,.56)}
+/* Accordion skill row */
+.ski{
+  border-bottom:1px solid var(--bdr);
+  cursor:none;
+  overflow:hidden;
+  transition:background .25s;
+}
 .ski:first-child{border-top:1px solid var(--bdr)}
-.sd{width:4px;height:4px;border-radius:50%;background:var(--pu);flex-shrink:0}
+.ski:hover{background:rgba(144,96,255,.04)}
+/* Header row — always visible */
+.ski-hd{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 0;font-size:.98rem;color:rgba(237,233,248,.88);
+  user-select:none;
+}
+/* Plus/minus icon */
+.ski-icon{
+  flex-shrink:0;width:20px;height:20px;border-radius:50%;
+  border:1px solid var(--bdrhi);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .3s;color:var(--pu);font-size:.9rem;line-height:1;
+}
+.ski.open .ski-icon{background:var(--g);border-color:transparent;color:#fff;transform:rotate(45deg)}
+/* Expandable body */
+.ski-body{
+  max-height:0;overflow:hidden;
+  transition:max-height .45s var(--ez),opacity .35s ease;
+  opacity:0;
+}
+.ski.open .ski-body{max-height:160px;opacity:1}
+.ski-body p{
+  font-size:.88rem;line-height:1.72;color:var(--mu);
+  padding:0 0 18px 0;
+}
+/* Active state — label gets gradient */
+.ski.open .ski-hd{color:var(--w)}
+.ski.open .ski-label{background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
 /* ── CONTACT ─────────────────────────────── */
 .cwr{position:relative;overflow:hidden;min-height:66vh;display:flex;flex-direction:column;justify-content:center}
@@ -220,27 +271,27 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
 .cse{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pu);margin-bottom:9px}
 .cst{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(36px,5vw,72px);line-height:.88;letter-spacing:-.03em;margin-bottom:9px}
 .cst .g{background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.css{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.2rem;color:var(--mu);margin-bottom:32px;font-weight:400}
+.css{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.35rem;color:var(--mu);margin-bottom:32px;font-weight:400}
 .csm{display:flex;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);margin-bottom:52px}
 .csmi{flex:1;padding:16px 20px;border-right:1px solid var(--bdr)}
 .csmi:last-child{border-right:none}
 .csmi .lb{font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pu);margin-bottom:4px}
-.csmi .vl{font-size:.78rem;color:var(--mu)}
+.csmi .vl{font-size:.98rem;color:var(--mu)}
 .csh{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin-bottom:56px;position:relative;overflow:hidden}
 .csnt{position:absolute;bottom:12px;right:12px;font-size:.52rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(144,96,255,.32)}
 .c2c{display:grid;grid-template-columns:1fr 1fr;gap:52px;margin-bottom:48px}
 .cssl{font-size:.57rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pu);margin-bottom:9px;display:flex;align-items:center;gap:8px}
 .cssl::before{content:'';width:16px;height:1px;background:var(--g)}
-.cssh{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.15rem;margin-bottom:9px}
-.csp{font-size:.84rem;line-height:1.85;color:var(--mu)}
+.cssh{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.42rem;margin-bottom:9px}
+.csp{font-size:1.06rem;line-height:1.85;color:var(--mu)}
 .ots{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:36px 0}
 .ot{background:var(--surf);padding:26px 22px;border-left:2px solid var(--pu)}
 .otn{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(26px,3vw,42px);line-height:1;background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
-.otl{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}
+.otl{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}
 .cim{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:36px 0}
 .ci{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .csq{border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:30px 0;margin:40px 0}
-.csq p{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.15rem;line-height:1.72;color:var(--w);margin-bottom:10px}
+.csq p{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.45rem;line-height:1.72;color:var(--w);margin-bottom:10px}
 .csq p::before{content:'\201C';background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:1.3em;margin-right:3px}
 .csq cite{font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--pu)}
 .ctgs{display:flex;flex-wrap:wrap;gap:5px;margin:28px 0}
@@ -252,7 +303,7 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
 .csnp{padding:14px 20px;background:var(--surf);cursor:none;transition:background .22s;display:block}
 .csnp:hover{background:var(--surf2)}
 .csnp .nl{font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pu);margin-bottom:3px}
-.csnp .nt{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.82rem;color:var(--w)}
+.csnp .nt{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.02rem;color:var(--w)}
 
 /* ── IMAGES ──────────────────────────────── */
 .pcbg img{width:100%;height:100%;object-fit:cover;display:block}
@@ -264,6 +315,48 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
 .mtn-h{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(36px,5vw,68px);line-height:.9;letter-spacing:-.03em;margin-bottom:10px}
 .mtn-ac{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:.88em;color:var(--pu)}
 
+
+/* ── VIDEO SLIDER ────────────────────────── */
+.vslider-wrap{position:relative;margin-top:52px;overflow:hidden}
+.vslider{display:flex;transition:transform .55s var(--ez);will-change:transform}
+.vslide{flex:0 0 100%;position:relative;overflow:hidden}
+.vslide-inner{position:relative;width:100%;aspect-ratio:16/6}
+@media(max-width:768px){.vslide-inner{aspect-ratio:16/9}}
+/* Video preview — loops silently */
+.vslide video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+/* Cover image fallback */
+.vslide-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+/* Dark gradient overlay */
+.vslide-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,5,15,.95) 0%,rgba(7,5,15,.5) 45%,rgba(7,5,15,.15) 100%)}
+/* Content positioned over gradient */
+.vslide-content{position:absolute;bottom:0;left:0;right:0;padding:56px 52px;z-index:2}
+@media(max-width:768px){.vslide-content{padding:28px 20px}}
+.vslide-tag{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:white;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.vslide-tag::before{content:'';width:20px;height:1px;background:var(--g)}
+.vslide-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:clamp(22px,3vw,44px);line-height:1.05;letter-spacing:-.015em;margin-bottom:10px}
+.vslide-meta{font-size:.88rem;color:var(--mu);line-height:1.5;margin-bottom:24px;max-width:560px}
+.vslide-cta{display:inline-flex;align-items:center;gap:8px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#fff;background:var(--g);padding:12px 28px;transition:opacity .25s;cursor:none}
+.vslide-cta:hover{opacity:.8}
+/* Play badge */
+.vslide-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:68px;height:68px;border-radius:50%;border:2px solid rgba(255,255,255,.3);backdrop-filter:blur(8px);background:rgba(144,96,255,.2);display:flex;align-items:center;justify-content:center;transition:all .3s;pointer-events:none}
+.vslide:hover .vslide-play{background:var(--g);border-color:transparent;transform:translate(-50%,-50%) scale(1.08)}
+/* Stat chips */
+.vslide-stats{display:flex;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.vstat{padding:6px 14px;border:1px solid rgba(144,96,255,.3);font-size:.72rem;letter-spacing:.06em;color:rgba(237,233,248,.9)}
+.vstat strong{color:var(--pu);font-weight:700}
+/* Controls */
+.vslider-controls{display:flex;align-items:center;justify-content:space-between;padding:20px 52px 0}
+@media(max-width:768px){.vslider-controls{padding:16px 20px 0}}
+.vslider-dots{display:flex;gap:8px;align-items:center}
+.vdot{width:28px;height:2px;background:rgba(144,96,255,.3);transition:all .3s;cursor:none;border:none;padding:0}
+.vdot.on{background:var(--g);width:44px}
+.vslider-arrows{display:flex;gap:8px}
+.varrow{width:44px;height:44px;border:1px solid var(--bdrhi);background:transparent;color:var(--w);display:flex;align-items:center;justify-content:center;cursor:none;transition:all .25s}
+.varrow:hover{background:var(--g);border-color:transparent}
+/* Progress bar */
+.vslider-progress{height:2px;background:rgba(144,96,255,.12);margin-top:0;position:relative;overflow:hidden}
+.vslider-progress-bar{position:absolute;left:0;top:0;height:100%;background:var(--g);transition:width .1s linear}
+
 /* ── RESPONSIVE ─────────────────────────── */
 @media(max-width:1024px){
   nav{padding:18px 32px}
@@ -274,7 +367,7 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
 }
 @media(max-width:768px){
   /* Whiter body copy for legibility */
-  :root{--mu:rgba(237,233,248,.78);--mu2:rgba(237,233,248,.5)}
+  :root{--mu:rgba(237,233,248,.92);--mu2:rgba(237,233,248,.65)}
 
   /* No custom cursor on touch */
   body,a,button,.pc,.mi,.cc,.fn,.pclink,[style*="cursor:none"]{cursor:auto!important}
@@ -285,7 +378,7 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
 
   /* Testimonials — more prominent */
   .tc{background:var(--surf2);border:1px solid rgba(144,96,255,.22);padding:28px 22px}
-  .tt{color:rgba(237,233,248,.82)}
+  .tt{color:rgba(237,233,248,.92)}
 
   /* Motion heading — "moves people" full-size on its own line */
   .mtn-ac{font-size:1em;display:block}
@@ -299,7 +392,7 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
   .hero{padding:0 20px 56px}
   .hbn{display:none}
   .hsc{display:none}
-  .hs{font-size:.86rem}
+  .hs{font-size:.96rem}
 
   /* General sections */
   section{padding:64px 20px}
@@ -325,7 +418,7 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
   .tc{padding:28px 20px}
 
   /* Clients */
-  .cg{grid-template-columns:repeat(3,1fr)}
+  .cg{grid-template-columns:1fr}
   .clh{font-size:clamp(24px,6vw,36px)}
 
   /* About */
@@ -356,14 +449,63 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
   .cst{font-size:clamp(28px,7vw,52px)}
   .ch2{font-size:clamp(36px,10vw,72px)}
   .csq p{font-size:1rem}
+  /* Enhanced mobile additions */
+  .ptn{font-size:1.06rem}
+  .ptd{font-size:.92rem}
+  .ap{font-size:1rem}
+  .sl{font-size:.84rem}
+  .ski{font-size:.96rem;padding:16px 0}
+  .hh{font-size:clamp(40px,10vw,72px)}
+  .hs{font-size:.96rem;max-width:100%}
+  .ah{font-size:clamp(32px,8vw,48px)}
+  .csu{font-size:.96rem}
+  .tt{font-size:.96rem;color:rgba(237,233,248,.92)}
+  .cn{font-size:.82rem}
+  .cat{flex-direction:column;gap:8px;align-items:flex-start}
+  .cpr,.cs2{text-align:center;width:100%;box-sizing:border-box}
+  /* Slider mobile */
+  .vslide-title{font-size:clamp(20px,5vw,32px)}
+  .vslide-stats{gap:8px}
+  .vstat{font-size:.68rem;padding:4px 10px}
+  .vslide-cta{font-size:.66rem;padding:10px 20px}
+  /* Process steps */
+  .csproc-step{flex-direction:column;gap:8px}
+  .csproc-num{font-size:1.1rem;width:auto}
+  .csp{font-size:1rem}
+  .cssh{font-size:1.2rem}
+  .csq p{font-size:1.1rem}
 }
 @media(max-width:480px){
   .sr{grid-template-columns:1fr 1fr}
   .ots{grid-template-columns:1fr}
   .cg{grid-template-columns:repeat(2,1fr)}
-  .fb .fn{font-size:.58rem;padding:7px 12px}
-  .ptn{font-size:.84rem}
+  .fb .fn{font-size:.64rem;padding:8px 13px}
+  .ptn{font-size:.94rem}
+  .vslide-content{padding:20px 16px}
+  .vslide-title{font-size:clamp(18px,5.5vw,26px)}
+  .vslide-stats{display:none}
+  .vslider-controls{padding:12px 16px 0}
+  .hero{padding:0 16px 56px}
+  section{padding:60px 16px}
+  .ey{font-size:.64rem}
+  .tqm{font-size:2.4rem}
+  .ski-body p{font-size:.84rem}
+  .cn{font-size:clamp(16px,4vw,22px)}
 }
+
+/* ── PROCESS TIMELINE ───────────────────── */
+.csproc{margin:44px 0 52px}
+.csproc-title{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pu);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.csproc-title::before{content:'';width:16px;height:1px;background:var(--g)}
+.csproc-steps{display:flex;flex-direction:column;gap:0}
+.csproc-step{display:flex;gap:24px;padding:18px 0;border-bottom:1px solid var(--bdr)}
+.csproc-step:first-child{border-top:1px solid var(--bdr)}
+.csproc-num{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;color:transparent;-webkit-text-stroke:1px rgba(144,96,255,.35);flex-shrink:0;width:36px;line-height:1.2}
+.csproc-text{font-size:1rem;line-height:1.7;color:rgba(237,233,248,.88);padding-top:2px}
+.csproc-label{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--pu);margin-bottom:3px;font-weight:600}
+
+/* ── CASE STUDY FULL IMAGE ─────────────── */
+.csfullimg{width:100%;height:auto;display:block;margin:36px 0}
 
 /* ── REVEAL ──────────────────────────────── */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ez),transform .8s var(--ez)}
@@ -544,44 +686,251 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
 
 <section id="motion" class="msc">
   <div class="ey rv">Motion &amp; Animation</div>
-  <div class="rv">
-    <h2 class="mtn-h">Design that <span class="mtn-ac">moves people.</span></h2>
-    <p style="font-size:.86rem;color:var(--mu);max-width:420px;line-height:1.78">Character animation, kinetic campaigns, explainer video; motion is where brand storytelling truly comes alive.</p>
-  </div>
-  <div class="mgr">
-    <div class="mi" onclick="oCS('lifetimewellbeing')" style="cursor:none">
-      <div class="mia"><img class="mi-img" src="images/wellbeing-cover.jpg" alt="Lifetime Wellbeing"><div class="mif"><div class="pb"><svg width="15" height="15" viewBox="0 0 24 24" fill="#9060ff"><polygon points="5,3 19,12 5,21"/></svg></div><span class="mlb">Case Study</span></div><div class="mm"><div class="mt">Lifetime — Wellbeing Programme Animation</div><div class="ms">Character Animation · Explainer · +78% Employee Awareness</div></div></div>
-    </div>
-    <div class="mi" onclick="oCS('bqlearning')" style="cursor:none">
-      <div class="mia"><img class="mi-img" src="images/b&amp;q-cover.jpg" alt="B&amp;Q In Learning"><div class="mif"><div class="pb"><svg width="13" height="13" viewBox="0 0 24 24" fill="#9060ff"><polygon points="5,3 19,12 5,21"/></svg></div><span class="mlb">Case Study</span></div><div class="mm"><div class="mt">B&amp;Q — In Learning Target</div><div class="ms">Character Animation · 94% Learner Comprehension</div></div></div>
-    </div>
-    <div class="mi" onclick="oCS('haven')" style="cursor:none">
-      <div class="mia"><img class="mi-img" src="images/haven-cover.jpg" alt="Haven"><div class="mif"><div class="pb"><svg width="13" height="13" viewBox="0 0 24 24" fill="#9060ff"><polygon points="5,3 19,12 5,21"/></svg></div><span class="mlb">Animation</span></div><div class="mm"><div class="mt">Haven Apprenticeship</div><div class="ms">Character animation · Zero amendments on delivery</div></div></div>
-    </div>
-    <div class="mi" onclick="oCS('wetherspoons')" style="cursor:none">
-      <div class="mia"><img class="mi-img" src="images/wetherspoons-cover.jpg" alt="Wetherspoons"><div class="mif"><div class="pb"><svg width="13" height="13" viewBox="0 0 24 24" fill="#9060ff"><polygon points="5,3 19,12 5,21"/></svg></div><span class="mlb">Character Design</span></div><div class="mm"><div class="mt">Wetherspoons Characters</div><div class="ms">Illustration · Motion · Privacy-first solution</div></div></div>
-    </div>
-    <div class="mi" onclick="oCS('naw')" style="cursor:none">
-      <div class="mia"><img class="mi-img" src="images/marstons-cover.jpg" alt="NAW Campaign"><div class="mif"><div class="pb"><svg width="13" height="13" viewBox="0 0 24 24" fill="#9060ff"><polygon points="5,3 19,12 5,21"/></svg></div><span class="mlb">Video Campaign</span></div><div class="mm"><div class="mt">NAW Campaign Videos</div><div class="ms">48% B2B traffic increase · 23,791 organic impressions</div></div></div>
+  <div class="rv" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px">
+    <div>
+      <h2 class="mtn-h">Design that <span class="mtn-ac">moves people.</span></h2>
+      <p style="font-size:1rem;color:var(--mu);max-width:460px;line-height:1.78;margin-top:10px">Character animation, kinetic campaigns, explainer video — motion is where brand storytelling truly comes alive.</p>
     </div>
   </div>
+
+  <!-- VIDEO SLIDER -->
+  <div class="vslider-wrap rv">
+    <div class="vslider" id="vslider">
+
+      <!-- SLIDE 1: Lifetime Wellbeing -->
+      <div class="vslide" onclick="oCS('lifetimewellbeing')">
+        <div class="vslide-inner">
+          <!-- Replace src with your actual preview clip: videos/wellbeing-preview.mp4 -->
+          <video autoplay muted loop playsinline poster="images/wellbeing-cover.jpg">
+            <source src="videos/wellbeing-preview.mp4" type="video/mp4">
+          </video>
+          <img class="vslide-cover" src="images/wellbeing-cover.jpg" alt="Lifetime Wellbeing" id="vcover0">
+          <div class="vslide-overlay"></div>
+          <div class="vslide-play">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><polygon points="6,3 20,12 6,21"/></svg>
+          </div>
+          <div class="vslide-content">
+            <div class="vslide-tag">Character Animation · Explainer</div>
+            <h3 class="vslide-title">Lifetime — Wellbeing<br>Programme Animation</h3>
+            <div class="vslide-stats">
+              <div class="vstat"><strong>+78%</strong> Employee Awareness</div>
+              <div class="vstat"><strong>Zero</strong> Amendments on Delivery</div>
+              <div class="vstat"><strong>100%</strong> Produced In-House</div>
+            </div>
+            <span class="vslide-cta">View Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: B&Q In Learning -->
+      <div class="vslide" onclick="oCS('bqlearning')">
+        <div class="vslide-inner">
+          <video autoplay muted loop playsinline poster="images/b&amp;q-cover.jpg">
+            <source src="videos/bq-preview.mp4" type="video/mp4">
+          </video>
+          <img class="vslide-cover" src="images/b&amp;q-cover.jpg" alt="B&Q In Learning" id="vcover1">
+          <div class="vslide-overlay"></div>
+          <div class="vslide-play">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><polygon points="6,3 20,12 6,21"/></svg>
+          </div>
+          <div class="vslide-content">
+            <div class="vslide-tag">Character Animation · Explainer</div>
+            <h3 class="vslide-title">B&amp;Q — In Learning<br>Target Animation</h3>
+            <div class="vslide-stats">
+              <div class="vstat"><strong>94%</strong> Learner Comprehension</div>
+              <div class="vstat"><strong>31%</strong> On-Time Target Increase</div>
+              <div class="vstat"><strong>Zero</strong> Amendments</div>
+            </div>
+            <span class="vslide-cta">View Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: Haven -->
+      <div class="vslide" onclick="oCS('haven')">
+        <div class="vslide-inner">
+          <video autoplay muted loop playsinline poster="images/haven-cover.jpg">
+            <source src="videos/haven-preview.mp4" type="video/mp4">
+          </video>
+          <img class="vslide-cover" src="images/haven-cover.jpg" alt="Haven Apprenticeship" id="vcover2">
+          <div class="vslide-overlay"></div>
+          <div class="vslide-play">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><polygon points="6,3 20,12 6,21"/></svg>
+          </div>
+          <div class="vslide-content">
+            <div class="vslide-tag">Character Animation · Brand Video</div>
+            <h3 class="vslide-title">Haven — Apprenticeship<br>Explainer Animation</h3>
+            <div class="vslide-stats">
+              <div class="vstat"><strong>Zero</strong> Amendments on Delivery</div>
+              <div class="vstat"><strong>Full</strong> Script to Screen</div>
+              <div class="vstat"><strong>Haven</strong> Brand-Perfect</div>
+            </div>
+            <span class="vslide-cta">View Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: Wetherspoons -->
+      <div class="vslide" onclick="oCS('wetherspoons')">
+        <div class="vslide-inner">
+          <video autoplay muted loop playsinline poster="images/wetherspoons-cover.jpg">
+            <source src="videos/wetherspoons-preview.mp4" type="video/mp4">
+          </video>
+          <img class="vslide-cover" src="images/wetherspoons-cover.jpg" alt="Wetherspoons" id="vcover3">
+          <div class="vslide-overlay"></div>
+          <div class="vslide-play">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><polygon points="6,3 20,12 6,21"/></svg>
+          </div>
+          <div class="vslide-content">
+            <div class="vslide-tag">Character Design · Illustration · Motion</div>
+            <h3 class="vslide-title">Wetherspoons —<br>Character Animation</h3>
+            <div class="vslide-stats">
+              <div class="vstat"><strong>Strong</strong> Client Approval</div>
+              <div class="vstat"><strong>Privacy-First</strong> Design Solution</div>
+              <div class="vstat"><strong>Full</strong> Character Set</div>
+            </div>
+            <span class="vslide-cta">View Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 5: NAW Campaign -->
+      <div class="vslide" onclick="oCS('naw')">
+        <div class="vslide-inner">
+          <video autoplay muted loop playsinline poster="images/marstons-cover.jpg">
+            <source src="videos/naw-preview.mp4" type="video/mp4">
+          </video>
+          <img class="vslide-cover" src="images/marstons-cover.jpg" alt="NAW Campaign" id="vcover4">
+          <div class="vslide-overlay"></div>
+          <div class="vslide-play">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><polygon points="6,3 20,12 6,21"/></svg>
+          </div>
+          <div class="vslide-content">
+            <div class="vslide-tag">Campaign · Social · Video</div>
+            <h3 class="vslide-title">National Apprenticeship<br>Week Campaign</h3>
+            <div class="vslide-stats">
+              <div class="vstat"><strong>110%</strong> Application Increase</div>
+              <div class="vstat"><strong>48%</strong> B2B Traffic Growth</div>
+              <div class="vstat"><strong>23,791</strong> Organic Impressions</div>
+            </div>
+            <span class="vslide-cta">View Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /vslider -->
+
+    <!-- Progress bar -->
+    <div class="vslider-progress"><div class="vslider-progress-bar" id="vprog"></div></div>
+
+    <!-- Controls -->
+    <div class="vslider-controls">
+      <div class="vslider-dots" id="vdots">
+        <button class="vdot on" onclick="goSlide(0)" aria-label="Slide 1"></button>
+        <button class="vdot" onclick="goSlide(1)" aria-label="Slide 2"></button>
+        <button class="vdot" onclick="goSlide(2)" aria-label="Slide 3"></button>
+        <button class="vdot" onclick="goSlide(3)" aria-label="Slide 4"></button>
+        <button class="vdot" onclick="goSlide(4)" aria-label="Slide 5"></button>
+      </div>
+      <div class="vslider-arrows">
+        <button class="varrow" onclick="moveSlide(-1)" aria-label="Previous">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <button class="varrow" onclick="moveSlide(1)" aria-label="Next">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div><!-- /vslider-wrap -->
 </section>
 
 <section>
   <div class="ey rv">What Clients Say</div>
   <div class="tg">
     <div class="tc rv"><span class="tqm">"</span><p class="tt">Her designs are always top quality and align perfectly with our partners brand guidelines. I've received great feedback from two of our employer partners on Reni's work.</p><div class="ts">Employer Partner — Nando's</div></div>
-    <div class="tc rv d1"><span class="tqm">"</span><p class="tt">They'll now never move on from Lifetime being their preferred supplier. A huge turnaround, in no small way down to the outstanding work on this project.</p><div class="ts">Account Manager — B&amp;Q Reignite</div></div>
+    <div class="tc rv d1"><span class="tqm">"</span><p class="tt">They'll now never move on from Lifetime being their preferred supplier. A huge turnaround, in no small way down to the outstanding design work on this project.</p><div class="ts">Account Manager — B&amp;Q Reignite</div></div>
     <div class="tc rv d2"><span class="tqm">"</span><p class="tt">We never seen such a well put to point process of creation. From the moment the brief has been sent, to the time we got the first draft, everything ran smoothly.</p><div class="ts">Client — Blue Cross</div></div>
   </div>
 </section>
 
 <section class="clsc">
   <div class="ey rv">Client Roster</div>
-  <h2 class="clh rv">Trusted by brands<br>that millions know.</h2>
+  <h2 class="mtn-h">Trusted by brands<br>that millions know.</h2>
   <div class="cg rv">
-    <div class="cc"><div class="cn">McDonald's</div></div><div class="cc"><div class="cn">Nando's</div></div><div class="cc"><div class="cn">Lidl</div></div><div class="cc"><div class="cn">B&amp;Q</div></div><div class="cc"><div class="cn">KFC</div></div><div class="cc"><div class="cn">Greene King</div></div><div class="cc"><div class="cn">Wetherspoon</div></div><div class="cc"><div class="cn">Haven</div></div><div class="cc"><div class="cn">Bupa</div></div><div class="cc"><div class="cn">Blue Cross</div></div><div class="cc"><div class="cn">Poundland</div></div><div class="cc"><div class="cn">SSP UK</div></div>
+    <div class="cc">
+      <div class="cn-row">
+        <span class="cn">McDonald's</span>
+        <span class="cn-label">QSR / Food</span>
+      </div>
+    </div>
+    <div class="cc">
+      <div class="cn-row">
+        <span class="cn">Nando's</span>
+        <span class="cn-label">QSR / Food</span>
+      </div>
+    </div>
+    <div class="cc">
+      <div class="cn-row">
+        <span class="cn">Lidl</span>
+        <span class="cn-label">Retail</span>
+      </div>
+    </div>
+    <div class="cc">
+      <div class="cn-row">
+        <span class="cn">B&Q</span>
+        <span class="cn-label">Retail / DIY</span>
+      </div>
+    </div>
+    <div class="cc">
+      <div class="cn-row">
+        <span class="cn">KFC</span>
+        <span class="cn-label">QSR / Food</span>
+      </div>
+    </div>
+    <div class="cc">
+      <div class="cn-row">
+        <span class="cn">Greene King</span>
+        <span class="cn-label">Hospitality</span>
+      </div>
+    </div>
+    <div class="cc">
+      <div class="cn-row">
+        <span class="cn">Wetherspoon</span>
+        <span class="cn-label">Hospitality</span>
+      </div>
+    </div>
+    <div class="cc">
+      <div class="cn-row">
+        <span class="cn">Haven</span>
+        <span class="cn-label">Leisure</span>
+      </div>
+    </div>
+    <div class="cc">
+      <div class="cn-row">
+        <span class="cn">Bupa</span>
+        <span class="cn-label">Healthcare</span>
+      </div>
+    </div>
+    <div class="cc">
+      <div class="cn-row">
+        <span class="cn">Blue Cross</span>
+        <span class="cn-label">Charity</span>
+      </div>
+    </div>
+    <div class="cc">
+      <div class="cn-row">
+        <span class="cn">Poundland</span>
+        <span class="cn-label">Retail</span>
+      </div>
+    </div>
+    <div class="cc">
+      <div class="cn-row">
+        <span class="cn">SSP UK</span>
+        <span class="cn-label">Food Travel</span>
+      </div>
+    </div>
   </div>
+	 <p class="cl-more rv">...and many more.</p>
 </section>
 
 <section id="about">
@@ -594,14 +943,56 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
       <p class="ap">MA in PR &amp; Advertising · Google UX Certificate · Super Advanced Motion Graphics, Soho Editors.</p>
     </div>
     <div class="rv d1" style="padding-top:44px">
-      <ul class="sk">
-        <li class="ski"><span>Creative Direction &amp; Leadership</span><span class="sd"></span></li>
-        <li class="ski"><span>Brand Systems &amp; Governance</span><span class="sd"></span></li>
-        <li class="ski"><span>Motion &amp; Animation (After Effects)</span><span class="sd"></span></li>
-        <li class="ski"><span>Campaign Design — Digital &amp; Print</span><span class="sd"></span></li>
-        <li class="ski"><span>Web &amp; UX Design</span><span class="sd"></span></li>
-        <li class="ski"><span>Team Mentorship</span><span class="sd"></span></li>
-        <li class="ski"><span>Adobe CC · Figma · HTML · CSS</span><span class="sd"></span></li>
+      <ul class="sk" id="skillList">
+        <li class="ski" onclick="toggleSkill(this)">
+          <div class="ski-hd">
+            <span class="ski-label">Creative Direction & Leadership</span>
+            <span class="ski-icon">+</span>
+          </div>
+          <div class="ski-body"><p>I set visual direction across campaigns and brand touchpoints, translating strategy into something people feel before they read. I've presented to boards, led creative reviews, and shaped outcomes from the first brief to the final asset.</p></div>
+        </li>
+        <li class="ski" onclick="toggleSkill(this)">
+          <div class="ski-hd">
+            <span class="ski-label">Brand Systems & Governance</span>
+            <span class="ski-icon">+</span>
+          </div>
+          <div class="ski-body"><p>I build brand systems that scale, not just guidelines documents, but living toolkits that teams actually use. I act as brand guardian, introducing review processes and raising the standard of consistency across every deliverable.</p></div>
+        </li>
+        <li class="ski" onclick="toggleSkill(this)">
+          <div class="ski-hd">
+            <span class="ski-label">Motion & Animation</span>
+            <span class="ski-icon">+</span>
+          </div>
+          <div class="ski-body"><p>From character animation to kinetic campaigns, I produce motion work that earns attention. I script, storyboard and animate in-house, delivering projects like Haven and B&Q with zero amendments on first delivery.</p></div>
+        </li>
+        <li class="ski" onclick="toggleSkill(this)">
+          <div class="ski-hd">
+            <span class="ski-label">Campaign Design — Digital & Print</span>
+            <span class="ski-icon">+</span>
+          </div>
+          <div class="ski-body"><p>I lead multi-channel campaigns from concept to completion. The NAW #IAspiretoBe campaign drove a 110% increase in applications. I design for impact at every touchpoint, whether it's a social GIF or a printed activation box.</p></div>
+        </li>
+        <li class="ski" onclick="toggleSkill(this)">
+          <div class="ski-hd">
+            <span class="ski-label">Web & UX Design</span>
+            <span class="ski-icon">+</span>
+          </div>
+          <div class="ski-body"><p>I approach web design through a UX lens, understanding user journeys before picking up a tool. The MyLife portal redesign increased user engagement by 20% by restructuring information architecture around real learner needs.</p></div>
+        </li>
+        <li class="ski" onclick="toggleSkill(this)">
+          <div class="ski-hd">
+            <span class="ski-label">Team Mentorship</span>
+            <span class="ski-icon">+</span>
+          </div>
+          <div class="ski-body"><p>I've mentored junior and midweight designers, leveraging their individual strengths to raise team standards. I believe good mentorship means giving people space to own their work while knowing when to step in with direction.</p></div>
+        </li>
+        <li class="ski" onclick="toggleSkill(this)">
+          <div class="ski-hd">
+            <span class="ski-label">Adobe CC · Figma · HTML · CSS</span>
+            <span class="ski-icon">+</span>
+          </div>
+          <div class="ski-body"><p>Proficient across the full Adobe CC suite (Illustrator, Photoshop, InDesign, After Effects, Premiere). I also work directly in Figma for UI and prototyping, and build production-ready HTML/CSS when the project calls for it.</p></div>
+        </li>
       </ul>
     </div>
   </div>
@@ -642,6 +1033,21 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
 </div>
 
 <script>
+// NAV SCROLL BEHAVIOUR
+(function(){
+  const nav = document.querySelector('nav');
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if(!ticking){
+      requestAnimationFrame(()=>{
+        nav.classList.toggle('scrolled', window.scrollY > 80);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, {passive:true});
+})();
+
 // CURSOR
 const cd=document.getElementById('cd'),cr=document.getElementById('cr');
 let mx=0,my=0,rx=0,ry=0;
@@ -675,18 +1081,18 @@ const D={
   fusion:{ey:'Brand Identity · Packaging · Motion',ti:'Fusion',su:'Functional Beverage Brand Identity',cl:'Fusion Beverages',yr:'2025',ro:'Creative Lead / Brand Designer',tg:['Brand Identity','Logo Design','Packaging','Visual System','Motion'],ch:'Develop a complete brand identity for a functional beverage startup entering a competitive wellness market. The brand needed to feel premium yet approachable, communicating energy and wellbeing without tired category clichés.',so:'Created a bold visual system centred on a dynamic logomark that evokes movement and vitality. The colour palette balances deep confident tones with vibrant accents, with motion assets in After Effects extending the brand into animated formats. Typography is clean and confident, allowing packaging to cut through on shelf.',o1:'4',l1:'Can designs',o2:'Functional',l2:'Beverage',o3:'Full',l3:'Logo, Packaging & Visual System',qt:'A brand identity built to stand up to the biggest names in the functional beverage space.',qb:'Project Brief',bh:'https://www.behance.net/gallery/248327877/Fusion-Functional-Beverage-Brand-Identity',img:'images/fusion-cover.jpg',bfull:'images/fusion-behance-full.jpg',beh:true},
   oriva:{ey:'Brand Identity · Product Design · Visual System',ti:'Oriva',su:'Finance, Simplified — Visual Identity',cl:'Oriva Finance',yr:'2025',ro:'Senior Graphic Designer',tg:['Brand Identity','Visual System','Fintech','Logo','Product Design'],ch:'Build trust and approachability for a fintech platform in a sector associated with complexity. The brand needed to convey reliability without feeling cold or corporate.',so:'A restrained, elegant identity grounded in the design philosophy of calm clarity, helping users understand their money through intentional visual decisions. Clean typography pairs with subtle accent touches to signal modernity. The logo system is flexible across digital and print, with UI screen design extending the identity into product.',o1:'UI',l1:'Product Design Including Interface Screens',o2:'Calm',l2:'Design Philosophy — Reducing Complexity',o3:'Effective',l3:'Product launch',qt:'Clarity and confidence — exactly what a modern finance brand needs to earn trust.',qb:'Design Review',bh:'https://www.behance.net/gallery/242368371/Oriva-Finance-simplified-Visual-Identity',img:'images/oriva-cover.jpg',bfull:'images/oriva-behance-full.jpg',snaps:[{s:'images/oriva-cover.jpg',p:'center top'},{s:'images/oriva-cover.jpg',p:'center bottom'}],beh:true},
   codedash:{ey:'Brand Identity · Developer Tools · Visual System',ti:'Codedash',su:'Brand Identity & Visual System',cl:'Codedash',yr:'2024',ro:'Senior Graphic Designer',tg:['Brand Identity','Tech','Visual System','Logo Design','AI'],ch:'Position a developer tools platform as both technically credible and creatively distinct, cutting through generic tech branding at a moment when the AI revolution was reshaping what product design means.',so:"A sharp identity anchored in the insight that AI alone doesn't create value; it becomes powerful when paired with thoughtful product design and real user needs. Negative space within the logomark embeds a code reference. Monochromatic with a single high-impact accent, built for precision across screen and print.",o1:'AI',l1:'Brand Built for the AI-Native Product Space',o2:'Full',l2:'Visual System for Tech & Developer Audiences',o3:'Clear',l3:'Brand placement',qt:'Immediately recognisable. Feels built for developers, not just marketed at them.',qb:'Client Review',bh:'https://www.behance.net/gallery/238973155/Codedash-Brand-Identity-Visual-System',img:'images/codedash-cover.jpg',bfull:'images/codedash-behance-full.jpg',beh:true},
-  lifetime:{ey:'Brand Strategy · Identity · Art Direction',ti:'Lifetime Training',su:'Brand Repositioning & Evolution',cl:'Lifetime Training',yr:'2024–2025',ro:'Senior Designer & Motion Specialist',tg:['Brand Evolution','Art Direction','Design System','Guidelines'],ch:'Reposition a well-recognised but outdated national training brand seen as operational rather than transformative, lacking relevance in key growth sectors such as professional services and leadership development.',so:'Presented three strategic rebrand concepts to the board. The approved solution introduced a refreshed design system grounded in visual clarity, digital maturity, and emotional resonance. Full guidelines, asset libraries, and templates followed.',o1:'Unanimous',l1:'Board Approval',o2:'Full',l2:'Brand System & Guidelines',o3:'National',l3:'Rollout Across All Touchpoints',qt:'Recognition for design clarity, strategic thinking, and creative leadership from the full board of directors.',qb:'Board of Directors — Lifetime Training',bh:'https://www.behance.net/hankorenata',img:'images/lifetime-repositioning-cover.jpg',bfull:'images/lifetime-repositioning-behance-full.jpg',links:[{label:'Brand Evolution',url:'https://drive.google.com/file/d/14BMo0fqjy_MYI2Ib8oeT8jsLxC9sl7e0/view'},{label:'Brand Animation',url:'https://drive.google.com/file/d/1rn8ihdKRtXvc2INaWDR4ZlBxyMrXqd2-/view'}],beh:false},
+  lifetime:{ey:'Brand Strategy · Identity · Art Direction',ti:'Lifetime Training',su:'Brand Repositioning & Evolution',cl:'Lifetime Training',yr:'2024–2025',ro:'Creative Lead & Brand designer',tg:['Brand Evolution','Art Direction','Design System','Guidelines'],ch:'Lifetime was a nationally recognised training provider, but the brand had grown operational in appearance — seen as a delivery machine rather than a transformative partner. It lacked visual credibility in key growth sectors including professional services and leadership development, and the existing identity felt dated against more progressive competitors. The brief: reposition the brand visually and strategically, without losing the trust of existing clients.',process:[{label:'Brand Audit & Discovery',detail:'Analysed existing brand perception across clients, staff, and partners — identifying a gap between Lifetime\'s internal confidence and how it was experienced externally: operational, not transformative.'},{label:'Three Strategic Concepts',detail:'Developed and presented Evolve (a refined iteration of the existing brand), Transform (a bold repositioning), and Elevate (a premium professional reframe). Each had a full visual rationale and board-ready deck.'},{label:'Unanimous Board Approval',detail:'The presentation achieved unanimous board approval first time — a rare outcome that reflected the clarity and confidence of the creative rationale.'},{label:'Design System Build',detail:'Created comprehensive brand guidelines including icon sets, layout templates, refined typography, photography art direction, and social templates, built to scale across the entire organisation.'},{label:'National Rollout',detail:'Delivered across website, print collateral, social channels, presentations, email campaigns, and video — every touchpoint aligned to the new positioning.'}],so:'Presented three strategic rebrand concepts to the board. The approved solution introduced a refreshed design system grounded in visual clarity, digital maturity, and emotional resonance. Full guidelines, asset libraries, and templates followed.',o1:'Unanimous',l1:'Board Approval',o2:'Full',l2:'Brand System & Guidelines',o3:'National',l3:'Rollout Across All Touchpoints',qt:'Recognition for design clarity, strategic thinking, and creative leadership from the full board of directors.',qb:'Board of Directors — Lifetime Training',bh:'https://www.behance.net/hankorenata',img:'images/lifetime-repositioning-cover.jpg',bfull:'images/lifetime-repositioning-behance-full.jpg',links:[{label:'Brand Evolution',url:'https://drive.google.com/file/d/14BMo0fqjy_MYI2Ib8oeT8jsLxC9sl7e0/view'},{label:'Brand Animation',url:'https://drive.google.com/file/d/1rn8ihdKRtXvc2INaWDR4ZlBxyMrXqd2-/view'}],beh:false},
   voyageur:{ey:'Brand Identity · Travel · Visual Language',ti:'Voyageur',su:'Travel Company Brand Identity',cl:'Voyageur Travel',yr:'2024',ro:'Senior Graphic Designer',tg:['Brand Identity','Travel','Logo Design','Visual Language'],ch:'Create a brand capturing the romance and adventure of independent travel, standing apart from generic travel aesthetics and communicating the thrill of exploration through considered, minimalist design.',so:'An identity rooted in cartography and exploration. Refined typography evokes discovery, with the palette drawing from natural landscapes and the colour of adventure. Eight visual modules build a cohesive system from logo to full brand application.',o1:'Scalability',l1:'Across all media and assets',o2:'Minimalist',l2:'Logo Built on Typographic Restraint',o3:'100%',l3:'Brand recognition',qt:'The brief was adventure — the outcome was a brand that felt like it had been on the journey.',qb:'Design Review',bh:'https://www.behance.net/gallery/210632483/Voyageur-Travel-company-Brand-Identity',img:'images/voyageur-cover.jpg',bfull:'images/voyageur-behance-full.jpg',snaps:[{s:'images/voyageur-cover.jpg',p:'center 8%'},{s:'images/voyageur-cover.jpg',p:'center 62%'}],beh:true},
-  huddle:{ey:'Internal Brand · Identity System · Employee Engagement',ti:'Huddle',su:'Internal Brand Identity',cl:'Lifetime Training (Internal)',yr:'2023',ro:'Creative Lead',tg:['Internal Brand','Identity','Employee Engagement','Guidelines'],ch:'Transform internal communications for a national company, fostering community, improving information accessibility, and increasing employee engagement across distributed teams.',so:'Developed the Huddle brand from scratch: logo, visual guidelines, tone of voice, and a full suite of branded assets including digital templates. Visual language is inclusive, energetic and human.',o1:'+25%',l1:'Employee Participation',o2:'+40%',l2:'Satisfaction Improvement',o3:'Full',l3:'Brand & Asset Library',qt:"The brand's visual language was carefully crafted to be inclusive, engaging, and aligned with the company's values.",qb:'Internal Communications Team',bh:'https://www.behance.net/gallery/199316641/Huddle-Brand-identity',img:'images/huddle-cover.jpg',bfull:'images/huddle-behance-full.jpg',beh:true},
-  naw:{ey:'Campaign Design · Motion · Social Media',ti:'NAW Campaign',su:'National Apprenticeship Week',cl:'Lifetime Training',yr:'2023',ro:'Creative Lead / Motion Designer',tg:['Campaign Design','Animation','Social Media','Motion Design','Video'],ch:'Create the complete visual design for the annual National Apprenticeship Week video campaign, building a cohesive video format for multiple clients across all social media platforms. The aim was to showcase the impact of apprenticeships and drive learner enrolment.',so:'Created a flexible template system to achieve brand consistency and production efficiency across multiple videos. The visual style aimed to be professional and engaging, emphasising the value and impact of apprenticeships for both businesses and learners.',o1:'48%',l1:'Increase in B2B Traffic',o2:'23,791',l2:'Organic Impressions in Campaign Week',o3:'1',l3:'Template Across Every Client Video',qt:'We managed to deliver great impact videos across all clients during NAW with ease, the engagement was extraordinary!',qb:'Partnership Executive — Lifetime Training',bh:'https://drive.google.com/file/d/1yCxToL8LDCBboBLH1XqnQJ7p4W5c30t9/view?usp=sharing',img:'images/marstons-cover.jpg',snaps:[{s:'images/naw-campaign-hero.jpg',p:'center top'},{s:'images/naw-campaign-hero.jpg',p:'center bottom'}],vid:'https://drive.google.com/file/d/1yCxToL8LDCBboBLH1XqnQJ7p4W5c30t9/preview',beh:false},
-  haven:{ey:'Character Animation · Motion Design · Explainer',ti:'Haven Animation',su:'Apprenticeship Explainer Animation',cl:'Haven Leisure',yr:'2023',ro:'Motion Designer / Animator',tg:['Animation','Motion Design','Character Design','Explainer','After Effects'],ch:'Design and animate a full explainer for Haven learners — communicating a complex apprenticeship journey in an engaging, on-brand way requiring zero revisions on delivery.',so:'Storyboarded a narrative following an apprentice on a road trip to their Haven placement. Character design, background illustration, kinetic type and icon animation all produced in-house. Template system built for future efficiency.',o1:'Zero',l1:'Amendments on Delivery',o2:'Full',l2:'Storyboard to Final Animation',o3:'High',l3:'Engagement',qt:"The video was received with great feedback — the client was really satisfied with the end result and they didn't require any additional amendments.",qb:'Project Manager — Lifetime Training',bh:'https://drive.google.com/file/d/1q8hVgFigauh1y_sPUt7-GEvb6dSnAqCG/view?usp=sharing',img:'images/haven-cover.jpg',vid:'https://drive.google.com/file/d/1q8hVgFigauh1y_sPUt7-GEvb6dSnAqCG/preview',beh:false},
-  wetherspoons:{ey:'Character Design · Illustration · Motion',ti:'Wetherspoons',su:'Character Design & Animation',cl:'Wetherspoon',yr:'2023',ro:'Illustrator / Motion Designer',tg:['Character Design','Illustration','Animation','Brand','Motion'],ch:'Design illustrated characters representing the range of apprenticeship roles, as a privacy-respecting alternative to photography while maintaining brand quality.',so:'Developed a cohesive character set reflecting different apprenticeship roles. The illustration style is clean, modern and characterful — consistent with the rebrand and adaptable across print and digital.',o1:'Strong',l1:'Client Approval',o2:'Full',l2:'Character Set Delivered',o3:'Privacy-First',l3:'Photography Alternative',qt:"We love these new characters. We think they show clearly the style that we were pushing for, and they are a good alternative to images.",qb:'Client — Wetherspoon',bh:'https://drive.google.com/file/d/10Oc8cysPVTtCO6P9Vb2GRob8VOLCzKkt/view?usp=sharing',img:'images/wetherspoons-cover.jpg',vid:'https://drive.google.com/file/d/10Oc8cysPVTtCO6P9Vb2GRob8VOLCzKkt/preview',beh:false},
+  huddle:{ey:'Internal Brand · Identity System · Employee Engagement',ti:'Huddle',su:'Internal Brand Identity',cl:'Lifetime Training (Internal)',yr:'2023',ro:'Creative Lead',tg:['Internal Brand','Identity','Employee Engagement','Guidelines'],ch:'Transform internal communications for a national company, fostering community, improving information accessibility, and increasing employee engagement across distributed teams.',process:[{label:'Stakeholder Discovery',detail:'Ran conversations with team members across departments to understand what internal communications were missing — the consistent answer was that messages felt top-down, corporate, and easy to ignore.'},{label:'Naming & Concept',detail:'Generated multiple naming routes before landing on Huddle — a word that immediately communicates togetherness, informal collaboration, and shared momentum. The tagline: United Minds, Shared Success.'},{label:'Visual Identity Development',detail:'Developed logo concepts centred on a connected-nodes mark, a geometric illustration system, a warm and energetic colour palette, and a typographic voice that felt accessible without losing professionalism.'},{label:'Brand Guidelines & Templates',detail:'Built a full brand guidelines document with ready-to-use templates for newsletters, presentations, posters, and digital communications — making it easy for non-designers to stay on-brand.'},{label:'Launch & Measurement',detail:'+25% participation in internal communications channels. +40% improvement in employee satisfaction scores related to internal communications within the first measurement cycle.'}],so:'Developed the Huddle brand from scratch: logo, visual guidelines, tone of voice, and a full suite of branded assets including digital templates. Visual language is inclusive, energetic and human.',o1:'+25%',l1:'Employee Participation',o2:'+40%',l2:'Satisfaction Improvement',o3:'Full',l3:'Brand & Asset Library',qt:"The brand's visual language was carefully crafted to be inclusive, engaging, and aligned with the company's values.",qb:'Internal Communications Team',bh:'https://www.behance.net/gallery/199316641/Huddle-Brand-identity',img:'images/huddle-cover.jpg',bfull:'images/huddle-behance-full.jpg',beh:true},
+  naw:{ey:'Campaign Design · Motion · Social Media',ti:'NAW Campaign',su:'National Apprenticeship Week',cl:'Lifetime Training',yr:'2023',ro:'Creative Lead / Motion Designer',tg:['Campaign Design','Animation','Social Media','Motion Design','Video'],ch:'Create the complete visual design for the annual National Apprenticeship Week video campaign, building a cohesive video format for multiple clients across all social media platforms. The aim was to showcase the impact of apprenticeships and drive learner enrolment.',process:[{label:'Campaign Concept',detail:'Developed the #IAspiretoBe hashtag mechanic as the unifying idea — a simple, shareable format that put real learner ambition at the centre of the campaign.'},{label:'Visual Identity',detail:'Created the campaign identity: bold geometric shapes, vibrant teal-and-purple palette, and a dynamic layout system that worked across all formats from GIF to print.'},{label:'Social Animation Suite',detail:'Produced a series of animated GIFs designed for maximum thumb-stopping engagement on LinkedIn and Instagram, each sized and optimised for native platform performance.'},{label:'Video Template System',detail:'Built a flexible video template in After Effects that allowed the team to produce on-brand campaign videos for Marston\'s and other national clients at speed — cutting production time by over 60%.'},{label:'Results',detail:'110% increase in apprenticeship applications vs prior year. 48% increase in B2B traffic. 23,791 organic impressions during campaign week.'}],so:'I led the complete visual creative direction for the campaign, built around the #IAspiretoBe hashtag mechanic. The identity used bold geometric shapes, vibrant teal-and-purple palettes, and real learner photography to feel authentic and dynamic. I designed a full suite of animated GIFs for social — deliberately built for thumb-stopping engagement — alongside a templated video format that allowed us to produce campaign videos for Marston\'s and multiple other national clients at pace without sacrificing brand integrity. The template system alone reduced video production time by over 60% while maintaining consistent quality across every client deliverable.',o1:'48%',l1:'Increase in B2B Traffic',o2:'23,791',l2:'Organic Impressions in Campaign Week',o3:'1',l3:'Template Across Every Client Video',qt:'We managed to deliver great impact videos across all clients during NAW with ease, the engagement was extraordinary!',qb:'Partnership Executive — Lifetime Training',bh:'https://drive.google.com/file/d/1yCxToL8LDCBboBLH1XqnQJ7p4W5c30t9/view?usp=sharing',img:'images/marstons-cover.jpg',snaps:[{s:'images/naw-campaign-hero.jpg',p:'center top'},{s:'images/naw-campaign-hero.jpg',p:'center bottom'}],vid:'https://drive.google.com/file/d/1yCxToL8LDCBboBLH1XqnQJ7p4W5c30t9/preview',beh:false},
+  haven:{ey:'Character Animation · Motion Design · Explainer',ti:'Haven Animation',su:'Apprenticeship Explainer Animation',cl:'Haven Leisure',yr:'2023',ro:'Motion Designer / Animator',tg:['Animation','Motion Design','Character Design','Explainer','After Effects'],ch:'Haven needed an informational animation to guide their apprentices through the full journey of their programme — a complex process involving on-the-job training, Aptem tracking, coaching sessions, and end-point assessment. The challenge was to make this process feel exciting and achievable rather than bureaucratic, while staying tightly aligned to Haven\'s distinctive coastal and hospitality brand.',process:[{label:'Brief & Script',detail:'Worked with Haven and Lifetime to understand the full apprenticeship journey, then scripted a voiceover narrative that made complex process information feel human and approachable.'},{label:'Concept & Storyboard',detail:'Developed the road trip concept — following an apprentice driving from the city to a Haven coastal park — as a metaphor for the apprenticeship journey. Built a 13-scene storyboard covering every stage from enrolment to end-point assessment.'},{label:'Character & Environment Design',detail:'Designed all characters, coastal environments, branded signage, and interface screens from scratch — all staying within Haven\'s established brand palette.'},{label:'Animation Production',detail:'Produced entirely in After Effects, including kinetic typography, data visualisation moments, and smooth scene transitions.'},{label:'Delivery',detail:'Delivered to client with zero amendments required — a first-time approval on a full animation build.'}],so:'I developed the creative concept, scripted the voiceover, and built the full storyboard before producing every frame of animation in After Effects. The narrative follows a learner character driving out of the city and arriving at a Haven park — using the road trip metaphor to mirror the apprenticeship journey. I designed all characters and environments from scratch, incorporating Haven\'s map system, branded signage, and Aptem interface screens. The animation walks through programme duration, on and off-the-job training, the end-point assessment structure (observation, professional discussion, multiple choice, and business project), and the grading system (Pass, Merit, Distinction). The video was delivered without a single amendment required to their Haven placement. Character design, background illustration, kinetic type and icon animation all produced in-house. Template system built for future efficiency.',o1:'Zero',l1:'Amendments on Delivery',o2:'Full',l2:'Storyboard to Final Animation',o3:'High',l3:'Engagement',qt:"The video was received with great feedback — the client was really satisfied with the end result and they didn't require any additional amendments.",qb:'Project Manager — Lifetime Training',bh:'https://drive.google.com/file/d/1q8hVgFigauh1y_sPUt7-GEvb6dSnAqCG/view?usp=sharing',img:'images/haven-cover.jpg',vid:'https://drive.google.com/file/d/1q8hVgFigauh1y_sPUt7-GEvb6dSnAqCG/preview',beh:false},
+  wetherspoons:{ey:'Character Design · Illustration · Motion',ti:'Wetherspoons',su:'Character Design & Animation',cl:'Wetherspoon',yr:'2023',ro:'Illustrator / Motion Designer',tg:['Character Design','Illustration','Animation','Brand','Motion'],ch:'During the rebrand of the Wetherspoon apprenticeship programme, a core challenge emerged: many learners did not want their photographs used in promotional materials. Rather than treating this as a limitation, the brief evolved into an opportunity — design a set of original illustrated characters that could represent the full range of apprenticeship roles on offer, while capturing the brand\'s new visual style and serving as a reusable asset across digital and print.',so:'I developed a cohesive set of illustrated characters, each representing a different Wetherspoon apprenticeship role — bar staff, kitchen, management, and front-of-house. The illustration style is clean, modern, and characterful, with a consistent visual language across proportion, colour palette, and line weight. Each character was built for flexibility: working at small sizes on printed materials and at full scale in digital animations. The characters became the visual backbone of the rebrand\'s promotional materials and were embedded into the interactive web-based learner onboarding animation I also produced for the client.',o1:'Strong',l1:'Client Approval',o2:'Full',l2:'Character Set Delivered',o3:'Privacy-First',l3:'Photography Alternative',qt:"We love these new characters. We think they show clearly the style that we were pushing for, and they are a good alternative to images.",qb:'Client — Wetherspoon',bh:'https://drive.google.com/file/d/10Oc8cysPVTtCO6P9Vb2GRob8VOLCzKkt/view?usp=sharing',img:'images/wetherspoons-cover.jpg',vid:'https://drive.google.com/file/d/10Oc8cysPVTtCO6P9Vb2GRob8VOLCzKkt/preview',beh:false},
   rouge:{ey:'Brand Identity · Beauty · Packaging',ti:'Rouge',su:'Beauty Brand Identity',cl:'Rouge Beauty',yr:'2024',ro:'Senior Graphic Designer',tg:['Brand Identity','Beauty','Logo Design','Luxury','Packaging'],ch:'Create a luxury beauty brand identity with warmth and confidence, aspirational and accessible, standing out in a crowded market where visual shelf presence is everything.',so:'A refined identity centred on a sculptural wordmark with elegant letterforms. The warm, feminine palette was built for shelf impact, working across packaging, digital and editorial contexts with equal confidence.',o1:'Packaging',l1:'Cosmetics Identity Including Pack Design',o2:'Warm',l2:'Feminine Palette Crafted for Shelf Impact',o3:'Full',l3:'Logo, Packaging & Editorial Applications',qt:'Warmth, elegance, and confidence — a brand that women actually want to pick up.',qb:'Design Review',bh:'https://www.behance.net/gallery/186327127/Rouge-Beauty-Brand-identity',img:'images/rouge-cover.jpg',bfull:'images/rouge-behance-full.jpg',snaps:[{s:'images/rouge-cover.jpg',p:'20% center'},{s:'images/rouge-cover.jpg',p:'75% center'}],beh:true},
-  bq:{ey:'Print Design · Packaging · Activation Campaign',ti:'B&Q Reignite',su:'Print, Packaging & Activation Campaign',cl:'B&Q',yr:'2023',ro:'Creative Lead',tg:['Print Design','Packaging','Campaign','Retail','Activation'],ch:"Re-energise B&Q's apprenticeship programme after stalled engagement, win back provision from rival suppliers and increase active vacancies.",so:'Led the full activation campaign: a branded Reignite Box sent to stores, short-form video, factsheets, manager guides, stickers and promotional print assets.',o1:'0→19',l1:'Vacancies in One Month',o2:'Retained',l2:'Preferred Supplier Status',o3:'Outstanding',l3:'Client Testimonial',qt:"They'll now never move on from Lifetime being their preferred supplier. A huge turnaround, in no small way down to the outstanding work on this project.",qb:'Account Manager — Lifetime Training',bh:'https://www.behance.net/hankorenata',img:'images/b&q-reignite-cover.jpg',links:[{label:'Packaging',url:'https://drive.google.com/file/d/1XIFu9Sgjl466UfY8ZLD53TB9MFCcIdMg/view?usp=sharing'}],beh:false},
+  bq:{ey:'Print Design · Packaging · Activation Campaign',ti:'B&Q Reignite',su:'Print, Packaging & Activation Campaign',cl:'B&Q',yr:'2023',ro:'Creative Lead',tg:['Print Design','Packaging','Campaign','Retail','Activation'],ch:"B&Q's apprenticeship programme had stalled. Engagement had dropped, active vacancies had fallen to zero, and there was a real risk of the client leaving Lifetime Training for a rival provider. The brief was urgent and high-stakes: create something that would re-energise unit managers across the business, drive vacancy creation, and remind B&Q of the value of the partnership.",so:"I led the full creative direction and production of the B&Q Reignite activation campaign. The centrepiece was a branded Reignite Box — a physical toolkit mailed directly to store managers, containing branded print materials, stickers, manager guides, and a QR-linked digital resource. I also produced a short-form video campaign to support the launch, alongside factsheets and promotional assets. Every touchpoint used B&Q's bold orange-and-black palette with Lifetime's co-branding, creating a campaign that felt premium and purposeful. The campaign reversed a decline that had threatened the entire partnership.",o1:'0→19',l1:'Vacancies in One Month',o2:'Retained',l2:'Preferred Supplier Status',o3:'Outstanding',l3:'Client Testimonial',qt:"They'll now never move on from Lifetime being their preferred supplier. A huge turnaround, in no small way down to the outstanding work on this project.",qb:'Account Manager — Lifetime Training',bh:'https://www.behance.net/hankorenata',img:'images/b&q-reignite-cover.jpg',links:[{label:'Packaging',url:'https://drive.google.com/file/d/1XIFu9Sgjl466UfY8ZLD53TB9MFCcIdMg/view?usp=sharing'}],beh:false},
   regalia:{ey:'Brand Identity · Luxury · Hospitality',ti:'Regalia',su:'Luxury Hotel Visual Identity',cl:'Regalia Hotel',yr:'2024',ro:'Senior Graphic Designer',tg:['Brand Identity','Luxury','Hotel','Hospitality'],ch:'Craft a hotel brand communicating old-world luxury while feeling fresh and relevant to a modern traveller, without predictable gold-and-serif clichés.',so:'An identity rooted in refined typography, considered spacing, and architectural references. Deliberate and restrained, every touchpoint feels purposeful. Old-world luxury reframed for the contemporary traveller.',o1:'Refined',l1:'Luxury Identity',o2:'Full',l2:'Identity Across All Hotel Touchpoints',o3:'Led',l3:'By the feel of the hotel',qt:'A hotel identity that earns every star on its own design merit.',qb:'Design Review',bh:'https://www.behance.net/gallery/184947869/Regalia-Luxury-Hotel-Visual-identity',img:'images/regalia-cover.jpg',bfull:'images/regalia-behance-full.jpg',beh:true},
   tokjo:{ey:'Web Design · Brand · Webflow',ti:'Tök Jó Gyümölcs',su:'Website Design & Brand Identity',cl:'Tök Jó Gyümölcs',yr:'2023',ro:'Senior Graphic Designer / Web Designer',tg:['Web Design','Brand Identity','Webflow','UX','Responsive'],ch:'Design a vibrant website and brand for a fresh fruit pick-your-own business, making healthy living feel joyful and the shopping experience sensory and alive.',so:'Anchored the visual strategy around engagement, trust, and delight. Bold imagery, natural textures, and interactive moments create a brand that feels alive. Built and launched in Webflow with sub-page architecture that keeps content clean.',o1:'+20%',l1:'User Engagement',o2:'Live',l2:'Webflow Site — Built & Launched',o3:'Mobile-First',l3:'Responsive Design',qt:'A brand about making healthy living feel joyful — and a website that delivers on that promise.',qb:'Project Brief',bh:'https://www.behance.net/gallery/181784631/Website-design-Toek-jo-gyuemoelcs',img:'images/tokjogyumolcs-cover.jpg',bfull:'images/tokjogyumolcs-behance-full.jpg',beh:true},
   mylife:{ey:'Web Design · UX/UI · Product',ti:'MyLife Portal',su:'Learner Portal Redesign',cl:'Lifetime Training',yr:'2024',ro:'Senior Designer / UX & UI',tg:['Web Design','UX/UI','Product Design','Responsive','User Experience'],ch:'Redesign the MyLife learner portal to improve usability and engagement, transforming a dated, hard-to-navigate interface into a clear, modern experience that learners genuinely want to use.',so:'Led the UX/UI redesign from research through to high-fidelity interface design. Restructured the information architecture around real learner journeys, introduced a clean, accessible visual language, and designed responsive layouts that work seamlessly across devices, balancing usability with an engaging, on-brand look and feel.',o1:'UX/UI',l1:'Full Research-to-Interface Redesign',o2:'Clearer',l2:'Restructured Information Architecture',o3:'Responsive',l3:'Seamless Across All Devices',qt:'A portal redesign that finally puts the learner experience first.',qb:'Project Brief',bh:'https://www.behance.net/hankorenata',img:'images/mylife-cover.jpg',bfull:'images/mylife-behance-full.jpg',beh:false},
-  nandos:{ey:'Print Design · Brand Guidelines · Editorial',ti:"Nando's",su:"Apprenticeship Programme — Full Print Suite",cl:"Nando's",yr:'2023',ro:'Senior Graphic Designer',tg:['Print Design','Brand Guidelines','Editorial'],ch:"Design and produce a full suite of apprenticeship materials for Nando's, working within strict, colourful brand guidelines while managing a high volume of deliverables.",so:"A comprehensive suite of guides, booklets and learner-facing materials honouring Nando's vibrant brand with precision. Every piece produced to the highest standard of brand alignment.",o1:'Full',l1:'Suite Delivered',o2:'Top Quality',l2:'Client-Praised Consistency',o3:'On Brand',l3:'Every Touchpoint',qt:"Her designs are always top quality and align perfectly with our partners brand guidelines.",qb:"Employer Partner — Nando's",bh:'https://www.behance.net/hankorenata',img:'images/nandos-cover.jpg',links:[{label:'View Print Suite',url:'https://drive.google.com/file/d/1thVzuJ15o1lXvgYt9HZ7Bfso2NiFv2l5/view?usp=sharing'}],beh:false},
+  nandos:{ey:'Print Design · Brand Guidelines · Editorial',ti:"Nando's",su:"Apprenticeship Programme — Full Print Suite",cl:"Nando's",yr:'2023',ro:'Senior Graphic Designer',tg:['Print Design','Brand Guidelines','Editorial'],ch:"Nando's has one of the UK's most recognisable and tightly governed brand identities — vibrant, characterful, and completely uncompromising. The challenge was to design a comprehensive suite of apprenticeship materials including learner guides, cohort booklets, email campaigns, and printed collateral that worked within those strict guidelines while also being practical, accessible documents for apprentices and their line managers.",so:"I immersed myself in the Nando's brand system and worked closely with the client team to ensure every piece was not only on-brand but genuinely useful. The suite included the Pathway to Patrão learner journey guide, programme handbooks, assessment preparation materials, cohort schedules, and supporting print assets. Each document balanced Nando's bold visual personality with the clear, structured hierarchy needed for learning materials — a genuinely challenging design constraint that required careful typographic control and layout discipline.",o1:'Full',l1:'Suite Delivered',o2:'Top Quality',l2:'Client-Praised Consistency',o3:'On Brand',l3:'Every Touchpoint',qt:"Her designs are always top quality and align perfectly with our partners brand guidelines.",qb:"Employer Partner — Nando's",bh:'https://www.behance.net/hankorenata',img:'images/nandos-cover.jpg',links:[{label:'View Print Suite',url:'https://drive.google.com/file/d/1thVzuJ15o1lXvgYt9HZ7Bfso2NiFv2l5/view?usp=sharing'}],beh:false},
   bluecross:{ey:'Print Design · Charity · Editorial',ti:'Blue Cross',su:'Apprenticeship Print Materials',cl:'Blue Cross',yr:'2023',ro:'Senior Graphic Designer',tg:['Print Design','Charity','Editorial','Apprenticeships'],ch:'Design a suite of promotional print materials for the charity, communicating the rewarding nature of apprenticeships with warmth and clarity through a seamless, well-managed process.',so:"A compassionate, considered print suite highlighting the rewarding nature of apprenticeships at Blue Cross. The visual approach is warm and people-focused, designed to feel genuine and inviting while staying true to the charity's established brand.",o1:'Full',l1:'Suite Delivered',o2:'Praised',l2:'Process & Clarity',o3:'100%',l3:'On-Brand Across Every Piece',qt:'We never seen such a well put to point process of creation. Everything ran smoothly.',qb:'Client — Blue Cross',bh:'https://www.behance.net/hankorenata',img:'images/blue-cross-cover.jpg',links:[{label:'Presentation Design',url:'https://drive.google.com/file/d/15tRdcASuRHt3r2nR319LiY_V9OMD0NzI/view?usp=sharing'},{label:'Brochure',url:'https://drive.google.com/file/d/1HSQfZbDBHidTH4Jov-BOuVvDHfN-V_fs/view?usp=sharing'}],beh:false},
   lifetimewellbeing:{ey:'Character Animation · Explainer · Internal Communications',ti:'Lifetime Wellbeing',su:'Employee Wellbeing Programme Animation',cl:'Lifetime Training (Internal)',yr:'2024',ro:'Motion Designer / Animator',tg:['Character Animation','Explainer','Internal Communications','After Effects','Wellbeing'],ch:"Create an engaging animated explainer to raise awareness of Lifetime's internal wellbeing programme, making support resources feel accessible, warm, and genuinely worth exploring for all employees, not just those already struggling.",so:"Developed a character-led narrative using relatable workplace scenarios to communicate mental health support, physical wellbeing resources, and team connection initiatives. The illustration style is deliberately warm and inclusive, approachable rather than corporate. Scripted, storyboarded and animated entirely in-house, from initial concept through to final delivery.",o1:'+78%',l1:'Employee Awareness of Wellbeing Resources',o2:'Zero',l2:'Amendments — Delivered First Time',o3:'100%',l3:'Produced In-House, Script to Screen',qt:"The animation really landed with our team. It didn't feel like a corporate tick-box exercise — it felt human, and that made all the difference to how people actually engaged with the programme.",qb:'People & Culture Team — Lifetime Training',bh:'https://drive.google.com/file/d/1QVgQy5PRCMCvtrKGKD-o-vzHi0r9VjKw/view?usp=sharing',img:'images/wellbeing-cover.jpg',vid:'https://drive.google.com/file/d/1QVgQy5PRCMCvtrKGKD-o-vzHi0r9VjKw/preview',beh:false},
   mayten:{ey:'Brand Identity · Tech · Visual System',ti:'Mayten',su:'Innovation & Tech Startup Brand Identity',cl:'Mayten',yr:'2023',ro:'Senior Graphic Designer',tg:['Brand Identity','Logo Design','Visual System','Tech','Innovation'],ch:'Create a comprehensive visual identity for an innovation and tech startup that helps companies build products faster and bring them to market sooner. The brand needed to feel futuristic and credible without losing approachability.',so:'Developed a visual system rooted in futuristic aesthetics and minimalist design principles, with a logomark that references software development and coding language. A considered colour palette, clean typography, and tone of voice guidelines round out the full brand, creating a system that feels technically sharp and distinctly modern.',o1:'Complete',l1:'Logo, Colour, Typography & TOV',o2:'Developed',l2:'New website',o3:'Full',l3:'control on assets',qt:'A brand that looks as innovative as the product it represents.',qb:'Design Review',bh:'https://www.behance.net/gallery/173129269/Mayten-Brand-Identity',img:'images/mayten-cover.jpg',bfull:'images/mayten-behance-full.jpg',beh:true},
@@ -713,8 +1119,9 @@ function oCS(id){
 ${d.vid ? `<div class="csh" style="padding:0;overflow:hidden;position:relative"><iframe src="${d.vid}" style="border:none;position:absolute;inset:0;width:100%;height:100%" allow="autoplay" allowfullscreen></iframe></div>` : d.bfull ? `` : d.img ? `<div class="csh" style="padding:0;overflow:hidden;position:relative"><img src="${d.img}" alt="${d.ti}" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0"></div>` : `<div class="csh ba"><svg width="110" height="64" viewBox="0 0 110 64" fill="none" opacity=".08"><path d="M8 40 Q30 10 55 40 Q80 70 102 40" stroke="#9060ff" stroke-width="2" fill="none"/><circle cx="55" cy="40" r="14" fill="#e04fa0" opacity=".3"/></svg><div class="csnt">Add project imagery here</div></div>`}
 <div class="c2c">
   <div><div class="cssl">The Challenge</div><h3 class="cssh">The Brief</h3><p class="csp">${d.ch}</p></div>
-  <div><div class="cssl">The Solution</div><h3 class="cssh">The Approach</h3><p class="csp">${d.so}</p></div>
+  <div><div class="cssl">The Approach</div><h3 class="cssh">The Solution</h3><p class="csp">${d.so}</p></div>
 </div>
+${d.process ? `<div class="csproc"><div class="csproc-title">Creative Process</div><div class="csproc-steps">${d.process.map((s,i)=>`<div class="csproc-step"><div class="csproc-num">0${i+1}</div><div class="csproc-text"><div class="csproc-label">${s.label}</div>${s.detail}</div></div>`).join('')}</div></div>` : ''}
 <div class="cssl">Outcomes</div>
 <div class="ots">
   <div class="ot"><div class="otn">${d.o1}</div><div class="otl">${d.l1}</div></div>
@@ -736,10 +1143,94 @@ ${d.links ? `<div style="display:flex;gap:8px;flex-wrap:wrap;margin:20px 0">${d.
   m.classList.add('open');m.scrollTop=0;
   document.body.style.overflow='hidden';
 }
+
+// ── VIDEO SLIDER ─────────────────────────────────────────────────────
+const SLIDE_COUNT = 5;
+const AUTO_DELAY = 6000; // ms per slide
+let cur = 0, autoTimer = null, progTimer = null, progStart = null;
+
+function goSlide(n, resetAuto=true) {
+  cur = (n + SLIDE_COUNT) % SLIDE_COUNT;
+  document.getElementById('vslider').style.transform = `translateX(-${cur * 100}%)`;
+  // Dots
+  document.querySelectorAll('.vdot').forEach((d,i) => d.classList.toggle('on', i===cur));
+  // Videos — pause all, play current
+  document.querySelectorAll('.vslide video').forEach((v,i) => {
+    if(i === cur) { v.currentTime = 0; v.play().catch(()=>{}); }
+    else { v.pause(); }
+  });
+  // Cover images — hide when video can play
+  document.querySelectorAll('.vslide video').forEach((v,i) => {
+    const cover = document.getElementById('vcover'+i);
+    if(!cover) return;
+    if(i === cur) {
+      v.addEventListener('canplay', () => { cover.style.opacity='0'; cover.style.transition='opacity .5s'; }, {once:true});
+    } else {
+      cover.style.opacity = '.55';
+    }
+  });
+  if(resetAuto) resetAutoPlay();
+  resetProgress();
+}
+
+function moveSlide(dir) { goSlide(cur + dir); }
+
+// Touch / swipe support
+let touchX = 0;
+const sliderEl = document.getElementById('vslider');
+if(sliderEl) {
+  sliderEl.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, {passive:true});
+  sliderEl.addEventListener('touchend', e => {
+    const diff = touchX - e.changedTouches[0].clientX;
+    if(Math.abs(diff) > 40) moveSlide(diff > 0 ? 1 : -1);
+  }, {passive:true});
+}
+
+// Progress bar
+function resetProgress() {
+  clearInterval(progTimer);
+  const bar = document.getElementById('vprog');
+  if(!bar) return;
+  bar.style.transition = 'none';
+  bar.style.width = '0%';
+  progStart = Date.now();
+  requestAnimationFrame(() => {
+    bar.style.transition = `width ${AUTO_DELAY}ms linear`;
+    bar.style.width = '100%';
+  });
+}
+
+// Auto-advance
+function resetAutoPlay() {
+  clearTimeout(autoTimer);
+  autoTimer = setTimeout(() => { goSlide(cur + 1, false); resetAutoPlay(); }, AUTO_DELAY);
+}
+
+// Init slider on load
+window.addEventListener('DOMContentLoaded', () => {
+  // Start at slide 0, play video
+  goSlide(0, true);
+  // Pause slider when tab is hidden
+  document.addEventListener('visibilitychange', () => {
+    if(document.hidden) { clearTimeout(autoTimer); clearInterval(progTimer); }
+    else resetAutoPlay();
+  });
+});
+
 function cCS(){
   document.getElementById('modal').classList.remove('open');
   document.body.style.overflow='';
 }
+
+// ── SKILLS ACCORDION ─────────────────────────────────────────────────
+function toggleSkill(item) {
+  const isOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.ski').forEach(s => s.classList.remove('open'));
+  // Toggle clicked (open if was closed)
+  if(!isOpen) item.classList.add('open');
+}
+
 document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)cCS()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')cCS()});
 </script>
