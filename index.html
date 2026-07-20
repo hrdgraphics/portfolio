@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0YBTD0JRY2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0YBTD0JRY2');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Renata Hanko — Creative Lead</title>
@@ -25,7 +16,7 @@
   --ez:cubic-bezier(.16,1,.3,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:auto;-webkit-font-smoothing:antialiased}
 body{background:var(--bg);color:var(--w);font-family:'Plus Jakarta Sans',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
@@ -66,12 +57,12 @@ nav.scrolled .ncta::before{display:none}
 .hgr{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(144,96,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(144,96,255,.025) 1px,transparent 1px);background-size:72px 72px}
 .hbn{position:absolute;right:-6px;top:50%;transform:translateY(-52%);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(160px,20vw,280px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(144,96,255,.048);user-select:none;pointer-events:none;letter-spacing:-.04em}
 .hc{position:relative;z-index:1}
-.he{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pu);margin-bottom:18px;opacity:0;animation:su .9s var(--ez) .3s forwards}
+.he{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pu);margin-bottom:18px;opacity:0;animation:su .9s var(--ez) .3s forwards}.he-name{color:var(--w);font-weight:600;letter-spacing:.06em;-webkit-text-fill-color:var(--w)}
 /* HERO H1 */
 .hh{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(42px,6vw,88px);line-height:1.1;letter-spacing:-.03em;margin-bottom:26px;opacity:0;animation:su .9s var(--ez) .5s forwards}
 /* Italic accent — DM Serif Display complements Syne's geometry */
 .hh .ac{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:1.1em;letter-spacing:-.01em;display:inline-block;padding-bottom:.05em;background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hs{max-width:700px;font-size:1.12rem;line-height:1.78;color:var(--mu);margin-bottom:40px;opacity:0;animation:su .9s var(--ez) .66s forwards}
+.hs{max-width:680px;font-size:1.22rem;font-weight:400;line-height:1.78;color:var(--mu);margin-bottom:40px;opacity:0;animation:su .9s var(--ez) .66s forwards}
 .hbt{display:flex;gap:12px;align-items:center;opacity:0;animation:su .9s var(--ez) .82s forwards}
 /* Primary button — gradient fill, intentional */
 .bp{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#fff;background:var(--g);transition:opacity .28s}
@@ -111,7 +102,7 @@ section{padding:104px 52px}
 .wh{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px}
 .wt{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(34px,4.5vw,62px);line-height:.9;letter-spacing:-.03em}
 .fb{display:flex;gap:2px}
-.fn{padding:8px 18px;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;background:transparent;border:1px solid var(--bdr);color:var(--mu);cursor:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;transition:all .2s}
+.fn{padding:8px 18px;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;background:transparent;border:1px solid var(--bdr);color:var(--mu);cursor:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;transition:all .2s}.fb-bot{display:flex;gap:2px;justify-content:center;margin-top:56px}
 .fn.on{background:var(--g);border-color:transparent;color:#fff;font-weight:600}
 .fn:hover:not(.on){border-color:var(--bdrhi);color:var(--w)}
 
@@ -328,18 +319,18 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
 /* ── VIDEO SLIDER ────────────────────────── */
 .vslider-wrap{position:relative;margin-top:52px;overflow:hidden}
 .vslider{display:flex;transition:transform .55s var(--ez);will-change:transform}
-.vslide{flex:0 0 100%;position:relative;overflow:hidden;display:flex;flex-direction:column}
-.vslide-inner{position:relative;width:100%;aspect-ratio:16/6;overflow:hidden;flex-shrink:0}
-@media(max-width:768px){.vslide-inner{aspect-ratio:16/8}}
+.vslide{flex:0 0 100%;position:relative;overflow:hidden}
+.vslide-inner{position:relative;width:100%;aspect-ratio:16/6}
+@media(max-width:768px){.vslide-inner{aspect-ratio:16/9}}
 /* Video preview — loops silently */
 .vslide video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
 /* Cover image fallback */
 .vslide-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
 /* Dark gradient overlay */
-.vslide-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,5,15,.35) 0%,transparent 50%)}
+.vslide-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,5,15,.95) 0%,rgba(7,5,15,.5) 45%,rgba(7,5,15,.15) 100%)}
 /* Content positioned over gradient */
-.vslide-content{display:none}
-
+.vslide-content{position:absolute;bottom:0;left:0;right:0;padding:56px 52px;z-index:2}
+@media(max-width:768px){.vslide-content{padding:28px 20px}}
 .vslide-tag{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:white;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .vslide-tag::before{content:'';width:20px;height:1px;background:var(--g)}
 .vslide-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:clamp(22px,3vw,44px);line-height:1.05;letter-spacing:-.015em;margin-bottom:10px}
@@ -365,35 +356,6 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
 /* Progress bar */
 .vslider-progress{height:2px;background:rgba(144,96,255,.12);margin-top:0;position:relative;overflow:hidden}
 .vslider-progress-bar{position:absolute;left:0;top:0;height:100%;background:var(--g);transition:width .1s linear}
-/* Caption below the video image */
-.vslide-caption{
-  background:var(--surf);
-  padding:28px 52px 32px;
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:32px;
-  flex-wrap:wrap;
-}
-.vslide-caption-left{flex:1;min-width:0}
-.vslide-caption-right{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;gap:16px;flex-shrink:0}
-.vslide-tag{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pu);margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.vslide-tag::before{content:'';width:16px;height:1px;background:var(--g)}
-.vslide-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:clamp(18px,2.2vw,30px);line-height:1.15;letter-spacing:-.015em;color:var(--w);margin-bottom:14px}
-.vslide-stats{display:flex;gap:10px;flex-wrap:wrap}
-.vstat{padding:5px 12px;border:1px solid rgba(144,96,255,.25);font-size:.68rem;letter-spacing:.05em;color:var(--mu)}
-.vstat strong{color:var(--pu);font-weight:700}
-.vslide-cta{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#fff;background:var(--g);padding:11px 24px;transition:opacity .25s;cursor:none;white-space:nowrap;flex-shrink:0}
-.vslide-cta:hover{opacity:.8}
-@media(max-width:768px){
-  .vslide-caption{padding:20px 20px 24px;flex-direction:column;gap:16px}
-  .vslide-caption-right{align-items:flex-start}
-  .vslide-title{font-size:clamp(16px,4.5vw,22px)}
-}
-@media(max-width:480px){
-  .vslide-caption{padding:16px 16px 20px}
-  .vslide-stats{display:none}
-}
 
 /* ── RESPONSIVE ─────────────────────────── */
 @media(max-width:1024px){
@@ -578,7 +540,7 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
   <div class="hgr"></div>
   <div class="hbn">01</div>
   <div class="hc">
-    <p class="he">Creative Lead, Bristol, UK</p>
+    <p class="he"><span class="he-name">Renata Hanko</span> &middot; Creative Lead, Bristol, UK</p>
     <h1 class="hh">Solution-focused<br><span class="ac">creativity</span><br>with impact.</h1>
     <p class="hs">13+ years building brand systems, motion campaigns and high-impact design for McDonald's, Nando's, Lidl, B&amp;Q, Haven and more.</p>
     <div class="hbt">
@@ -614,112 +576,129 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
 
   <div class="pg" id="pg">
 
+    <div class="pc" data-c="brand" style="background:linear-gradient(145deg,#162c22,#1e3d2e)">
+      <div class="pci" style="background:linear-gradient(145deg,#162c22,#1e3d2e)"><div class="pcbg"><img src="images/summy-cover.png" alt="SUMMY Adventurewear"></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Visual System</span><span class="ptag">Self-Initiated</span></div><div class="ptn">SUMMY Adventurewear</div><div class="ptd">Complete brand identity for a unified outdoor activewear system. One system. No compromise.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="work/summy.html"></a>
+    </div>
+
     <div class="pc ba" data-c="brand">
       <div class="pci ba"><div class="pcbg"><img src="images/fusion-cover.jpg" alt="Fusion"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Packaging</span></div><div class="ptn">Fusion: Functional Beverage Brand</div><div class="ptd">Full identity for a functional beverage startup. Logo, packaging, visual language.</div></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Packaging</span></div><div class="ptn">Fusion — Functional Beverage Brand</div><div class="ptd">Full identity for a functional beverage startup. Logo, packaging, visual language.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="#" onclick="event.preventDefault();oCS('fusion')"></a>
+      <a class="pclink" href="work/fusion.html"></a>
     </div>
 
     <div class="pc bb" data-c="brand">
       <div class="pci bb"><div class="pcbg"><img src="images/oriva-cover.jpg" alt="Oriva" style="object-position:center bottom"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Visual Identity</span><span class="ptag">Fintech</span></div><div class="ptn">Oriva: Finance, Simplified</div><div class="ptd">Clean, trustworthy identity for a fintech platform.</div></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Visual Identity</span><span class="ptag">Fintech</span></div><div class="ptn">Oriva — Finance, Simplified</div><div class="ptd">Clean, trustworthy identity for a fintech platform.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="#" onclick="event.preventDefault();oCS('oriva')"></a>
+      <a class="pclink" href="work/oriva.html"></a>
     </div>
 
     <div class="pc bc" data-c="brand">
       <div class="pci bc"><div class="pcbg"><img src="images/codedash-cover.jpg" alt="Codedash"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Dev Tools</span></div><div class="ptn">Codedash: Brand and Visual System</div><div class="ptd">Bold identity for a developer tools platform.</div></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Dev Tools</span></div><div class="ptn">Codedash — Brand &amp; Visual System</div><div class="ptd">Bold identity for a developer tools platform.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="#" onclick="event.preventDefault();oCS('codedash')"></a>
+      <a class="pclink" href="work/codedash.html"></a>
     </div>
 
     <div class="pc bd" data-c="brand">
       <div class="pci bd"><div class="pcbg"><img src="images/lifetime-repositioning-cover.jpg" alt="Lifetime Training"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Evolution</span><span class="ptag">Art Direction</span></div><div class="ptn">Lifetime Training: Brand Repositioning</div><div class="ptd">Unanimous board approval. Full national brand system.</div></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Evolution</span><span class="ptag">Art Direction</span></div><div class="ptn">Lifetime Training — Brand Repositioning</div><div class="ptd">Unanimous board approval. Full national brand system.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="#" onclick="event.preventDefault();oCS('lifetime')"></a>
+      <a class="pclink" href="work/lifetime.html"></a>
     </div>
 
     <div class="pc be" data-c="brand">
       <div class="pci be"><div class="pcbg"><img src="images/voyageur-cover.jpg" alt="Voyageur" style="object-position:center 25%"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Travel</span></div><div class="ptn">Voyageur: Travel Brand Identity</div><div class="ptd">Minimalist logo system across 8 visual identity modules.</div></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Travel</span></div><div class="ptn">Voyageur — Travel Brand Identity</div><div class="ptd">Minimalist logo system across 8 visual identity modules.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="#" onclick="event.preventDefault();oCS('voyageur')"></a>
+      <a class="pclink" href="work/voyageur.html"></a>
     </div>
 
     <div class="pc ba" data-c="brand">
       <div class="pci ba"><div class="pcbg"><img src="images/huddle-cover.jpg" alt="Huddle"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Internal Brand</span><span class="ptag">Identity</span></div><div class="ptn">Huddle: Internal Brand Identity</div><div class="ptd">+25% employee participation. +40% satisfaction improvement.</div></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Internal Brand</span><span class="ptag">Identity</span></div><div class="ptn">Huddle — Internal Brand Identity</div><div class="ptd">+25% employee participation. +40% satisfaction improvement.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="#" onclick="event.preventDefault();oCS('huddle')"></a>
+      <a class="pclink" href="work/huddle.html"></a>
     </div>
 
     <div class="pc be" data-c="brand">
       <div class="pci be"><div class="pcbg"><img src="images/rouge-cover.jpg" alt="Rouge" style="object-position:30% center"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Beauty Brand</span><span class="ptag">Identity</span></div><div class="ptn">Rouge: Beauty Brand Identity</div><div class="ptd">Luxe feminine identity. Packaging, logo &amp; editorial.</div></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Beauty Brand</span><span class="ptag">Identity</span></div><div class="ptn">Rouge — Beauty Brand Identity</div><div class="ptd">Luxe feminine identity. Packaging, logo &amp; editorial.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="#" onclick="event.preventDefault();oCS('rouge')"></a>
+      <a class="pclink" href="work/rouge.html"></a>
     </div>
 
     <div class="pc bb" data-c="print">
       <div class="pci bb"><div class="pcbg"><img src="images/b&amp;q-reignite-cover.jpg" alt="B&amp;Q Reignite"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Print</span><span class="ptag">Activation</span></div><div class="ptn">B&amp;Q Reignite Campaign</div><div class="ptd">0 to 19 vacancies in one month.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="#" onclick="event.preventDefault();oCS('bq')"></a>
+      <a class="pclink" href="work/bq.html"></a>
     </div>
 
     <div class="pc bd" data-c="brand">
       <div class="pci bd"><div class="pcbg"><img src="images/regalia-cover.jpg" alt="Regalia"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Luxury</span><span class="ptag">Hotel</span></div><div class="ptn">Regalia: Luxury Hotel Identity</div><div class="ptd">Refined luxury visual identity.</div></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Luxury</span><span class="ptag">Hotel</span></div><div class="ptn">Regalia — Luxury Hotel Identity</div><div class="ptd">Refined luxury visual identity.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="#" onclick="event.preventDefault();oCS('regalia')"></a>
+      <a class="pclink" href="work/regalia.html"></a>
     </div>
 
     <div class="pc bc" data-c="web">
       <div class="pci bc"><div class="pcbg"><img src="images/tokjogyumolcs-cover.jpg" alt="Tök Jó Gyümölcs"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Web Design</span><span class="ptag">Brand</span></div><div class="ptn">Tök Jó Gyümölcs: Web Design</div><div class="ptd">Vibrant web identity. +20% user engagement.</div></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Web Design</span><span class="ptag">Brand</span></div><div class="ptn">Tök Jó Gyümölcs — Web Design</div><div class="ptd">Vibrant web identity. +20% user engagement.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="#" onclick="event.preventDefault();oCS('tokjo')"></a>
+      <a class="pclink" href="work/tokjo.html"></a>
     </div>
 
     <div class="pc bd" data-c="web">
       <div class="pci bd"><div class="pcbg"><img src="images/mylife-cover.jpg" alt="MyLife Portal"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Web Design</span><span class="ptag">UX/UI</span></div><div class="ptn">MyLife Portal: Learner Portal Redesign</div><div class="ptd">UX/UI redesign of a learner portal, research to interface.</div></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Web Design</span><span class="ptag">UX/UI</span></div><div class="ptn">MyLife Portal — Learner Portal Redesign</div><div class="ptd">UX/UI redesign of a learner portal, research to interface.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="#" onclick="event.preventDefault();oCS('mylife')"></a>
+      <a class="pclink" href="work/mylife.html"></a>
     </div>
 
     <div class="pc bc" data-c="print">
       <div class="pci bc"><div class="pcbg"><img src="images/nandos-cover.jpg" alt="Nando's"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Print</span><span class="ptag">Guidelines</span></div><div class="ptn">Nando's: Apprenticeship Print Suite</div><div class="ptd">Full suite within strict colourful brand guidelines.</div></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Print</span><span class="ptag">Guidelines</span></div><div class="ptn">Nando's — Apprenticeship Print Suite</div><div class="ptd">Full suite within strict colourful brand guidelines.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="#" onclick="event.preventDefault();oCS('nandos')"></a>
+      <a class="pclink" href="work/nandos.html"></a>
     </div>
 
     <div class="pc bf" data-c="print">
       <div class="pci bf"><div class="pcbg"><img src="images/blue-cross-cover.jpg" alt="Blue Cross"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Print</span><span class="ptag">Charity</span></div><div class="ptn">Blue Cross: Print Materials</div><div class="ptd">Promotional print for a national charity.</div></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Print</span><span class="ptag">Charity</span></div><div class="ptn">Blue Cross — Print Materials</div><div class="ptd">Promotional print for a national charity.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="#" onclick="event.preventDefault();oCS('bluecross')"></a>
+      <a class="pclink" href="work/bluecross.html"></a>
     </div>
 
     <div class="pc ba" data-c="brand">
       <div class="pci ba"><div class="pcbg"><img src="images/mayten-cover.jpg" alt="Mayten"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Tech</span></div><div class="ptn">Mayten: Innovation and Tech Startup</div><div class="ptd">Futuristic, minimalist identity for a product development startup.</div></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Tech</span></div><div class="ptn">Mayten — Innovation &amp; Tech Startup</div><div class="ptd">Futuristic, minimalist identity for a product development startup.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="#" onclick="event.preventDefault();oCS('mayten')"></a>
+      <a class="pclink" href="work/mayten.html"></a>
     </div>
 
     <div class="pc be" data-c="brand">
       <div class="pci be"><div class="pcbg"><img src="images/smokin-burger-cover.jpg" alt="Smokin' Burger"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Restaurant</span></div><div class="ptn">Smokin' Burger: Brand Identity</div><div class="ptd">Bold, characterful identity for an independent burger restaurant.</div></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Restaurant</span></div><div class="ptn">Smokin' Burger — Brand Identity</div><div class="ptd">Bold, characterful identity for an independent burger restaurant.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="#" onclick="event.preventDefault();oCS('smokinburger')"></a>
+      <a class="pclink" href="work/smokinburger.html"></a>
     </div>
 
   </div>
+
+  <!-- Bottom filter bar — mirrors top, correct order -->
+  <div class="fb-bot">
+    <button class="fn"    data-f="all"   onclick="fltBot(this)">All</button>
+    <button class="fn on" data-f="brand" onclick="fltBot(this)">Brand</button>
+    <button class="fn"    data-f="web"   onclick="fltBot(this)">Web</button>
+    <button class="fn"    data-f="print" onclick="fltBot(this)">Print</button>
+    <button class="fn" onclick="document.getElementById('motion').scrollIntoView({behavior:'smooth'})">Motion ↓</button>
+  </div>
+
 </section>
 
 <section id="motion" class="msc">
@@ -727,7 +706,7 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
   <div class="rv" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px">
     <div>
       <h2 class="mtn-h">Design that <span class="mtn-ac">moves people.</span></h2>
-      <p style="font-size:1rem;color:var(--mu);max-width:460px;line-height:1.78;margin-top:10px">Character animation, kinetic campaigns, explainer video. Motion is where brand storytelling truly comes alive.</p>
+      <p style="font-size:1rem;color:var(--mu);max-width:460px;line-height:1.78;margin-top:10px">Character animation, kinetic campaigns, explainer video — motion is where brand storytelling truly comes alive.</p>
     </div>
   </div>
 
@@ -735,8 +714,10 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
   <div class="vslider-wrap rv">
     <div class="vslider" id="vslider">
 
+      <!-- SLIDE 1: Lifetime Wellbeing -->
       <div class="vslide" onclick="oCS('lifetimewellbeing')">
         <div class="vslide-inner">
+          <!-- Replace src with your actual preview clip: videos/wellbeing-preview.mp4 -->
           <video autoplay muted loop playsinline poster="images/wellbeing-cover.jpg">
             <source src="videos/wellbeing-preview.mp4" type="video/mp4">
           </video>
@@ -745,18 +726,20 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
           <div class="vslide-play">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><polygon points="6,3 20,12 6,21"/></svg>
           </div>
-        </div>
-        <div class="vslide-caption">
-          <div class="vslide-caption-left">
+          <div class="vslide-content">
             <div class="vslide-tag">Character Animation · Explainer</div>
-            <h3 class="vslide-title">Lifetime: Wellbeing<br>Programme Animation</h3>
-            <div class="vslide-stats"><div class="vstat"><strong>+78%</strong> Employee Awareness</div><div class="vstat"><strong>Zero</strong> Amendments on Delivery</div><div class="vstat"><strong>100%</strong> Produced In-House</div></div>
-          </div>
-          <div class="vslide-caption-right">
-            <span class="vslide-cta">View Case Study <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            <h3 class="vslide-title">Lifetime — Wellbeing<br>Programme Animation</h3>
+            <div class="vslide-stats">
+              <div class="vstat"><strong>+78%</strong> Employee Awareness</div>
+              <div class="vstat"><strong>Zero</strong> Amendments on Delivery</div>
+              <div class="vstat"><strong>100%</strong> Produced In-House</div>
+            </div>
+            <span class="vslide-cta">View Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
         </div>
       </div>
+
+      <!-- SLIDE 2: B&Q In Learning -->
       <div class="vslide" onclick="oCS('bqlearning')">
         <div class="vslide-inner">
           <video autoplay muted loop playsinline poster="images/b&amp;q-cover.jpg">
@@ -767,18 +750,20 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
           <div class="vslide-play">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><polygon points="6,3 20,12 6,21"/></svg>
           </div>
-        </div>
-        <div class="vslide-caption">
-          <div class="vslide-caption-left">
+          <div class="vslide-content">
             <div class="vslide-tag">Character Animation · Explainer</div>
-            <h3 class="vslide-title">B&amp;Q: In Learning<br>Target Animation</h3>
-            <div class="vslide-stats"><div class="vstat"><strong>94%</strong> Learner Comprehension</div><div class="vstat"><strong>31%</strong> On-Time Target Increase</div><div class="vstat"><strong>Zero</strong> Amendments</div></div>
-          </div>
-          <div class="vslide-caption-right">
-            <span class="vslide-cta">View Case Study <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            <h3 class="vslide-title">B&amp;Q — In Learning<br>Target Animation</h3>
+            <div class="vslide-stats">
+              <div class="vstat"><strong>94%</strong> Learner Comprehension</div>
+              <div class="vstat"><strong>31%</strong> On-Time Target Increase</div>
+              <div class="vstat"><strong>Zero</strong> Amendments</div>
+            </div>
+            <span class="vslide-cta">View Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
         </div>
       </div>
+
+      <!-- SLIDE 3: Haven -->
       <div class="vslide" onclick="oCS('haven')">
         <div class="vslide-inner">
           <video autoplay muted loop playsinline poster="images/haven-cover.jpg">
@@ -789,18 +774,20 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
           <div class="vslide-play">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><polygon points="6,3 20,12 6,21"/></svg>
           </div>
-        </div>
-        <div class="vslide-caption">
-          <div class="vslide-caption-left">
+          <div class="vslide-content">
             <div class="vslide-tag">Character Animation · Brand Video</div>
-            <h3 class="vslide-title">Haven: Apprenticeship<br>Explainer Animation</h3>
-            <div class="vslide-stats"><div class="vstat"><strong>Zero</strong> Amendments on Delivery</div><div class="vstat"><strong>Full</strong> Script to Screen</div><div class="vstat"><strong>Haven</strong> Brand-Perfect</div></div>
-          </div>
-          <div class="vslide-caption-right">
-            <span class="vslide-cta">View Case Study <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            <h3 class="vslide-title">Haven — Apprenticeship<br>Explainer Animation</h3>
+            <div class="vslide-stats">
+              <div class="vstat"><strong>Zero</strong> Amendments on Delivery</div>
+              <div class="vstat"><strong>Full</strong> Script to Screen</div>
+              <div class="vstat"><strong>Haven</strong> Brand-Perfect</div>
+            </div>
+            <span class="vslide-cta">View Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
         </div>
       </div>
+
+      <!-- SLIDE 4: Wetherspoons -->
       <div class="vslide" onclick="oCS('wetherspoons')">
         <div class="vslide-inner">
           <video autoplay muted loop playsinline poster="images/wetherspoons-cover.jpg">
@@ -811,18 +798,20 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
           <div class="vslide-play">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><polygon points="6,3 20,12 6,21"/></svg>
           </div>
-        </div>
-        <div class="vslide-caption">
-          <div class="vslide-caption-left">
+          <div class="vslide-content">
             <div class="vslide-tag">Character Design · Illustration · Motion</div>
-            <h3 class="vslide-title">Wetherspoons:<br>Character Animation</h3>
-            <div class="vslide-stats"><div class="vstat"><strong>Strong</strong> Client Approval</div><div class="vstat"><strong>Privacy-First</strong> Design Solution</div><div class="vstat"><strong>Full</strong> Character Set</div></div>
-          </div>
-          <div class="vslide-caption-right">
-            <span class="vslide-cta">View Case Study <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            <h3 class="vslide-title">Wetherspoons —<br>Character Animation</h3>
+            <div class="vslide-stats">
+              <div class="vstat"><strong>Strong</strong> Client Approval</div>
+              <div class="vstat"><strong>Privacy-First</strong> Design Solution</div>
+              <div class="vstat"><strong>Full</strong> Character Set</div>
+            </div>
+            <span class="vslide-cta">View Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
         </div>
       </div>
+
+      <!-- SLIDE 5: NAW Campaign -->
       <div class="vslide" onclick="oCS('naw')">
         <div class="vslide-inner">
           <video autoplay muted loop playsinline poster="images/marstons-cover.jpg">
@@ -833,15 +822,15 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
           <div class="vslide-play">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><polygon points="6,3 20,12 6,21"/></svg>
           </div>
-        </div>
-        <div class="vslide-caption">
-          <div class="vslide-caption-left">
+          <div class="vslide-content">
             <div class="vslide-tag">Campaign · Social · Video</div>
             <h3 class="vslide-title">National Apprenticeship<br>Week Campaign</h3>
-            <div class="vslide-stats"><div class="vstat"><strong>110%</strong> Application Increase</div><div class="vstat"><strong>48%</strong> B2B Traffic Growth</div><div class="vstat"><strong>23,791</strong> Organic Impressions</div></div>
-          </div>
-          <div class="vslide-caption-right">
-            <span class="vslide-cta">View Case Study <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            <div class="vslide-stats">
+              <div class="vstat"><strong>110%</strong> Application Increase</div>
+              <div class="vstat"><strong>48%</strong> B2B Traffic Growth</div>
+              <div class="vstat"><strong>23,791</strong> Organic Impressions</div>
+            </div>
+            <span class="vslide-cta">View Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
         </div>
       </div>
@@ -875,9 +864,9 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
 <section>
   <div class="ey rv">What Clients Say</div>
   <div class="tg">
-    <div class="tc rv"><span class="tqm">"</span><p class="tt">Her designs are always top quality and align perfectly with our partners brand guidelines. I've received great feedback from two of our employer partners on Reni's work.</p><div class="ts">Employer Partner, Nando's</div></div>
-    <div class="tc rv d1"><span class="tqm">"</span><p class="tt">They'll now never move on from Lifetime being their preferred supplier. A huge turnaround, in no small way down to the outstanding design work on this project.</p><div class="ts">Account Manager, B&amp;Q Reignite</div></div>
-    <div class="tc rv d2"><span class="tqm">"</span><p class="tt">We never seen such a well put to point process of creation. From the moment the brief has been sent, to the time we got the first draft, everything ran smoothly.</p><div class="ts">Client, Blue Cross</div></div>
+    <div class="tc rv"><span class="tqm">"</span><p class="tt">Her designs are always top quality and align perfectly with our partners brand guidelines. I've received great feedback from two of our employer partners on Reni's work.</p><div class="ts">Employer Partner — Nando's</div></div>
+    <div class="tc rv d1"><span class="tqm">"</span><p class="tt">They'll now never move on from Lifetime being their preferred supplier. A huge turnaround, in no small way down to the outstanding design work on this project.</p><div class="ts">Account Manager — B&amp;Q Reignite</div></div>
+    <div class="tc rv d2"><span class="tqm">"</span><p class="tt">We never seen such a well put to point process of creation. From the moment the brief has been sent, to the time we got the first draft, everything ran smoothly.</p><div class="ts">Client — Blue Cross</div></div>
   </div>
 </section>
 
@@ -995,10 +984,10 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
         </li>
         <li class="ski" onclick="toggleSkill(this)">
           <div class="ski-hd">
-            <span class="ski-label">Campaign Design: Digital and Print</span>
+            <span class="ski-label">Campaign Design — Digital & Print</span>
             <span class="ski-icon">+</span>
           </div>
-          <div class="ski-body"><p>I lead multi-channel campaigns from concept to completion. The NAW campaign drove a 110% increase in applications. I design for impact at every touchpoint, whether it's a social GIF or a printed activation box.</p></div>
+          <div class="ski-body"><p>I lead multi-channel campaigns from concept to completion. The NAW #IAspiretoBe campaign drove a 110% increase in applications. I design for impact at every touchpoint, whether it's a social GIF or a printed activation box.</p></div>
         </li>
         <li class="ski" onclick="toggleSkill(this)">
           <div class="ski-hd">
@@ -1112,7 +1101,7 @@ const D={
   lifetime:{ey:'Brand Strategy · Identity · Art Direction',ti:'Lifetime Training',su:'Brand Repositioning & Evolution',cl:'Lifetime Training',yr:'2024–2025',ro:'Creative Lead & Brand designer',tg:['Brand Evolution','Art Direction','Design System','Guidelines'],ch:'Lifetime was a nationally recognised training provider, but the brand had grown operational in appearance — seen as a delivery machine rather than a transformative partner. It lacked visual credibility in key growth sectors including professional services and leadership development, and the existing identity felt dated against more progressive competitors. The brief: reposition the brand visually and strategically, without losing the trust of existing clients.',process:[{label:'Brand Audit & Discovery',detail:'Analysed existing brand perception across clients, staff, and partners — identifying a gap between Lifetime\'s internal confidence and how it was experienced externally: operational, not transformative.'},{label:'Three Strategic Concepts',detail:'Developed and presented Evolve (a refined iteration of the existing brand), Transform (a bold repositioning), and Elevate (a premium professional reframe). Each had a full visual rationale and board-ready deck.'},{label:'Unanimous Board Approval',detail:'The presentation achieved unanimous board approval first time — a rare outcome that reflected the clarity and confidence of the creative rationale.'},{label:'Design System Build',detail:'Created comprehensive brand guidelines including icon sets, layout templates, refined typography, photography art direction, and social templates, built to scale across the entire organisation.'},{label:'National Rollout',detail:'Delivered across website, print collateral, social channels, presentations, email campaigns, and video — every touchpoint aligned to the new positioning.'}],so:'Presented three strategic rebrand concepts to the board. The approved solution introduced a refreshed design system grounded in visual clarity, digital maturity, and emotional resonance. Full guidelines, asset libraries, and templates followed.',o1:'Unanimous',l1:'Board Approval',o2:'Full',l2:'Brand System & Guidelines',o3:'National',l3:'Rollout Across All Touchpoints',qt:'Recognition for design clarity, strategic thinking, and creative leadership from the full board of directors.',qb:'Board of Directors — Lifetime Training',bh:'https://www.behance.net/hankorenata',img:'images/lifetime-repositioning-cover.jpg',bfull:'images/lifetime-repositioning-behance-full.jpg',links:[{label:'Brand Evolution',url:'https://drive.google.com/file/d/14BMo0fqjy_MYI2Ib8oeT8jsLxC9sl7e0/view'},{label:'Brand Animation',url:'https://drive.google.com/file/d/1rn8ihdKRtXvc2INaWDR4ZlBxyMrXqd2-/view'}],beh:false},
   voyageur:{ey:'Brand Identity · Travel · Visual Language',ti:'Voyageur',su:'Travel Company Brand Identity',cl:'Voyageur Travel',yr:'2024',ro:'Senior Graphic Designer',tg:['Brand Identity','Travel','Logo Design','Visual Language'],ch:'Create a brand capturing the romance and adventure of independent travel, standing apart from generic travel aesthetics and communicating the thrill of exploration through considered, minimalist design.',so:'An identity rooted in cartography and exploration. Refined typography evokes discovery, with the palette drawing from natural landscapes and the colour of adventure. Eight visual modules build a cohesive system from logo to full brand application.',o1:'Scalability',l1:'Across all media and assets',o2:'Minimalist',l2:'Logo Built on Typographic Restraint',o3:'100%',l3:'Brand recognition',qt:'The brief was adventure — the outcome was a brand that felt like it had been on the journey.',qb:'Design Review',bh:'https://www.behance.net/gallery/210632483/Voyageur-Travel-company-Brand-Identity',img:'images/voyageur-cover.jpg',bfull:'images/voyageur-behance-full.jpg',snaps:[{s:'images/voyageur-cover.jpg',p:'center 8%'},{s:'images/voyageur-cover.jpg',p:'center 62%'}],beh:true},
   huddle:{ey:'Internal Brand · Identity System · Employee Engagement',ti:'Huddle',su:'Internal Brand Identity',cl:'Lifetime Training (Internal)',yr:'2023',ro:'Creative Lead',tg:['Internal Brand','Identity','Employee Engagement','Guidelines'],ch:'Transform internal communications for a national company, fostering community, improving information accessibility, and increasing employee engagement across distributed teams.',process:[{label:'Stakeholder Discovery',detail:'Ran conversations with team members across departments to understand what internal communications were missing — the consistent answer was that messages felt top-down, corporate, and easy to ignore.'},{label:'Naming & Concept',detail:'Generated multiple naming routes before landing on Huddle — a word that immediately communicates togetherness, informal collaboration, and shared momentum. The tagline: United Minds, Shared Success.'},{label:'Visual Identity Development',detail:'Developed logo concepts centred on a connected-nodes mark, a geometric illustration system, a warm and energetic colour palette, and a typographic voice that felt accessible without losing professionalism.'},{label:'Brand Guidelines & Templates',detail:'Built a full brand guidelines document with ready-to-use templates for newsletters, presentations, posters, and digital communications — making it easy for non-designers to stay on-brand.'},{label:'Launch & Measurement',detail:'+25% participation in internal communications channels. +40% improvement in employee satisfaction scores related to internal communications within the first measurement cycle.'}],so:'Developed the Huddle brand from scratch: logo, visual guidelines, tone of voice, and a full suite of branded assets including digital templates. Visual language is inclusive, energetic and human.',o1:'+25%',l1:'Employee Participation',o2:'+40%',l2:'Satisfaction Improvement',o3:'Full',l3:'Brand & Asset Library',qt:"The brand's visual language was carefully crafted to be inclusive, engaging, and aligned with the company's values.",qb:'Internal Communications Team',bh:'https://www.behance.net/gallery/199316641/Huddle-Brand-identity',img:'images/huddle-cover.jpg',bfull:'images/huddle-behance-full.jpg',beh:true},
-  naw:{ey:'Campaign Design · Motion · Social Media',ti:'NAW Campaign',su:'National Apprenticeship Week',cl:'Lifetime Training',yr:'2023',ro:'Creative Lead / Motion Designer',tg:['Campaign Design','Animation','Social Media','Motion Design','Video'],ch:'Create the complete visual design for the annual National Apprenticeship Week video campaign, building a cohesive video format for multiple clients across all social media platforms. The aim was to showcase the impact of apprenticeships and drive learner enrolment.',process:[{label:'Campaign Concept',detail:'Developed the campaign hashtag mechanic as the unifying idea — a simple, shareable format that put real learner ambition at the centre of the campaign.'},{label:'Visual Identity',detail:'Created the campaign identity: bold geometric shapes, vibrant teal-and-purple palette, and a dynamic layout system that worked across all formats from GIF to print.'},{label:'Social Animation Suite',detail:'Produced a series of animated GIFs designed for maximum thumb-stopping engagement on LinkedIn and Instagram, each sized and optimised for native platform performance.'},{label:'Video Template System',detail:'Built a flexible video template in After Effects that allowed the team to produce on-brand campaign videos for Marston\'s and other national clients at speed — cutting production time by over 60%.'},{label:'Results',detail:'110% increase in apprenticeship applications vs prior year. 48% increase in B2B traffic. 23,791 organic impressions during campaign week.'}],so:'I led the complete visual creative direction for the campaign, built around the campaign hashtag mechanic. The identity used bold geometric shapes, vibrant teal-and-purple palettes, and real learner photography to feel authentic and dynamic. I designed a full suite of animated GIFs for social — deliberately built for thumb-stopping engagement — alongside a templated video format that allowed us to produce campaign videos for Marston\'s and multiple other national clients at pace without sacrificing brand integrity. The template system alone reduced video production time by over 60% while maintaining consistent quality across every client deliverable.',o1:'48%',l1:'Increase in B2B Traffic',o2:'23,791',l2:'Organic Impressions in Campaign Week',o3:'1',l3:'Template Across Every Client Video',qt:'We managed to deliver great impact videos across all clients during NAW with ease, the engagement was extraordinary!',qb:'Partnership Executive — Lifetime Training',bh:'https://drive.google.com/file/d/1yCxToL8LDCBboBLH1XqnQJ7p4W5c30t9/view?usp=sharing',img:'images/marstons-cover.jpg',snaps:[{s:'images/naw-campaign-hero.jpg',p:'center top'},{s:'images/naw-campaign-hero.jpg',p:'center bottom'}],vid:'https://drive.google.com/file/d/1yCxToL8LDCBboBLH1XqnQJ7p4W5c30t9/preview',beh:false},
+  naw:{ey:'Campaign Design · Motion · Social Media',ti:'NAW Campaign',su:'National Apprenticeship Week',cl:'Lifetime Training',yr:'2023',ro:'Creative Lead / Motion Designer',tg:['Campaign Design','Animation','Social Media','Motion Design','Video'],ch:'Create the complete visual design for the annual National Apprenticeship Week video campaign, building a cohesive video format for multiple clients across all social media platforms. The aim was to showcase the impact of apprenticeships and drive learner enrolment.',process:[{label:'Campaign Concept',detail:'Developed the #IAspiretoBe hashtag mechanic as the unifying idea — a simple, shareable format that put real learner ambition at the centre of the campaign.'},{label:'Visual Identity',detail:'Created the campaign identity: bold geometric shapes, vibrant teal-and-purple palette, and a dynamic layout system that worked across all formats from GIF to print.'},{label:'Social Animation Suite',detail:'Produced a series of animated GIFs designed for maximum thumb-stopping engagement on LinkedIn and Instagram, each sized and optimised for native platform performance.'},{label:'Video Template System',detail:'Built a flexible video template in After Effects that allowed the team to produce on-brand campaign videos for Marston\'s and other national clients at speed — cutting production time by over 60%.'},{label:'Results',detail:'110% increase in apprenticeship applications vs prior year. 48% increase in B2B traffic. 23,791 organic impressions during campaign week.'}],so:'I led the complete visual creative direction for the campaign, built around the #IAspiretoBe hashtag mechanic. The identity used bold geometric shapes, vibrant teal-and-purple palettes, and real learner photography to feel authentic and dynamic. I designed a full suite of animated GIFs for social — deliberately built for thumb-stopping engagement — alongside a templated video format that allowed us to produce campaign videos for Marston\'s and multiple other national clients at pace without sacrificing brand integrity. The template system alone reduced video production time by over 60% while maintaining consistent quality across every client deliverable.',o1:'48%',l1:'Increase in B2B Traffic',o2:'23,791',l2:'Organic Impressions in Campaign Week',o3:'1',l3:'Template Across Every Client Video',qt:'We managed to deliver great impact videos across all clients during NAW with ease, the engagement was extraordinary!',qb:'Partnership Executive — Lifetime Training',bh:'https://drive.google.com/file/d/1yCxToL8LDCBboBLH1XqnQJ7p4W5c30t9/view?usp=sharing',img:'images/marstons-cover.jpg',snaps:[{s:'images/naw-campaign-hero.jpg',p:'center top'},{s:'images/naw-campaign-hero.jpg',p:'center bottom'}],vid:'https://drive.google.com/file/d/1yCxToL8LDCBboBLH1XqnQJ7p4W5c30t9/preview',beh:false},
   haven:{ey:'Character Animation · Motion Design · Explainer',ti:'Haven Animation',su:'Apprenticeship Explainer Animation',cl:'Haven Leisure',yr:'2023',ro:'Motion Designer / Animator',tg:['Animation','Motion Design','Character Design','Explainer','After Effects'],ch:'Haven needed an informational animation to guide their apprentices through the full journey of their programme — a complex process involving on-the-job training, Aptem tracking, coaching sessions, and end-point assessment. The challenge was to make this process feel exciting and achievable rather than bureaucratic, while staying tightly aligned to Haven\'s distinctive coastal and hospitality brand.',process:[{label:'Brief & Script',detail:'Worked with Haven and Lifetime to understand the full apprenticeship journey, then scripted a voiceover narrative that made complex process information feel human and approachable.'},{label:'Concept & Storyboard',detail:'Developed the road trip concept — following an apprentice driving from the city to a Haven coastal park — as a metaphor for the apprenticeship journey. Built a 13-scene storyboard covering every stage from enrolment to end-point assessment.'},{label:'Character & Environment Design',detail:'Designed all characters, coastal environments, branded signage, and interface screens from scratch — all staying within Haven\'s established brand palette.'},{label:'Animation Production',detail:'Produced entirely in After Effects, including kinetic typography, data visualisation moments, and smooth scene transitions.'},{label:'Delivery',detail:'Delivered to client with zero amendments required — a first-time approval on a full animation build.'}],so:'I developed the creative concept, scripted the voiceover, and built the full storyboard before producing every frame of animation in After Effects. The narrative follows a learner character driving out of the city and arriving at a Haven park — using the road trip metaphor to mirror the apprenticeship journey. I designed all characters and environments from scratch, incorporating Haven\'s map system, branded signage, and Aptem interface screens. The animation walks through programme duration, on and off-the-job training, the end-point assessment structure (observation, professional discussion, multiple choice, and business project), and the grading system (Pass, Merit, Distinction). The video was delivered without a single amendment required to their Haven placement. Character design, background illustration, kinetic type and icon animation all produced in-house. Template system built for future efficiency.',o1:'Zero',l1:'Amendments on Delivery',o2:'Full',l2:'Storyboard to Final Animation',o3:'High',l3:'Engagement',qt:"The video was received with great feedback — the client was really satisfied with the end result and they didn't require any additional amendments.",qb:'Project Manager — Lifetime Training',bh:'https://drive.google.com/file/d/1q8hVgFigauh1y_sPUt7-GEvb6dSnAqCG/view?usp=sharing',img:'images/haven-cover.jpg',vid:'https://drive.google.com/file/d/1q8hVgFigauh1y_sPUt7-GEvb6dSnAqCG/preview',beh:false},
   wetherspoons:{ey:'Character Design · Illustration · Motion',ti:'Wetherspoons',su:'Character Design & Animation',cl:'Wetherspoon',yr:'2023',ro:'Illustrator / Motion Designer',tg:['Character Design','Illustration','Animation','Brand','Motion'],ch:'During the rebrand of the Wetherspoon apprenticeship programme, a core challenge emerged: many learners did not want their photographs used in promotional materials. Rather than treating this as a limitation, the brief evolved into an opportunity — design a set of original illustrated characters that could represent the full range of apprenticeship roles on offer, while capturing the brand\'s new visual style and serving as a reusable asset across digital and print.',so:'I developed a cohesive set of illustrated characters, each representing a different Wetherspoon apprenticeship role — bar staff, kitchen, management, and front-of-house. The illustration style is clean, modern, and characterful, with a consistent visual language across proportion, colour palette, and line weight. Each character was built for flexibility: working at small sizes on printed materials and at full scale in digital animations. The characters became the visual backbone of the rebrand\'s promotional materials and were embedded into the interactive web-based learner onboarding animation I also produced for the client.',o1:'Strong',l1:'Client Approval',o2:'Full',l2:'Character Set Delivered',o3:'Privacy-First',l3:'Photography Alternative',qt:"We love these new characters. We think they show clearly the style that we were pushing for, and they are a good alternative to images.",qb:'Client — Wetherspoon',bh:'https://drive.google.com/file/d/10Oc8cysPVTtCO6P9Vb2GRob8VOLCzKkt/view?usp=sharing',img:'images/wetherspoons-cover.jpg',vid:'https://drive.google.com/file/d/10Oc8cysPVTtCO6P9Vb2GRob8VOLCzKkt/preview',beh:false},
   rouge:{ey:'Brand Identity · Beauty · Packaging',ti:'Rouge',su:'Beauty Brand Identity',cl:'Rouge Beauty',yr:'2024',ro:'Senior Graphic Designer',tg:['Brand Identity','Beauty','Logo Design','Luxury','Packaging'],ch:'Create a luxury beauty brand identity with warmth and confidence, aspirational and accessible, standing out in a crowded market where visual shelf presence is everything.',so:'A refined identity centred on a sculptural wordmark with elegant letterforms. The warm, feminine palette was built for shelf impact, working across packaging, digital and editorial contexts with equal confidence.',o1:'Packaging',l1:'Cosmetics Identity Including Pack Design',o2:'Warm',l2:'Feminine Palette Crafted for Shelf Impact',o3:'Full',l3:'Logo, Packaging & Editorial Applications',qt:'Warmth, elegance, and confidence — a brand that women actually want to pick up.',qb:'Design Review',bh:'https://www.behance.net/gallery/186327127/Rouge-Beauty-Brand-identity',img:'images/rouge-cover.jpg',bfull:'images/rouge-behance-full.jpg',snaps:[{s:'images/rouge-cover.jpg',p:'20% center'},{s:'images/rouge-cover.jpg',p:'75% center'}],beh:true},
@@ -1261,6 +1250,106 @@ function toggleSkill(item) {
 
 document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)cCS()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')cCS()});
+
+// ── BOTTOM FILTER BAR ────────────────────────────────────────────────
+function fltBot(btn){
+  // Sync active state on bottom bar
+  document.querySelectorAll('.fb-bot .fn').forEach(function(b){ b.classList.remove('on'); });
+  btn.classList.add('on');
+
+  // Sync active state on top bar to match
+  var f = btn.dataset.f;
+  document.querySelectorAll('.fb .fn').forEach(function(b){ b.classList.remove('on'); });
+  var topMatch = document.querySelector('.fb .fn[data-f="' + f + '"]');
+  if(topMatch) topMatch.classList.add('on');
+
+  // Run the filter
+  flt(btn);
+
+  // Wait for filter DOM to settle before measuring scroll target
+  // Use the work section heading as anchor, not the grid itself
+  setTimeout(function(){
+    var workSection = document.getElementById('work');
+    if(!workSection) return;
+    var target = workSection.getBoundingClientRect().top + window.scrollY - 80;
+    smoothScrollTo(target, 1400);
+  }, 60);
+}
+
+// Custom smooth scroll — speed controlled by duration (ms)
+function smoothScrollTo(targetY, duration){
+  var startY = window.scrollY;
+  var distance = targetY - startY;
+  var startTime = null;
+  function ease(t){ return t<0.5 ? 2*t*t : -1+(4-2*t)*t; }
+  function step(now){
+    if(!startTime) startTime = now;
+    var elapsed = now - startTime;
+    var progress = Math.min(elapsed / duration, 1);
+    window.scrollTo(0, startY + distance * ease(progress));
+    if(progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+
+// ── CARD REVEAL ON SCROLL ─────────────────────────────────────────────
+setTimeout(function(){
+  var cards = Array.from(document.querySelectorAll('.pc'));
+  var visible = cards.filter(function(c){ return !c.classList.contains('gone'); });
+
+  visible.forEach(function(c){
+    var rect = c.getBoundingClientRect();
+    if(rect.top >= window.innerHeight * 0.35){
+      c.style.opacity = '0';
+      c.style.transform = 'translateY(40px)';
+      c.style.transition = 'opacity 1.4s cubic-bezier(0.16,1,0.3,1), transform 1.4s cubic-bezier(0.16,1,0.3,1)';
+    }
+  });
+
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var card = entry.target;
+      var vis = Array.from(document.querySelectorAll('.pc:not(.gone)'));
+      var col = vis.indexOf(card) % 2;
+      setTimeout(function(){
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, col === 1 ? 130 : 0);
+      obs.unobserve(card);
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -280px 0px' });
+
+  visible.forEach(function(c){
+    var rect = c.getBoundingClientRect();
+    if(rect.top >= window.innerHeight * 0.35){
+      obs.observe(c);
+    }
+  });
+
+  var origFlt = window.flt;
+  window.flt = function(btn){
+    origFlt(btn);
+    setTimeout(function(){
+      var vis2 = Array.from(document.querySelectorAll('.pc:not(.gone)'));
+      obs.disconnect();
+      vis2.forEach(function(c){
+        var rect = c.getBoundingClientRect();
+        if(rect.top >= window.innerHeight * 0.35){
+          c.style.opacity = '0';
+          c.style.transform = 'translateY(40px)';
+          c.style.transition = 'opacity 1.4s cubic-bezier(0.16,1,0.3,1), transform 1.4s cubic-bezier(0.16,1,0.3,1)';
+          obs.observe(c);
+        } else {
+          c.style.opacity = '1';
+          c.style.transform = 'translateY(0)';
+        }
+      });
+    }, 30);
+  };
+}, 200);
+
 </script>
 </body>
 </html>
