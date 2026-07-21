@@ -577,7 +577,7 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
   <div class="pg" id="pg">
 
     <div class="pc" data-c="brand" style="background:linear-gradient(145deg,#162c22,#1e3d2e)">
-      <div class="pci" style="background:linear-gradient(145deg,#162c22,#1e3d2e)"><div class="pcbg"><img src="images/summy-cover.png" alt="SUMMY Adventurewear"></div><div class="pco"></div></div>
+      <div class="pci" style="background:linear-gradient(145deg,#162c22,#1e3d2e)"><div class="pcbg"><img src="images/summy-cover.jpg" alt="SUMMY Adventurewear"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Visual System</span><span class="ptag">Self-Initiated</span></div><div class="ptn">SUMMY Adventurewear</div><div class="ptd">Complete brand identity for a unified outdoor activewear system. One system. No compromise.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
       <a class="pclink" href="work/summy.html"></a>
@@ -609,6 +609,13 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
       <div class="pct"><div><div class="ptags"><span class="ptag">Brand Evolution</span><span class="ptag">Art Direction</span></div><div class="ptn">Lifetime Training — Brand Repositioning</div><div class="ptd">Unanimous board approval. Full national brand system.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
       <a class="pclink" href="work/lifetime.html"></a>
+    </div>
+
+    <div class="pc" data-c="print">
+      <div class="pci"><div class="pcbg"><img src="images/lla-cover.jpg" alt="Lifetime Learning Awards 2026"></div><div class="pco"></div></div>
+      <div class="pct"><div><div class="ptags"><span class="ptag">Event Branding</span><span class="ptag">Stage Design</span><span class="ptag">Print</span></div><div class="ptn">Lifetime Learning Awards 2026</div><div class="ptd">Complete event brand and creative direction for a national awards evening at Edgbaston Stadium — stage, programme, social campaign and presentation.</div></div></div>
+      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      <a class="pclink" href="work/lla.html"></a>
     </div>
 
     <div class="pc be" data-c="brand">
@@ -975,13 +982,6 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
           </div>
           <div class="ski-body"><p>I build brand systems that scale, not just guidelines documents, but living toolkits that teams actually use. I act as brand guardian, introducing review processes and raising the standard of consistency across every deliverable.</p></div>
         </li>
-		  <li class="ski" onclick="toggleSkill(this)">
-          <div class="ski-hd">
-            <span class="ski-label">AI-Integrated Workflows</span>
-            <span class="ski-icon">+</span>
-          </div>
-          <div class="ski-body"><p>Creating AI integrated workflows, including Claude, ChatGPT and Gemini into my creative process at the points where they genuinely accelerate production, using them to move faster through ideation, research and refinement so more time and attention can go towards the work that actually requires creative leadership.</p></div>
-        </li>
         <li class="ski" onclick="toggleSkill(this)">
           <div class="ski-hd">
             <span class="ski-label">Motion & Animation</span>
@@ -1170,7 +1170,7 @@ ${d.links ? `<div style="display:flex;gap:8px;flex-wrap:wrap;margin:20px 0">${d.
 
 // ── VIDEO SLIDER ─────────────────────────────────────────────────────
 const SLIDE_COUNT = 5;
-const AUTO_DELAY = 8000; // ms per slide
+const AUTO_DELAY = 6000; // ms per slide
 let cur = 0, autoTimer = null, progTimer = null, progStart = null;
 
 function goSlide(n, resetAuto=true) {
