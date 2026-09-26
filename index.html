@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0YBTD0JRY2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0YBTD0JRY2');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Renata Hanko — Creative Lead</title>
@@ -16,7 +24,7 @@
   --ez:cubic-bezier(.16,1,.3,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:auto;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 body{background:var(--bg);color:var(--w);font-family:'Plus Jakarta Sans',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
@@ -72,6 +80,11 @@ nav.scrolled .ncta::before{display:none}
 .bg:hover{color:var(--w)}
 .bg svg{transition:transform .28s}
 .bg:hover svg{transform:translateX(4px)}
+/* AI tags row in hero */
+.hai{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:28px;opacity:0;animation:su .9s var(--ez) .76s forwards}
+.hai-label{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pu);margin-right:6px}
+.hai-tool{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(237,233,248,.5)}
+.hai-tool+.hai-tool::before{content:'·';margin-right:8px;color:rgba(144,96,255,.4)}
 .hsc{position:absolute;right:52px;bottom:88px;writing-mode:vertical-rl;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mu2);display:flex;align-items:center;gap:12px;opacity:0;animation:fi 1s ease 1.4s forwards}
 .hsc::after{content:'';width:1px;height:48px;background:linear-gradient(to bottom,transparent,var(--pu))}
 @keyframes su{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
@@ -102,7 +115,7 @@ section{padding:104px 52px}
 .wh{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px}
 .wt{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(34px,4.5vw,62px);line-height:.9;letter-spacing:-.03em}
 .fb{display:flex;gap:2px}
-.fn{padding:8px 18px;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;background:transparent;border:1px solid var(--bdr);color:var(--mu);cursor:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;transition:all .2s}.fb-bot{display:flex;gap:2px;justify-content:center;margin-top:56px}
+.fn{padding:8px 18px;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;background:transparent;border:1px solid var(--bdr);color:var(--mu);cursor:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;transition:all .2s}
 .fn.on{background:var(--g);border-color:transparent;color:#fff;font-weight:600}
 .fn:hover:not(.on){border-color:var(--bdrhi);color:var(--w)}
 
@@ -232,7 +245,7 @@ section{padding:104px 52px}
   transition:max-height .45s var(--ez),opacity .35s ease;
   opacity:0;
 }
-.ski.open .ski-body{max-height:160px;opacity:1}
+.ski.open .ski-body{max-height:200px;opacity:1}
 .ski-body p{
   font-size:.88rem;line-height:1.72;color:var(--mu);
   padding:0 0 18px 0;
@@ -240,6 +253,19 @@ section{padding:104px 52px}
 /* Active state — label gets gradient */
 .ski.open .ski-hd{color:var(--w)}
 .ski.open .ski-label{background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* AI skills highlight row */
+.ski--ai{background:rgba(144,96,255,.06);border-bottom:1px solid rgba(144,96,255,.25)}
+.ski--ai:first-child{border-top:1px solid rgba(144,96,255,.25)}
+.ski--ai:hover{background:rgba(144,96,255,.1)}
+.ski--ai .ski-hd{color:var(--w)}
+.ski-badge{
+  display:inline-block;
+  font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--g);color:#fff;
+  padding:2px 7px;border-radius:20px;
+  margin-left:10px;vertical-align:middle;position:relative;top:-1px;
+}
 
 /* ── CONTACT ─────────────────────────────── */
 .cwr{position:relative;overflow:hidden;min-height:66vh;display:flex;flex-direction:column;justify-content:center}
@@ -543,6 +569,14 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
     <p class="he"><span class="he-name">Renata Hanko</span> &middot; Creative Lead, Bristol, UK</p>
     <h1 class="hh">Solution-focused<br><span class="ac">creativity</span><br>with impact.</h1>
     <p class="hs">13+ years building brand systems, motion campaigns and high-impact design for McDonald's, Nando's, Lidl, B&amp;Q, Haven and more.</p>
+    <div class="hai">
+      <span class="hai-label">AI-enabled</span>
+      <span class="hai-tool">Claude Design</span>
+      <span class="hai-tool">ChatGPT</span>
+      <span class="hai-tool">Gemini</span>
+      <span class="hai-tool">Firefly</span>
+      <span class="hai-tool">Higgsfield AI</span>
+    </div>
     <div class="hbt">
       <a href="#work" class="bp">View Work<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
@@ -576,136 +610,112 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
 
   <div class="pg" id="pg">
 
-    <div class="pc" data-c="brand" style="background:linear-gradient(145deg,#162c22,#1e3d2e)">
-      <div class="pci" style="background:linear-gradient(145deg,#162c22,#1e3d2e)"><div class="pcbg"><img src="images/summy-cover.jpg" alt="SUMMY Adventurewear"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Visual System</span><span class="ptag">Self-Initiated</span></div><div class="ptn">SUMMY Adventurewear</div><div class="ptd">Complete brand identity for a unified outdoor activewear system. One system. No compromise.</div></div></div>
-      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/summy.html"></a>
-    </div>
-
     <div class="pc ba" data-c="brand">
       <div class="pci ba"><div class="pcbg"><img src="images/fusion-cover.jpg" alt="Fusion"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Packaging</span></div><div class="ptn">Fusion — Functional Beverage Brand</div><div class="ptd">Full identity for a functional beverage startup. Logo, packaging, visual language.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/fusion.html"></a>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('fusion')"></a>
     </div>
 
     <div class="pc bb" data-c="brand">
       <div class="pci bb"><div class="pcbg"><img src="images/oriva-cover.jpg" alt="Oriva" style="object-position:center bottom"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Visual Identity</span><span class="ptag">Fintech</span></div><div class="ptn">Oriva — Finance, Simplified</div><div class="ptd">Clean, trustworthy identity for a fintech platform.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/oriva.html"></a>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('oriva')"></a>
     </div>
 
     <div class="pc bc" data-c="brand">
       <div class="pci bc"><div class="pcbg"><img src="images/codedash-cover.jpg" alt="Codedash"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Dev Tools</span></div><div class="ptn">Codedash — Brand &amp; Visual System</div><div class="ptd">Bold identity for a developer tools platform.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/codedash.html"></a>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('codedash')"></a>
     </div>
 
     <div class="pc bd" data-c="brand">
       <div class="pci bd"><div class="pcbg"><img src="images/lifetime-repositioning-cover.jpg" alt="Lifetime Training"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Brand Evolution</span><span class="ptag">Art Direction</span></div><div class="ptn">Lifetime Training — Brand Repositioning</div><div class="ptd">Unanimous board approval. Full national brand system.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/lifetime.html"></a>
-    </div>
-
-    <div class="pc" data-c="print">
-      <div class="pci"><div class="pcbg"><img src="images/lla-cover.jpg" alt="Lifetime Learning Awards 2026"></div><div class="pco"></div></div>
-      <div class="pct"><div><div class="ptags"><span class="ptag">Event Branding</span><span class="ptag">Stage Design</span><span class="ptag">Print</span></div><div class="ptn">Lifetime Learning Awards 2026</div><div class="ptd">Complete event brand and creative direction for a national awards evening at Edgbaston Stadium — stage, programme, social campaign and presentation.</div></div></div>
-      <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/lla.html"></a>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('lifetime')"></a>
     </div>
 
     <div class="pc be" data-c="brand">
       <div class="pci be"><div class="pcbg"><img src="images/voyageur-cover.jpg" alt="Voyageur" style="object-position:center 25%"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Travel</span></div><div class="ptn">Voyageur — Travel Brand Identity</div><div class="ptd">Minimalist logo system across 8 visual identity modules.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/voyageur.html"></a>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('voyageur')"></a>
     </div>
 
     <div class="pc ba" data-c="brand">
       <div class="pci ba"><div class="pcbg"><img src="images/huddle-cover.jpg" alt="Huddle"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Internal Brand</span><span class="ptag">Identity</span></div><div class="ptn">Huddle — Internal Brand Identity</div><div class="ptd">+25% employee participation. +40% satisfaction improvement.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/huddle.html"></a>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('huddle')"></a>
     </div>
 
     <div class="pc be" data-c="brand">
       <div class="pci be"><div class="pcbg"><img src="images/rouge-cover.jpg" alt="Rouge" style="object-position:30% center"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Beauty Brand</span><span class="ptag">Identity</span></div><div class="ptn">Rouge — Beauty Brand Identity</div><div class="ptd">Luxe feminine identity. Packaging, logo &amp; editorial.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/rouge.html"></a>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('rouge')"></a>
     </div>
 
     <div class="pc bb" data-c="print">
       <div class="pci bb"><div class="pcbg"><img src="images/b&amp;q-reignite-cover.jpg" alt="B&amp;Q Reignite"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Print</span><span class="ptag">Activation</span></div><div class="ptn">B&amp;Q Reignite Campaign</div><div class="ptd">0 to 19 vacancies in one month.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/bq.html"></a>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('bq')"></a>
     </div>
 
     <div class="pc bd" data-c="brand">
       <div class="pci bd"><div class="pcbg"><img src="images/regalia-cover.jpg" alt="Regalia"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Luxury</span><span class="ptag">Hotel</span></div><div class="ptn">Regalia — Luxury Hotel Identity</div><div class="ptd">Refined luxury visual identity.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/regalia.html"></a>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('regalia')"></a>
     </div>
 
     <div class="pc bc" data-c="web">
       <div class="pci bc"><div class="pcbg"><img src="images/tokjogyumolcs-cover.jpg" alt="Tök Jó Gyümölcs"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Web Design</span><span class="ptag">Brand</span></div><div class="ptn">Tök Jó Gyümölcs — Web Design</div><div class="ptd">Vibrant web identity. +20% user engagement.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/tokjo.html"></a>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('tokjo')"></a>
     </div>
 
     <div class="pc bd" data-c="web">
       <div class="pci bd"><div class="pcbg"><img src="images/mylife-cover.jpg" alt="MyLife Portal"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Web Design</span><span class="ptag">UX/UI</span></div><div class="ptn">MyLife Portal — Learner Portal Redesign</div><div class="ptd">UX/UI redesign of a learner portal, research to interface.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/mylife.html"></a>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('mylife')"></a>
     </div>
 
     <div class="pc bc" data-c="print">
       <div class="pci bc"><div class="pcbg"><img src="images/nandos-cover.jpg" alt="Nando's"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Print</span><span class="ptag">Guidelines</span></div><div class="ptn">Nando's — Apprenticeship Print Suite</div><div class="ptd">Full suite within strict colourful brand guidelines.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/nandos.html"></a>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('nandos')"></a>
     </div>
 
     <div class="pc bf" data-c="print">
       <div class="pci bf"><div class="pcbg"><img src="images/blue-cross-cover.jpg" alt="Blue Cross"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Print</span><span class="ptag">Charity</span></div><div class="ptn">Blue Cross — Print Materials</div><div class="ptd">Promotional print for a national charity.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/bluecross.html"></a>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('bluecross')"></a>
     </div>
 
     <div class="pc ba" data-c="brand">
       <div class="pci ba"><div class="pcbg"><img src="images/mayten-cover.jpg" alt="Mayten"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Tech</span></div><div class="ptn">Mayten — Innovation &amp; Tech Startup</div><div class="ptd">Futuristic, minimalist identity for a product development startup.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/mayten.html"></a>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('mayten')"></a>
     </div>
 
     <div class="pc be" data-c="brand">
       <div class="pci be"><div class="pcbg"><img src="images/smokin-burger-cover.jpg" alt="Smokin' Burger"></div><div class="pco"></div></div>
       <div class="pct"><div><div class="ptags"><span class="ptag">Brand Identity</span><span class="ptag">Restaurant</span></div><div class="ptn">Smokin' Burger — Brand Identity</div><div class="ptd">Bold, characterful identity for an independent burger restaurant.</div></div></div>
       <div class="par"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-      <a class="pclink" href="work/smokinburger.html"></a>
+      <a class="pclink" href="#" onclick="event.preventDefault();oCS('smokinburger')"></a>
     </div>
 
   </div>
-
-  <!-- Bottom filter bar — mirrors top, correct order -->
-  <div class="fb-bot">
-    <button class="fn"    data-f="all"   onclick="fltBot(this)">All</button>
-    <button class="fn on" data-f="brand" onclick="fltBot(this)">Brand</button>
-    <button class="fn"    data-f="web"   onclick="fltBot(this)">Web</button>
-    <button class="fn"    data-f="print" onclick="fltBot(this)">Print</button>
-    <button class="fn" onclick="document.getElementById('motion').scrollIntoView({behavior:'smooth'})">Motion ↓</button>
-  </div>
-
 </section>
 
 <section id="motion" class="msc">
@@ -968,6 +978,13 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
     </div>
     <div class="rv d1" style="padding-top:44px">
       <ul class="sk" id="skillList">
+        <li class="ski ski--ai" onclick="toggleSkill(this)">
+          <div class="ski-hd">
+            <span class="ski-label">AI-Enabled Creative Workflows <span class="ski-badge">Now</span></span>
+            <span class="ski-icon">+</span>
+          </div>
+          <div class="ski-body"><p>I integrate AI tools into every stage of the creative process: generating concept directions in Firefly, accelerating copy iterations with Claude and ChatGPT, producing AI video with Higgsfield, and using Gemini for research and ideation. I know where AI adds value and where a human eye is still essential. The result is faster pipelines, sharper outputs, and more time for the thinking that actually matters.</p></div>
+        </li>
         <li class="ski" onclick="toggleSkill(this)">
           <div class="ski-hd">
             <span class="ski-label">Creative Direction & Leadership</span>
@@ -1257,106 +1274,6 @@ function toggleSkill(item) {
 
 document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)cCS()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')cCS()});
-
-// ── BOTTOM FILTER BAR ────────────────────────────────────────────────
-function fltBot(btn){
-  // Sync active state on bottom bar
-  document.querySelectorAll('.fb-bot .fn').forEach(function(b){ b.classList.remove('on'); });
-  btn.classList.add('on');
-
-  // Sync active state on top bar to match
-  var f = btn.dataset.f;
-  document.querySelectorAll('.fb .fn').forEach(function(b){ b.classList.remove('on'); });
-  var topMatch = document.querySelector('.fb .fn[data-f="' + f + '"]');
-  if(topMatch) topMatch.classList.add('on');
-
-  // Run the filter
-  flt(btn);
-
-  // Wait for filter DOM to settle before measuring scroll target
-  // Use the work section heading as anchor, not the grid itself
-  setTimeout(function(){
-    var workSection = document.getElementById('work');
-    if(!workSection) return;
-    var target = workSection.getBoundingClientRect().top + window.scrollY - 80;
-    smoothScrollTo(target, 1400);
-  }, 60);
-}
-
-// Custom smooth scroll — speed controlled by duration (ms)
-function smoothScrollTo(targetY, duration){
-  var startY = window.scrollY;
-  var distance = targetY - startY;
-  var startTime = null;
-  function ease(t){ return t<0.5 ? 2*t*t : -1+(4-2*t)*t; }
-  function step(now){
-    if(!startTime) startTime = now;
-    var elapsed = now - startTime;
-    var progress = Math.min(elapsed / duration, 1);
-    window.scrollTo(0, startY + distance * ease(progress));
-    if(progress < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
-
-// ── CARD REVEAL ON SCROLL ─────────────────────────────────────────────
-setTimeout(function(){
-  var cards = Array.from(document.querySelectorAll('.pc'));
-  var visible = cards.filter(function(c){ return !c.classList.contains('gone'); });
-
-  visible.forEach(function(c){
-    var rect = c.getBoundingClientRect();
-    if(rect.top >= window.innerHeight * 0.35){
-      c.style.opacity = '0';
-      c.style.transform = 'translateY(40px)';
-      c.style.transition = 'opacity 1.4s cubic-bezier(0.16,1,0.3,1), transform 1.4s cubic-bezier(0.16,1,0.3,1)';
-    }
-  });
-
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(!entry.isIntersecting) return;
-      var card = entry.target;
-      var vis = Array.from(document.querySelectorAll('.pc:not(.gone)'));
-      var col = vis.indexOf(card) % 2;
-      setTimeout(function(){
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-      }, col === 1 ? 130 : 0);
-      obs.unobserve(card);
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -280px 0px' });
-
-  visible.forEach(function(c){
-    var rect = c.getBoundingClientRect();
-    if(rect.top >= window.innerHeight * 0.35){
-      obs.observe(c);
-    }
-  });
-
-  var origFlt = window.flt;
-  window.flt = function(btn){
-    origFlt(btn);
-    setTimeout(function(){
-      var vis2 = Array.from(document.querySelectorAll('.pc:not(.gone)'));
-      obs.disconnect();
-      vis2.forEach(function(c){
-        var rect = c.getBoundingClientRect();
-        if(rect.top >= window.innerHeight * 0.35){
-          c.style.opacity = '0';
-          c.style.transform = 'translateY(40px)';
-          c.style.transition = 'opacity 1.4s cubic-bezier(0.16,1,0.3,1), transform 1.4s cubic-bezier(0.16,1,0.3,1)';
-          obs.observe(c);
-        } else {
-          c.style.opacity = '1';
-          c.style.transform = 'translateY(0)';
-        }
-      });
-    }, 30);
-  };
-}, 200);
-
 </script>
 </body>
 </html>
