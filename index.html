@@ -30,9 +30,9 @@ a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 
 /* ── CURSOR ─────────────────────────────── */
-#cd{position:fixed;width:6px;height:6px;border-radius:50%;background:var(--pu);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,background .2s;mix-blend-mode:screen}
-#cr{position:fixed;width:32px;height:32px;border-radius:50%;border:1px solid rgba(144,96,255,.4);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s var(--ez),height .3s var(--ez)}
-body.ch #cd{transform:translate(-50%,-50%) scale(3.5);background:var(--pk)}
+#cd{position:fixed;width:6px;height:6px;border-radius:50%;background:var(--pu);pointer-events:none;z-index:9999;top:0;left:0;transition:background .2s;mix-blend-mode:screen;will-change:transform}
+#cr{position:fixed;width:32px;height:32px;border-radius:50%;border:1px solid rgba(144,96,255,.4);pointer-events:none;z-index:9998;top:0;left:0;transition:width .3s var(--ez),height .3s var(--ez);will-change:transform}
+body.ch #cd{background:var(--pk);width:18px;height:18px}
 body.ch #cr{width:50px;height:50px}
 
 /* ── NAV ─────────────────────────────────── */
@@ -388,9 +388,40 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
   nav{padding:18px 32px}
   section{padding:88px 32px}
   .hero{padding:0 32px 72px}
-  .wt{font-size:clamp(28px,4vw,48px)}
+  .wt{font-size:clamp(36px,8vw,62px)}
   .mgr{grid-template-columns:1fr 1fr}
 }
+/* ── MOBILE HERO GRADIENT ANIMATION ─────────── */
+@media(hover:none),(max-width:768px){
+  .hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    animation:mobgrad 8s ease-in-out infinite alternate;
+    opacity:.9;
+  }
+  .o1{animation:df 9s ease-in-out infinite,morborb1 11s ease-in-out infinite alternate}
+  .o2{animation:df 12s ease-in-out infinite reverse,morborb2 9s ease-in-out infinite alternate}
+}
+@keyframes mobgrad{
+  0%{background:radial-gradient(ellipse 70% 60% at 20% 30%,rgba(144,96,255,.22) 0%,transparent 65%),radial-gradient(ellipse 50% 50% at 80% 70%,rgba(224,79,160,.15) 0%,transparent 60%)}
+  33%{background:radial-gradient(ellipse 60% 70% at 75% 20%,rgba(144,96,255,.18) 0%,transparent 65%),radial-gradient(ellipse 55% 45% at 25% 80%,rgba(224,79,160,.18) 0%,transparent 58%)}
+  66%{background:radial-gradient(ellipse 55% 65% at 50% 60%,rgba(144,96,255,.2) 0%,transparent 62%),radial-gradient(ellipse 48% 55% at 85% 30%,rgba(224,79,160,.12) 0%,transparent 65%)}
+  100%{background:radial-gradient(ellipse 65% 55% at 15% 75%,rgba(144,96,255,.16) 0%,transparent 68%),radial-gradient(ellipse 52% 48% at 70% 15%,rgba(224,79,160,.2) 0%,transparent 60%)}
+}
+@keyframes morborb1{
+  0%{transform:translate(0,0) scale(1)}
+  50%{transform:translate(-40px,30px) scale(1.2)}
+  100%{transform:translate(30px,-50px) scale(.85)}
+}
+@keyframes morborb2{
+  0%{transform:translate(0,0) scale(1)}
+  50%{transform:translate(50px,-30px) scale(1.15)}
+  100%{transform:translate(-20px,40px) scale(.9)}
+}
+
 @media(max-width:768px){
   /* Whiter body copy for legibility */
   :root{--mu:rgba(237,233,248,.92);--mu2:rgba(237,233,248,.65)}
@@ -415,7 +446,7 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
   .ncta{font-size:.6rem;padding:8px 16px}
 
   /* Hero */
-  .hero{padding:0 20px 56px}
+  .hero{min-height:100svh;padding:120px 20px 56px;justify-content:center}
   .hbn{display:none}
   .hsc{display:none}
   .hs{font-size:.96rem}
@@ -1089,18 +1120,19 @@ footer{border-top:1px solid var(--bdr);padding:28px 52px;display:flex;justify-co
   }, {passive:true});
 })();
 
-// CURSOR
+// CURSOR — use transform:translate for zero-lag positioning
 const cd=document.getElementById('cd'),cr=document.getElementById('cr');
-let mx=window.innerWidth/2,my=window.innerHeight/2,rx=mx,ry=my;
-// dot snaps instantly; ring lerps behind
-document.addEventListener('mousemove',e=>{
-  mx=e.clientX;my=e.clientY;
-  cd.style.left=mx+'px';cd.style.top=my+'px';
-},{passive:true});
-(function loop(){
-  rx+=(mx-rx)*.14;ry+=(my-ry)*.14;
-  cr.style.left=rx+'px';cr.style.top=ry+'px';
-  requestAnimationFrame(loop);
+let mx=-200,my=-200,rx=-200,ry=-200;
+cd.style.cssText+='transition:none;left:0;top:0;';
+cr.style.cssText+='transition:width .3s,height .3s;left:0;top:0;';
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;},{passive:true});
+(function tick(){
+  // dot: instant
+  cd.style.transform=`translate(calc(${mx}px - 50%), calc(${my}px - 50%))`;
+  // ring: smooth lerp
+  rx+=(mx-rx)*.12;ry+=(my-ry)*.12;
+  cr.style.transform=`translate(calc(${rx}px - 50%), calc(${ry}px - 50%))`;
+  requestAnimationFrame(tick);
 })();
 document.querySelectorAll('a,button,.pc,.mi,.cc').forEach(el=>{
   el.addEventListener('mouseenter',()=>document.body.classList.add('ch'));
@@ -1111,25 +1143,21 @@ document.querySelectorAll('a,button,.pc,.mi,.cc').forEach(el=>{
 (function(){
   const hero=document.querySelector('.hero');
   if(!hero)return;
-  // create a radial gradient layer that moves with the cursor
   const layer=document.createElement('div');
-  layer.style.cssText='position:absolute;inset:0;pointer-events:none;z-index:0;transition:background .05s linear;will-change:background';
-  hero.appendChild(layer);
-  let hx=0.5,hy=0.5,tlx=0.5,tly=0.5;
+  layer.style.cssText='position:absolute;inset:0;pointer-events:none;z-index:1;will-change:opacity';
+  hero.insertBefore(layer,hero.firstChild);
+  let tx=0.5,ty=0.5,cx=0.5,cy=0.5;
   document.addEventListener('mousemove',e=>{
-    const r=hero.getBoundingClientRect();
-    // only active when cursor is anywhere on the page; gives full-range movement
-    hx=e.clientX/window.innerWidth;
-    hy=e.clientY/window.innerHeight;
+    tx=e.clientX/window.innerWidth;
+    ty=e.clientY/window.innerHeight;
   },{passive:true});
   (function drift(){
-    tlx+=(hx-tlx)*.04;tly+=(hy-tly)*.04;
-    // two radial gradient orbs that shift opposite each other for a 3D feel
-    const px=Math.round(tlx*100),py=Math.round(tly*100);
-    const px2=Math.round((1-tlx)*100),py2=Math.round((1-tly)*100);
+    cx+=(tx-cx)*.05;cy+=(ty-cy)*.05;
+    const px=(cx*100).toFixed(2),py=(cy*100).toFixed(2);
+    const px2=((1-cx)*100).toFixed(2),py2=((1-cy)*100).toFixed(2);
     layer.style.background=
-      `radial-gradient(ellipse 60% 50% at ${px}% ${py}%, rgba(144,96,255,.13) 0%, transparent 70%),`+
-      `radial-gradient(ellipse 45% 40% at ${px2}% ${py2}%, rgba(224,79,160,.09) 0%, transparent 65%)`;
+      `radial-gradient(ellipse 55% 55% at ${px}% ${py}%, rgba(144,96,255,.18) 0%, transparent 68%),`+
+      `radial-gradient(ellipse 42% 42% at ${px2}% ${py2}%, rgba(224,79,160,.12) 0%, transparent 62%)`;
     requestAnimationFrame(drift);
   })();
 })();
