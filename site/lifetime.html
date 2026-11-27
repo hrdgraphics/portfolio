@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Brand, campaign and motion work by Renata Hanko, Senior Creative Designer and Motion Lead.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Lifetime: Built to Lead · Renata Hanko</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+:root{--teal:#004d61;--tint:#e3eded}
+.bar{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--acc);transform-origin:left;transform:scaleX(0);z-index:60}
+.ch{padding-top:150px;position:relative;isolation:isolate}
+.back{display:inline-flex;align-items:center;gap:10px;font-size:15px;text-decoration:none;color:var(--mute);transition:color .3s,gap .4s var(--ease)}
+.back:hover{color:var(--ink);gap:14px}
+.ch h1{font-size:clamp(56px,9.4vw,152px);margin:34px 0 0;letter-spacing:-.045em}
+.lede{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:40px;margin-top:40px;align-items:end}
+.lede p{grid-column:span 7;font-size:clamp(22px,2.2vw,30px);line-height:1.35;margin:0;letter-spacing:-.01em}
+.lede .res{grid-column:9/span 4;text-align:right}
+.res strong{display:block;font:600 clamp(40px,4.6vw,68px)/1 "Inter Tight",Inter,sans-serif;letter-spacing:-.04em;color:var(--acc)}
+.res span{color:var(--mute);font-size:15px}
+.facts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:28px;margin:0;padding-top:22px}
+.facts dt{font-size:14px;color:var(--mute);margin-bottom:8px}
+.facts dd{margin:0;font-size:16px;font-weight:500;line-height:1.45}
+
+/* image stages */
+.stage{position:relative}
+.stage.pad{padding:0}
+.stage img{display:block;width:100%;border-radius:18px;border:1px solid var(--line)}
+
+.stage.logos{border:1px solid var(--line);border-radius:18px}.stage.logos img{border:0}
+.cap{font-size:14px;color:var(--mute);margin:14px 0 0}
+.heroimg{margin-top:72px}
+.heroimg .par{height:min(84vh,820px);border-radius:24px;border:1px solid var(--line)}
+@font-face{font-family:"Montserrat";src:url(fonts/montserrat-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+.lhero{position:relative;height:min(84vh,820px);border-radius:24px;overflow:hidden;background:#00313a;isolation:isolate}
+.lh-media{position:absolute;inset:0;overflow:hidden;container-type:size;--z:1.2;--ax:0;--ay:.3}
+.lh-stage{position:absolute;width:calc(max(100cqw, 100cqh * 1.5007) * var(--z));aspect-ratio:2200/1466;left:calc((100cqw - max(100cqw, 100cqh * 1.5007) * var(--z)) * var(--ax));top:calc((100cqh - max(100cqw, 100cqh * 1.5007) * var(--z) / 1.5007) * var(--ay));transform-origin:50% 41%;animation:lhzoom 26s ease-in-out infinite alternate}
+@keyframes lhzoom{from{transform:scale(1)}to{transform:scale(1.06)}}
+.lh-stage img,.lh-stage svg{position:absolute;inset:0;width:100%;height:100%;max-width:none;display:block}
+.lh-loz{overflow:visible}
+.lh-loz rect{fill:none;stroke:#fff;stroke-width:var(--sw,2)}
+.lh-loz .base{stroke-dasharray:1 1;stroke-dashoffset:1}
+.lh-loz .spark{stroke-width:calc(var(--sw,2) * 2.4);stroke-linecap:round;stroke-dasharray:.07 .93;stroke-dashoffset:0;opacity:0;filter:drop-shadow(0 0 4px #fff)}
+.lhero.in .lh-loz .base{animation:lhdraw 2.4s cubic-bezier(.65,0,.35,1) .6s forwards}
+.lhero.in .lh-loz .spark{animation:lhspin 6s linear 3s infinite,lhin .6s ease 3s forwards}
+@keyframes lhdraw{to{stroke-dashoffset:0}}
+@keyframes lhspin{to{stroke-dashoffset:-1}}
+@keyframes lhin{to{opacity:1}}
+.lh-tint{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(0,45,50,.7) 0%,rgba(0,45,50,.35) 30%,rgba(0,45,50,0) 48%),linear-gradient(180deg,rgba(0,40,40,.25),rgba(0,40,40,0) 30%)}
+.lh-logo{position:absolute;z-index:3;left:clamp(24px,5%,64px);top:clamp(24px,7%,60px);width:clamp(110px,11vw,170px);fill:#fff;opacity:0;transform:translateY(10px);transition:opacity .9s var(--ease) .3s,transform .9s var(--ease) .3s}
+.lhero.in .lh-logo{opacity:1;transform:none}
+.lh-head{position:absolute;z-index:3;left:clamp(24px,5%,64px);bottom:clamp(28px,9%,84px);margin:0;font:700 clamp(24px,3vw,46px)/1.2 Montserrat,"Inter Tight",Inter,sans-serif;color:#fff;max-width:calc(100% - 48px);text-shadow:0 2px 18px rgba(0,30,30,.35)}
+.lh-head>span{display:block;overflow:hidden;padding:.06em 0 .12em}
+.lh-head>span>span{display:block;transform:translateY(115%);transition:transform 1.1s var(--ease)}
+.lh-head em{position:relative;font-style:normal;display:inline-block;padding:0 .3em .04em;margin-left:-.3em;isolation:isolate;text-shadow:none}
+.lh-head em::before{content:"";position:absolute;inset:-.06em 0 -.04em;background:#3a7d69;border-radius:.32em;box-shadow:0 8px 24px rgba(0,45,50,.3);transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease) 1.5s;z-index:-1}
+.lhero.in .lh-head .l1:nth-child(1)>span{transform:none;transition-delay:.85s}
+.lhero.in .lh-head .l1:nth-child(2)>span{transform:none;transition-delay:.95s}
+.lhero.in .lh-head .l2>span{transform:none;transition-delay:1.05s}
+.lhero.in .lh-head em::before{transform:none}
+.lh-head>.l2{margin-left:-.36em;padding-left:.36em;padding-right:.2em}
+@media (max-width:700px){
+ .lhero{--pw:calc(100vw - 40px);height:auto;padding:calc(var(--pw) + 22px) 24px 30px}
+ .lh-media{inset:0 0 auto 0;height:var(--pw);--z:1.05;--ax:.6;--ay:.25}
+ .lh-tint{background:linear-gradient(0deg,#00313a 0%,rgba(0,49,58,0) 22%)}
+ .lh-head{position:relative;left:auto;bottom:auto;max-width:none;font-size:27px}
+ .lh-logo{position:relative;left:auto;top:auto;display:block;width:120px;margin:0 0 18px}
+}
+@media (prefers-reduced-motion:reduce){.lh-stage{animation:none}.lh-loz .base{stroke-dashoffset:0}.lh-loz .spark{display:none}.lh-logo,.lh-head>span>span,.lh-head em::before{opacity:1;transform:none}}
+
+
+/* layout */
+.toc{position:fixed;left:calc((100vw - var(--max))/2 - 110px);top:50%;transform:translateY(-50%);list-style:none;margin:0;padding:0;z-index:20;opacity:0;pointer-events:none;transition:opacity .5s}
+.toc.show{opacity:1;pointer-events:auto}
+.toc a{display:flex;align-items:center;gap:12px;padding:7px 0;text-decoration:none;color:#8a8a93;font-size:14px;transition:color .3s}
+.toc a::before{content:"";width:14px;height:1px;background:currentColor;transition:width .45s var(--ease)}
+.toc a:hover,.toc a.on{color:var(--ink)}
+.toc a.on::before{width:30px;background:var(--acc)}
+.chap{padding-top:150px}
+.txt{max-width:780px;margin-left:clamp(0px,17vw,260px)}
+.txt>.lab{margin:0 0 16px}
+.txt h2{font-size:clamp(34px,4vw,58px);margin:0 0 26px}
+.txt p{font-size:19px;color:#34343c;margin:0 0 18px}
+.wide{margin-top:64px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.sev{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:center}
+
+/* challenge */
+.shift{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:40px}
+.shift>div{padding:32px;border-radius:22px;background:var(--soft)}
+.shift>div.to{background:var(--teal);color:#fff}
+.shift h3{font:600 15px/1 Inter,sans-serif;margin:0 0 20px;color:var(--mute)}
+.shift .to h3{color:rgba(255,255,255,.72)}
+.shift ul{list-style:none;margin:0;padding:0}
+.shift li{padding:13px 0;border-top:1px solid rgba(0,0,0,.08);font-size:17px;line-height:1.45;transition:padding .4s var(--ease)}
+.shift .to li{border-color:rgba(255,255,255,.18)}
+.shift li:hover{padding-left:8px}
+.pull{font-size:clamp(28px,3vw,44px);line-height:1.18;letter-spacing:-.02em;margin:72px 0 0;padding-left:28px;border-left:2px solid var(--acc);max-width:900px}
+
+/* audit */
+.finds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:24px}
+.finds div{padding:24px;border-radius:18px;border:1px solid var(--line);transition:border-color .3s,transform .5s var(--ease)}
+.finds div:hover{border-color:var(--ink);transform:translateY(-4px)}
+.finds strong{display:block;font:600 19px/1.2 "Inter Tight",Inter,sans-serif;margin-bottom:8px}
+.finds span{font-size:15px;color:var(--mute);line-height:1.5}
+
+/* directions */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px}
+.tabs button{min-height:46px;padding:0 20px;border-radius:999px;border:1px solid #cfcfd6;background:#fff;color:var(--ink);font:500 15px Inter,sans-serif;cursor:pointer;transition:all .35s var(--ease);display:inline-flex;align-items:center;gap:8px}
+.tabs button:hover{border-color:var(--ink)}
+.tabs button[aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tabs em{font-style:normal;font-size:12px;padding:3px 8px;border-radius:999px;background:var(--acc);color:#fff}
+.dgrid{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:24px;align-items:start}
+.dboard{position:relative;aspect-ratio:2/1}
+.dboard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s var(--ease),transform 1s var(--ease);transform:scale(.98)}
+.dboard img.on{opacity:1;transform:none}
+.dtext h3{font-size:30px;margin:4px 0 6px}
+.dtext .tone{color:var(--acc);font-weight:500;margin:0 0 16px}
+.dtext p{font-size:16px;color:#3d3d45;margin:0}
+
+/* before after */
+.ba{position:relative;aspect-ratio:1767/760;border-radius:24px;overflow:hidden;background:#f2f2f2;--p:50%;user-select:none}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .after{clip-path:inset(0 0 0 var(--p))}
+.ba .line{position:absolute;top:0;bottom:0;left:var(--p);width:2px;background:#fff;transform:translateX(-1px);box-shadow:0 0 20px rgba(0,0,0,.25);pointer-events:none}
+.ba .knob{position:absolute;top:50%;left:var(--p);width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.25);pointer-events:none}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba .tag{position:absolute;top:18px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.94);font-size:13px;font-weight:600;pointer-events:none}
+
+/* system */
+.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.rules div{padding:22px 24px;border-radius:18px;background:var(--soft);transition:background .4s}
+.rules div:hover{background:var(--tint)}
+.rules strong{display:block;font:600 18px/1.2 "Inter Tight",Inter,sans-serif;margin-bottom:6px}
+.rules span{font-size:15px;color:var(--mute)}
+.pal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
+.pal button{height:120px;border-radius:18px;border:0;cursor:pointer;display:flex;align-items:flex-end;justify-content:space-between;padding:16px;font:600 14px Inter,sans-serif;transition:transform .5s var(--ease)}
+.pal button:hover{transform:translateY(-6px)}
+.note{font-size:14px;color:var(--mute);margin-top:14px}
+
+/* in use */
+.use{margin-left:0;margin-right:0}
+.use figcaption{display:flex;gap:14px;align-items:baseline;margin-top:16px;font-size:15px;color:var(--mute)}
+.use figcaption b{color:var(--ink);font-weight:600;min-width:110px}
+.browser{border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 40px 80px -40px rgba(10,40,50,.4)}
+.browser .top{height:38px;display:flex;align-items:center;gap:7px;padding:0 16px;background:#f1f1f3;border-bottom:1px solid var(--line)}
+.browser .top i{width:10px;height:10px;border-radius:50%;background:#d4d4da}
+.browser .top span{margin-left:14px;font-size:12px;color:var(--mute)}
+.browser .view{aspect-ratio:16/10;overflow:hidden;position:relative}
+.browser .view img{position:absolute;left:0;top:0;width:100%;transition:transform 6s cubic-bezier(.45,0,.2,1)}
+.browser:hover .view img{transform:translateY(var(--scroll,0px))}
+.browser .hint{position:absolute;right:14px;bottom:14px;padding:8px 12px;border-radius:999px;background:rgba(13,13,16,.82);color:#fff;font-size:12px;transition:opacity .4s;pointer-events:none}
+.browser:hover .hint{opacity:0}
+@media (hover:none){.browser,.bcap{display:none}.sev{grid-template-columns:minmax(0,1fr)}}
+
+/* outcome */
+.outcome{padding-block:130px;margin-top:120px;background:var(--soft);position:relative;isolation:isolate;overflow:hidden}
+.outcome .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:40px;align-items:end}
+.outcome .oh{grid-column:span 8}
+.outcome h2{font-size:clamp(56px,7.6vw,128px);margin:12px 0 0;color:var(--acc)}
+.outcome .why{grid-column:9/span 4}
+.outcome .why p{font-size:18px;color:#34343c;margin:0 0 16px}
+.shows{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:36px}
+.shows div{border-top:1px solid var(--ink);padding-top:20px}
+.shows h3{font:600 22px/1.2 "Inter Tight",Inter,sans-serif;margin:0 0 10px;letter-spacing:-.02em}
+.shows p{font-size:16px;margin:0}
+.next{display:block;text-decoration:none;margin:40px 0 0;position:relative;border-radius:24px;overflow:hidden;height:min(70vh,620px);color:#fff}
+.next .par{position:absolute;inset:0}
+.next .par img{filter:brightness(.62);transition:filter .8s,scale 1.2s var(--ease)}
+.next:hover .par img{filter:brightness(.5);scale:1.04}
+.next .t{position:absolute;left:44px;right:44px;bottom:44px;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.next .t h2{font-size:clamp(40px,6vw,96px);margin:10px 0 0}
+a.next,a.next:hover{color:#fff}
+
+@media (max-width:1600px){.toc{display:none}}
+@media (max-width:1240px){.txt{margin-left:0}}
+@media (max-width:980px){
+ .lede,.outcome .wrap{grid-template-columns:minmax(0,1fr);gap:28px}
+ .lede p,.lede .res,.outcome .oh,.outcome .why{grid-column:1/-1;text-align:left}
+ .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .two,.sev,.shift,.dgrid,.rules,.shows{grid-template-columns:minmax(0,1fr)}
+ .finds{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+}
+@media (max-width:600px){.chap{padding-top:100px}.finds,.facts{grid-template-columns:minmax(0,1fr)}.pal{grid-template-columns:repeat(2,minmax(0,1fr))}.next .t{left:22px;right:22px;bottom:24px}}
+</style>
+</head>
+<body>
+<div class="bar" id="bar" aria-hidden="true"></div>
+<header class="nav"><div class="wrap">
+<a class="brand" href="index.html">Renata Hanko<span>Senior Creative Designer and Motion Lead</span></a>
+<nav aria-label="Main"><a href="index.html#work" aria-current="page">Work</a><a href="index.html#approach">Approach</a><a href="index.html#expertise">Expertise</a><a href="index.html#about">About</a></nav>
+<a class="btn" href="index.html#contact" style="min-height:44px;padding:0 20px">Let's talk</a>
+</div></header>
+
+<nav aria-label="Case study sections"><ul class="toc" id="toc">
+<li><a href="#context">Context</a></li><li><a href="#challenge">Challenge</a></li><li><a href="#audit">Audit</a></li><li><a href="#directions">Directions</a></li><li><a href="#change">Before and after</a></li><li><a href="#system">The system</a></li><li><a href="#inuse">In use</a></li><li><a href="#shows">What it shows</a></li><li><a href="#outcome">Outcome</a></li>
+</ul></nav>
+
+<main>
+<section class="ch wrap">
+<span class="glowbox" aria-hidden="true"><span class="drift"><span class="glow" data-glow style="right:-20vw;top:-30vh"></span></span></span>
+<a class="back up" href="index.html#work"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All work</a>
+<h1 class="disp lines">Lifetime:<br>Built to Lead</h1>
+<div class="lede">
+<p class="up">Moving a well known training provider from operational supplier to a <span class="it">strategic learning partner,</span> from the first audit to a system the whole team uses.</p>
+<div class="res up"><strong>Unanimous</strong><span>board approval for the new direction</span></div>
+</div>
+<div class="rule" style="margin-top:64px"></div>
+<dl class="facts">
+<div class="up"><dt>Client</dt><dd>Lifetime Training</dd></div>
+<div class="up"><dt>Year</dt><dd>2025</dd></div>
+<div class="up"><dt>My role</dt><dd>Creative lead, from audit and pitch to the brand system</dd></div>
+<div class="up"><dt>Scope</dt><dd>Audit, positioning, three directions, system and rollout</dd></div>
+<div class="up"><dt>Audience</dt><dd>The board, L&amp;D and HR leaders, national employers</dd></div>
+</dl>
+</section>
+
+<section class="heroimg wrap"><div class="lhero clip" role="img" aria-label="Lifetime key visual: two colleagues working together at a laptop, the man framed by the Lifetime lozenge, under the line Aligning learning to the evolving workplace">
+<div class="lh-media"><div class="lh-stage">
+<img class="lh-bg" src="img/lt/hero-team.jpg" alt="">
+<svg class="lh-loz" viewBox="0 0 2200 1466" aria-hidden="true"><rect class="base" x="711" y="438" width="760" height="340" rx="170" transform="rotate(-30 1091 608)" pathLength="1"/><rect class="spark" x="711" y="438" width="760" height="340" rx="170" transform="rotate(-30 1091 608)" pathLength="1"/></svg>
+<img class="lh-fg" src="img/lt/hero-team-cut.webp" alt="">
+</div><div class="lh-tint" aria-hidden="true"></div></div>
+<svg class="lh-logo" viewBox="31.14 30.48 80.06 21.65" aria-hidden="true"><path d="M63.61,48.58v1.32h-3.95v-1.32h1.33v-8.16h-1.33v-1.31h2.81v9.47H63.61ZM68.24,48.58v1.32h-3.8v-1.32h1.18v-4.88h-1.18v-1.32h2.66v6.2H68.24ZM67.19,39.84q0,.37-.27.63c-.18.18-.39.27-.63.27s-.45-.09-.62-.27q-.26-.26-.26-.63t.26-.63c.17-.17.38-.26.62-.26s.47.09.64.26Q67.19,39.46,67.19,39.84M74.04,40.62l-1.32.2c-.04-.48-.23-.73-.56-.73-.23,0-.39.09-.47.25-.08.17-.12.47-.12.9v1.14h1.29v1.32h-1.29v4.88h1.42v1.32h-4v-1.32h1.1v-4.88h-1.1v-1.32h1.1v-1.17c0-.69.17-1.25.51-1.67s.83-.65,1.49-.65q.82,0,1.31.43C73.73,39.61,73.94,40.05,74.04,40.62M81.12,46.51h-6.31q.14,1.09.84,1.71.7.63,1.71.63.75,0,1.39-.31.63-.31,1.06-.94l1.31.58q-.62.96-1.62,1.45-1,.49-2.17.49-1.22,0-2.16-.51-.95-.5-1.47-1.41-.53-.91-.53-2.05,0-1.13.52-2.04.52-.91,1.42-1.42.9-.51,1.99-.51,1.19,0,2.07.52.89.53,1.39,1.51Q81.07,45.18,81.12,46.51M77.13,43.41q-.84,0-1.47.56c-.42.37-.69.87-.81,1.48h4.71c-.14-.61-.43-1.11-.88-1.48Q78.01,43.41,77.13,43.41M85.12,42.38v1.32h-1.38v3.95q0,.61.14.79c.08.12.24.19.45.19q.39,0,.79-.14v1.34c-.46.13-.83.2-1.11.2q-.93,0-1.34-.47-.41-.47-.41-1.61v-4.25h-.98v-1.32h.98v-1.14l1.48-1.35v2.49H85.12ZM89.74,48.58v1.32h-3.8v-1.32h1.18v-4.88h-1.18v-1.32h2.66v6.2H89.74ZM88.68,39.84c0,.25-.09.46-.26.63-.18.18-.39.27-.63.27s-.45-.09-.63-.27q-.25-.26-.25-.63,0-.36.25-.63c.18-.17.38-.26.63-.26s.46.09.64.26C88.6,39.38,88.68,39.59,88.68,39.84M91.46,48.58v-4.88h-1.27v-1.32h2.74v.95q1.33-1.05,2.6-1.05,1.3,0,1.79,1.17,1.45-1.17,2.73-1.17.91,0,1.45.53.54.54.54,1.65v4.12h1.32v1.32h-2.79v-4.77q0-.49-.05-.8c-.03-.2-.12-.38-.26-.52q-.21-.22-.67-.22-.41,0-.95.25-.54.24-1.15.73v4.01h1.28v1.32h-2.76v-4.95q0-.73-.22-1.04-.22-.32-.72-.32-.81,0-2.14.98v4.01h1.33v1.32h-4.15v-1.32H91.46ZM111.2,46.51h-6.3q.13,1.09.83,1.71.71.63,1.72.63.75,0,1.38-.31.64-.31,1.07-.94l1.3.58q-.61.96-1.61,1.45-1,.49-2.17.49-1.22,0-2.17-.51-.94-.5-1.47-1.41-.52-.91-.52-2.05,0-1.13.52-2.04.52-.91,1.42-1.42.9-.51,1.99-.51,1.19,0,2.07.52.88.53,1.39,1.51Q111.16,45.18,111.2,46.51M107.22,43.41q-.84,0-1.47.56c-.42.37-.69.87-.81,1.48h4.71c-.14-.61-.43-1.11-.88-1.48Q108.1,43.41,107.22,43.41M72.02,31.31h-.01c-1.41-.34-2.84-.59-4.31-.73-.73-.07-1.47-.11-2.21-.1-.74,0-1.49.05-2.24.14-.75.09-1.49.24-2.23.44-.36.11-.73.23-1.09.36-.35.13-.71.28-1.06.45-.69.33-1.35.72-1.97,1.17-.63.45-1.2.96-1.73,1.51-1.05,1.1-1.89,2.36-2.54,3.68-.33.66-.62,1.34-.87,2.02q-.19.51-.35,1.03-.16.52-.31,1.04c-.16.59-.29,1.18-.41,1.77-.05-.11-.11-.22-.16-.32-.36-.71-.76-1.39-1.2-2.05-.21-.34-.44-.66-.67-.98q-.36-.48-.74-.94c-.51-.62-1.05-1.21-1.64-1.76-.6-.55-1.23-1.07-1.94-1.52-.71-.45-1.49-.84-2.38-1.07-.44-.12-.92-.18-1.41-.17-.5.02-1.01.12-1.47.34-.12.04-.25.12-.37.18h-.03s-.01.03-.01.03l-.03.02-.06.04-.06.03-.04.03h-.02s-.04.05-.04.05c-.22.15-.42.34-.59.53-.33.41-.55.86-.69,1.3-.27.89-.27,1.73-.23,2.53.06.8.19,1.57.35,2.32.16.76.36,1.5.58,2.22.21.74.46,1.45.7,2.17.12.36.25.71.37,1.07-.05-.05-.11-.1-.17-.15-.24-.19-.48-.38-.73-.56-.13-.09-.25-.18-.39-.27-.12-.09-.25-.17-.39-.25-.27-.17-.54-.32-.83-.46-.29-.14-.59-.26-.9-.35-.32-.1-.65-.17-1-.19-.35-.01-.71.03-1.05.14-.34.11-.66.3-.91.53-.26.24-.47.51-.63.79-.16.28-.29.57-.39.87-.1.3-.17.6-.23.9-.06.3-.1.6-.12.9-.03.31-.04.61-.03.91,0,.07.05.13.13.14.07,0,.14-.05.16-.12h0c.03-.29.08-.58.15-.87.06-.28.14-.56.22-.83.18-.54.41-1.07.73-1.5.16-.21.34-.4.54-.55.2-.14.41-.24.64-.29.45-.1.95-.02,1.44.18.24.09.49.21.72.35.12.06.24.14.35.22.12.08.23.15.34.23.12.09.23.17.34.26.11.08.22.18.33.27.21.17.43.36.64.56.1.09.21.19.31.29.1.1.2.2.3.3.21.21.41.42.61.63.19.21.39.42.58.64.19.21.38.43.57.65.22.24.57.33.88.19.38-.17.55-.61.38-1v-.02s0,0,0,0c-.17-.31-.34-.64-.49-.97-.16-.34-.3-.67-.45-1.01-.29-.68-.55-1.36-.79-2.06-.25-.69-.46-1.39-.65-2.1-.18-.7-.34-1.41-.45-2.12-.11-.71-.18-1.42-.18-2.11,0-.69.1-1.36.32-1.89.11-.26.26-.47.42-.62.08-.08.17-.14.26-.19h.02s0-.02,0-.02c-.05.04,0,.01-.01.02h0s.07-.04.07-.04l.06-.03.03-.02h.01s.01,0,.01,0c.05-.02.08-.03.14-.05.22-.07.46-.09.71-.07.25.03.52.09.78.19.54.21,1.08.55,1.59.96.51.41.99.89,1.44,1.4.46.51.89,1.05,1.29,1.61q.6.86,1.12,1.76c.36.6.69,1.22.99,1.85q.47.94.88,1.91c.26.64.52,1.29.75,1.95.24.66.44,1.33.66,2l.03.12c.15.61.73,1.04,1.38.97.72-.07,1.23-.7,1.16-1.41v-.1s-.02-.12-.02-.12l-.01-.24c-.01-.16-.02-.32-.02-.49-.01-.32-.02-.65-.01-.98q0-.5.03-.99c.02-.33.04-.66.07-.99.06-.66.16-1.31.27-1.96.11-.65.26-1.29.42-1.92.09-.31.18-.62.28-.93.1-.31.21-.62.33-.92.23-.6.49-1.19.79-1.75.61-1.13,1.34-2.15,2.22-3.01.44-.43.92-.82,1.42-1.16s1.04-.62,1.6-.86c.56-.24,1.14-.42,1.74-.55.6-.14,1.21-.22,1.83-.27.62-.04,1.25-.04,1.88,0,.63.03,1.26.1,1.89.21,1.27.2,2.53.53,3.76.94.05.02.1.04.15.05.93.22,1.86-.36,2.08-1.29C73.52,32.46,72.95,31.53,72.02,31.31"/></svg>
+<p class="lh-head" aria-hidden="true"><span class="l1"><span>Aligning learning</span></span><span class="l1"><span>to the evolving</span></span><span class="l2"><span><em>workplace</em></span></span></p>
+</div></section>
+
+<section class="chap wrap" id="context">
+<div class="txt"><p class="lab">Context</p>
+<h2 class="disp lines">A trusted brand,<br>ready for its next chapter.</h2>
+<p class="up">Lifetime has a strong presence and a distinctive logo, and people recognise its colours and shapes. Over the years, though, the brand had drifted, and it was still speaking mainly to apprentices at a time when the business wanted to win leaders, HR teams and new sectors.</p></div>
+<div class="wide stage logos up" style="padding:clamp(24px,4vw,56px)"><img src="img/lt/old-logos.jpg" alt="Three versions of the Lifetime logo over the years"></div>
+<p class="cap">The Lifetime logo through the years.</p>
+</section>
+
+<section class="chap wrap" id="challenge">
+<div class="txt"><p class="lab">Challenge</p>
+<h2 class="disp lines">Known for delivery,<br>ready to lead.</h2>
+<p class="up">Competitors were building more engaging brand positions, and Lifetime was seen as an operational apprenticeship provider rather than a transformative one. Employers did not know the full range of what it offered, so specialist programmes it could deliver were going elsewhere.</p>
+<p class="up">The opportunity was to win back share in hospitality, adult care and retail, and to grow into professional services, early years and logistics, without losing the recognition the brand already had.</p></div>
+<div class="shift wide">
+<div class="up"><h3>Where the brand was</h3><ul><li>Seen as an operations apprenticeship provider</li><li>Employers unaware of the full offer</li><li>Specialist programmes going to competitors</li><li>Playful look that did not reach senior buyers</li></ul></div>
+<div class="to up"><h3>Where it needed to be</h3><ul><li>A strategic, high value L&amp;D partner</li><li>Credible with L&amp;D and HR leaders</li><li>The go to provider for leadership, customer excellence, data and people development</li><li>Still recognisably Lifetime</li></ul></div>
+</div>
+<blockquote class="pull disp up">Shift the perception from vanilla to a strategic, high value learning partner.</blockquote>
+<p class="cap" style="padding-left:30px">From the positioning brief</p>
+</section>
+
+<section class="chap wrap" id="audit">
+<div class="txt"><p class="lab">Audit</p>
+<h2 class="disp lines">An honest look<br>at what was working.</h2>
+<p class="up">I started by auditing the existing brand across colour, type, imagery, icons and layout, keeping what made it friendly and recognisable and naming what held it back with senior decision makers.</p></div>
+<div class="finds wide">
+<div class="up"><strong>Colour</strong><span>Playful and friendly, but too many colours, some of them not accessible.</span></div>
+<div class="up"><strong>Typography</strong><span>Clean sans serif type, used without consistency.</span></div>
+<div class="up"><strong>Imagery</strong><span>Diverse and people focused, but stock in feel and missing a leadership presence.</span></div>
+<div class="up"><strong>Icons and layout</strong><span>Too many icons and shapes used as filler, with layouts lacking the precision leaders expect.</span></div>
+</div>
+</section>
+
+<section class="chap wrap" id="directions">
+<div class="txt"><p class="lab">Directions</p>
+<h2 class="disp lines">Three routes,<br>shown as the real thing.</h2>
+<p class="up">I presented three distinct directions to the board, each with its own rationale, palette, icons and executions across web, print and social, so the decision was made on how the brand would actually look in use.</p></div>
+<div class="wide">
+<div class="tabs" role="tablist" aria-label="Creative directions">
+<button type="button" role="tab" aria-selected="true" aria-controls="dpanel" data-i="0">Lifetime Refined <em>Chosen</em></button>
+<button type="button" role="tab" aria-selected="false" aria-controls="dpanel" data-i="1">Lifetime Growth</button>
+<button type="button" role="tab" aria-selected="false" aria-controls="dpanel" data-i="2">Lifetime Reimagined</button>
+</div>
+<div class="dgrid" id="dpanel" role="tabpanel">
+<div class="stage pad up"><div class="dboard"><img class="on" src="img/lt/dir1.jpg" alt="Brand direction 1, Lifetime Refined"><img src="img/lt/dir2.jpg" alt="Brand direction 2, Lifetime Growth"><img src="img/lt/dir3.jpg" alt="Brand direction 3, Lifetime Reimagined"></div></div>
+<div class="dtext up"><p class="lab" id="dn">Direction one</p><h3 class="disp" id="dh">Lifetime Refined</h3><p class="tone" id="dt">Clean, mature and UX led</p><p id="dp"></p></div>
+</div>
+</div>
+</section>
+
+<section class="chap wrap" id="change">
+<div class="txt"><p class="lab">Before and after</p>
+<h2 class="disp lines">Same brand,<br>grown up.</h2>
+<p class="up">Drag across the image to compare earlier Lifetime materials with the refined brochure and posters.</p></div>
+<div class="ba wide up" id="ba">
+<img src="img/lt/old-materials.jpg" alt="Lifetime flyers, posters and social graphics before the refresh">
+<img class="after" src="img/lt/new-posters.jpg" alt="Refined Lifetime Retailer brochure cover and posters">
+<span class="tag" style="left:18px">Before</span><span class="tag" style="right:18px">After</span>
+<span class="line"></span><span class="knob" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0d0d10" stroke-width="2"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+<input type="range" min="0" max="100" value="50" aria-label="Compare before and after">
+</div>
+</section>
+
+<section class="chap wrap" id="system">
+<div class="txt"><p class="lab">The system</p>
+<h2 class="disp lines">Built so the team<br>could carry it.</h2>
+<p class="up">The chosen direction keeps Lifetime's visual equity and strips back the noise. Every rule came from the audit, and a review process keeps quality consistent as the wider team uses it.</p></div>
+<div class="rules wide">
+<div class="up"><strong>The lozenge</strong><span>One shape, from the Lifetime leap, in place of many.</span></div>
+<div class="up"><strong>Reduced palette</strong><span>Deep teal and green teal, with coral used for highlights.</span></div>
+<div class="up"><strong>Big, bold type</strong><span>Highlighted headlines that lead every layout.</span></div>
+<div class="up"><strong>Led by white space</strong><span>Calmer layouts built on UX principles.</span></div>
+<div class="up"><strong>Refined icons</strong><span>Simple, rounded and consistent in weight.</span></div>
+<div class="up"><strong>Cinematic photography</strong><span>Candid, high contrast images with an executive presence.</span></div>
+</div>
+<div class="pal up" id="pal"></div>
+<p class="note" id="palNote">Select a colour to copy its value.</p>
+</section>
+
+<section class="chap wrap" id="inuse">
+<div class="txt"><p class="lab">In use</p>
+<h2 class="disp lines">From web to print<br>to the boardroom.</h2>
+<p class="up">The system now runs across the website, social, print and presentations, and was carried into the new Leadership and Management materials.</p></div>
+<figure class="use wide up"><div class="stage"><img src="img/lt/web.jpg" alt="Refined Lifetime website homepage"></div><figcaption><b>Web</b>The new homepage, led by white space and one clear message.</figcaption></figure>
+<figure class="use wide up"><div class="stage"><img src="img/lt/socials.jpg" alt="Social media templates"></div><figcaption><b>Social</b>Templates built on the lozenge and highlighted headlines.</figcaption></figure>
+<figure class="use wide up"><div class="stage"><img src="img/lt/presentation.jpg" alt="Leadership presentation layouts"></div><figcaption><b>Presentations</b>Layouts for the Leadership and Management programmes.</figcaption></figure>
+</section>
+
+
+
+<section class="wrap" id="shows" style="padding-top:150px">
+<p class="lab">What it shows</p>
+<h2 class="disp lines" style="font-size:clamp(34px,4vw,58px);margin:14px 0 0">Strategy, leadership<br>and systems thinking.</h2>
+<div class="shows">
+<div class="up"><h3>Strategy</h3><p>Turning an audit into a clear positioning challenge and three distinct answers to it.</p></div>
+<div class="up"><h3>Leadership</h3><p>Presenting to the board and bringing senior stakeholders to a unanimous decision.</p></div>
+<div class="up"><h3>Systems thinking</h3><p>A brand built with templates and a review process, so it holds up without me in every file.</p></div>
+</div>
+
+</section>
+<section class="outcome" id="outcome"><span class="glowbox" aria-hidden="true"><span class="drift"><span class="glow" data-glow style="right:-25vw;top:-50vh"></span></span></span><div class="wrap">
+<div class="oh"><p class="lab">Outcome</p><h2 class="disp lines">Unanimous.</h2><p class="lab" style="font-size:18px;margin-top:14px"><b>Board approval for the new direction</b></p></div>
+<div class="why up"><p><b>Why it mattered:</b> the board backed the change in full, giving Lifetime a credible brand for the leadership and professional services work it wanted to win.</p><p>The system is now in use across web, print and social, and in the new Leadership and Management programme materials.</p></div>
+</div></section>
+<section class="wrap" style="padding-block:120px 40px"><a class="next up" href="awards.html" data-cursor="Next case">
+<div class="par" data-speed=".18"><img src="img/lla/stage-wide.jpg" alt=""></div>
+<div class="t"><div><p class="lab" style="color:rgba(255,255,255,.8)">Next case study</p><h2 class="disp">Lifetime Learning Awards</h2></div><span class="btn" style="background:#fff;color:#0d0d10;border-color:#fff">View case</span></div>
+</a></section>
+</main>
+
+<footer class="foot wrap" style="padding-block:100px 40px">
+<small style="margin-top:0"><span>© 2026 Renata Hanko · hrdgraphics.com</span></small>
+</footer>
+
+<script src="lenis.min.js"></script>
+<script>
+{
+window.__scrollHooks = window.__scrollHooks || [];
+const bar = document.getElementById('bar'), toc = document.getElementById('toc');
+const links = [...toc.querySelectorAll('a')], secs = links.map(a => document.querySelector(a.getAttribute('href')));
+window.__scrollHooks.push(y => {
+  const h = document.documentElement.scrollHeight - innerHeight; bar.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
+  let on = -1; secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < innerHeight * 0.45) on = i; });
+  links.forEach((a, i) => a.classList.toggle('on', i === on));
+  const ctx = secs[0].getBoundingClientRect().top, end = document.getElementById('outcome').getBoundingClientRect().bottom;
+  toc.classList.toggle('show', ctx < innerHeight * 0.6 && end > innerHeight * 0.5);
+});
+
+const D = [
+ { n: 'Direction one', t: 'Lifetime Refined', tone: 'Clean, mature and UX led', p: 'Keeps the visual equity people already recognise, strips back the noise and brings in UX principles, bolder type and sharper icons. The lozenge, rooted in the Lifetime leap, becomes the single brand shape.' },
+ { n: 'Direction two', t: 'Lifetime Growth', tone: 'Professional, expansive and led by white space', p: 'Evolves the leap into a leaf to symbolise growth, with gradients and generous white space for B2B buyers who expect clarity and professionalism.' },
+ { n: 'Direction three', t: 'Lifetime Reimagined', tone: 'Bold, human and story led', p: 'The boldest route, built on transformation and connection. Shapes become pathways to success, titles lead with a new typeface, and real people tell the story.' }];
+const tabs = [...document.querySelectorAll('[role=tab]')], boards = [...document.querySelectorAll('.dboard img')];
+function dir(i) {
+  const d = D[i]; tabs.forEach((t, k) => t.setAttribute('aria-selected', k === i)); boards.forEach((b, k) => b.classList.toggle('on', k === i));
+  document.getElementById('dn').textContent = d.n; document.getElementById('dh').textContent = d.t; document.getElementById('dt').textContent = d.tone; document.getElementById('dp').textContent = d.p;
+}
+tabs.forEach((t, k) => { t.addEventListener('click', () => dir(k)); t.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { const n = (k + (e.key === 'ArrowRight' ? 1 : 2)) % 3; tabs[n].focus(); dir(n); } }); });
+dir(0);
+
+const ba = document.getElementById('ba'), rng = ba.querySelector('input');
+rng.addEventListener('input', () => ba.style.setProperty('--p', rng.value + '%'));
+
+const P = [['#004d61', 'Deep teal', '#fff'], ['#1b7b6f', 'Green teal', '#fff'], ['#dd5d3f', 'Coral', '#0d0d10'], ['#d9e5d6', 'Sage', '#0d0d10']];
+const pal = document.getElementById('pal'), pn = document.getElementById('palNote');
+pal.innerHTML = P.map(p => '<button type="button" style="background:' + p[0] + ';color:' + p[2] + '" data-hex="' + p[0] + '"><span>' + p[1] + '</span><span>' + p[0].toUpperCase() + '</span></button>').join('');
+pal.querySelectorAll('button').forEach(b => b.addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(b.dataset.hex.toUpperCase()); pn.textContent = b.dataset.hex.toUpperCase() + ' copied.'; } catch (e) { pn.textContent = b.dataset.hex.toUpperCase(); }
+}));
+}
+</script>
+<script>
+{
+/* keep the lozenge line about 1.6px wide on screen at any size */
+const loz = document.querySelector('.lh-loz');
+const fit = () => { if (loz) document.querySelector('.lhero').style.setProperty('--sw', (1.6 * 2200 / loz.getBoundingClientRect().width).toFixed(2)); };
+addEventListener('load', fit); addEventListener('resize', fit); fit();
+}
+</script>
+<script src="site.js"></script>
+</body>
+</html>
